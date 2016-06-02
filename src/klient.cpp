@@ -29,6 +29,7 @@ Klient::Klient(QString _nick, QString _ip, int _port, QWidget *parent) :
     connect(pushButtonG1C8, SIGNAL(clicked()), this, SLOT(klikKarta8()));
     connect(pushButtonG1C9, SIGNAL(clicked()), this, SLOT(klikKarta9()));
     connect(pushButtonG1C10, SIGNAL(clicked()), this, SLOT(klikKarta10()));
+    connect(pushButtonPasG1, SIGNAL(clicked()), this, SLOT(klikPas()));
     connect(socket, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(blad(QAbstractSocket::SocketError)));
 
     socket->connectToHost(ip, port);
@@ -164,12 +165,13 @@ void Klient::ustawKarteSerwera(QString c)
 
     QString poz = c.mid(0, 1);
     QString pos = c.mid(1, 1);
-    QString iconaG2 = ":talie/" + rodzajTaliiG2 + "/" + c.mid(2) + ".png";
+    QString numer = c.mid(2);
+    QString iconaG2 = ":talie/" + rodzajTaliiG2 + "/" + numer + ".png";
 
 
-	if (pos == "0")
+    if (pos == "0")
         pushButtonG2C1->setIcon(QIcon(":/ikony/null.png"));
-	else if (pos == "1")
+    else if (pos == "1")
         pushButtonG2C2->setIcon(QIcon(":/ikony/null.png"));
     else if (pos == "2")
         pushButtonG2C3->setIcon(QIcon(":/ikony/null.png"));
@@ -188,7 +190,7 @@ void Klient::ustawKarteSerwera(QString c)
 	else
         pushButtonG2C10->setIcon(QIcon(":/ikony/null.png"));
 
-	posServer = pos.toInt();
+    posServer = pos.toInt();
 
     if (poz == "0") {
         labelG2->setEnabled(true);
@@ -315,10 +317,10 @@ void Klient::ustawKarty(QString c)
 
 void Klient::ustawNickSerwera(QString c)
 {
-    QString rT = c.mid(0,3);
+    QString rT = c.mid(0,4);
 
     rodzajTaliiG2 = rT;
-    QString nickServer = c.mid(3);
+    QString nickServer = c.mid(4);
     groupBoxG2->setTitle(nickServer);
     setWindowTitle("Gwint - " + nick + " vs " + nickServer);
 }

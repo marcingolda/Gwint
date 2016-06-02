@@ -1093,9 +1093,9 @@ void Server::wydajWerdykt()
 
     int werdykt;
 
-    if (pkt1 > pkt2)
+    if (pkt1 < pkt2)
         werdykt = Koniec::Zwyciestwo;
-    else if (pkt1 < pkt2)
+    else if (pkt1 > pkt2)
         werdykt = Koniec::Porazka;
     else
         werdykt = Koniec::Remis;
