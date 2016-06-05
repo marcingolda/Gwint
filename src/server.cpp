@@ -362,10 +362,17 @@ void Server::przyznajPunkty(int i)
         punkty2.setNum(g2->getPunkty());
         lineEditPktG2->setText(punkty2);
         wyslijWiadomosc("06" + punkty2 + "|");
+        if (rywalPas==false)
+        {
         if (g1->getRzucona() == NULL) {
             ustawTure(1);
         } else {
             aktywnyGracz(1);
+        }
+        }
+        else
+        {
+            ustawTure(2);
         }
     } else {
         g1->zwiekszPunkty(g1->getRzucona()->getSila());
@@ -373,10 +380,17 @@ void Server::przyznajPunkty(int i)
         punkty1.setNum(g1->getPunkty());
         lineEditPktG1->setText(punkty1);
         wyslijWiadomosc("05" + punkty1 + "|");
+        if(Pas==false)
+        {
         if (g2->getRzucona() == NULL) {
             ustawTure(2);
         } else {
             aktywnyGracz(2);
+        }
+        }
+        else
+        {
+            ustawTure(1);
         }
     }
 }
@@ -1040,6 +1054,7 @@ void Server::wydajWerdykt()
     if (pkt1 < pkt2)
     {
         rnd2++;
+        r1.setNum(rnd1);
         r2.setNum(rnd2);
         lineEditRundyG2->setText(r2);
         inicjujKolejnaPartie();
@@ -1048,6 +1063,7 @@ void Server::wydajWerdykt()
     {
         rnd1++;
         r1.setNum(rnd1);
+        r2.setNum(rnd2);
         lineEditRundyG1->setText(r1);
         inicjujKolejnaPartie();
     }
@@ -1092,7 +1108,7 @@ void Server::klikPas()
     wydajWerdykt();
 
     if (rywalPas == false)
-            wyslijWiadomosc("10SPASOWAŁ");
+            wyslijWiadomosc("10SPASOWAL");
 
 }
 
@@ -1101,7 +1117,7 @@ void Server::przeciwnikPas(QString c)
 
     rywalPas = true;
     aktywnyGracz(2);
-    niewidoczneG1();
+    pushButtonPasG1->setMaximumWidth(70);
     pushButtonPasG1->setText(c);
 
 }
@@ -1112,7 +1128,7 @@ void Server::ustawLiczbeRund(QString c)
 
 
     lineEditRundyG1->setText(c.mid(0,1));
-    lineEditRundyG2->setText(c.mid(0,1));
+    lineEditRundyG2->setText(c.mid(1,1));
 
     int rnd1 = c.mid(0,1).toInt();
     int rnd2 = c.mid (1,1).toInt();
@@ -1121,7 +1137,7 @@ void Server::ustawLiczbeRund(QString c)
     {
         if(rnd1==2)
             werdykt = Koniec::Porazka;
-        else if (rnd2==2)
+        else
             werdykt = Koniec::Zwyciestwo;
 
         Koniec *koniec = new Koniec(werdykt, rnd1, rnd2, nick, groupBoxG2->title());
@@ -1140,6 +1156,7 @@ void Server::inicjujKolejnaPartie()
 {
     Pas = false;
     rywalPas = false;
+    pushButtonPasG1->setMaximumWidth(50);
     pushButtonPasG1->setText("Pas");
     lineEditPktG1->setText("0");
     lineEditPktG2->setText("0");

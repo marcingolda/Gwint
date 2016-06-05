@@ -809,6 +809,7 @@ void Klient::wydajWerdykt()
     if (pkt1 < pkt2)
     {
         rnd2++;
+        r1.setNum(rnd1);
         r2.setNum(rnd2);
         lineEditRundyG2->setText(r2);
         inicjujKolejnaPartie();
@@ -817,6 +818,7 @@ void Klient::wydajWerdykt()
     {
         rnd1++;
         r1.setNum(rnd1);
+        r2.setNum(rnd2);
         lineEditRundyG1->setText(r1);
         inicjujKolejnaPartie();
     }
@@ -838,7 +840,7 @@ void Klient::wydajWerdykt()
         {
             if(rnd1==2)
                 werdykt = Koniec::Zwyciestwo;
-            else if (rnd2==2)
+            else
                 werdykt = Koniec::Porazka;
 
 
@@ -855,6 +857,7 @@ void Klient::inicjujKolejnaPartie()
 {
     Pas = false;
     rywalPas = false;
+    pushButtonPasG2->setMaximumWidth(50);
     pushButtonPasG2->setText("Pas");
     lineEditPktG1->setText("0");
     lineEditPktG2->setText("0");
@@ -903,7 +906,7 @@ void Klient::klikPas()
     wydajWerdykt();
 
     if (rywalPas == false)
-            wyslijWiadomosc("05PAS");
+            wyslijWiadomosc("05SPASOWAL");
 }
 
 void Klient::ustawLiczbeRund(QString c)
@@ -912,7 +915,7 @@ void Klient::ustawLiczbeRund(QString c)
 
 
     lineEditRundyG1->setText(c.mid(0,1));
-    lineEditRundyG2->setText(c.mid(0,1));
+    lineEditRundyG2->setText(c.mid(1,1));
 
     int rnd1 = c.mid(0,1).toInt();
     int rnd2 = c.mid (1,1).toInt();
@@ -921,7 +924,7 @@ void Klient::ustawLiczbeRund(QString c)
     {
         if(rnd2==2)
             werdykt = Koniec::Porazka;
-        else if (rnd1==2)
+        else
             werdykt = Koniec::Zwyciestwo;
 
         Koniec *koniec = new Koniec(werdykt, rnd1, rnd2, nick, groupBoxG2->title());
@@ -938,7 +941,7 @@ void Klient::ustawLiczbeRund(QString c)
 void Klient::przeciwnikPas(QString c)
 {
     rywalPas = true;
-    niewidoczneG2();
+    pushButtonPasG2->setMaximumWidth(70);
     pushButtonPasG2->setText(c);
 }
 
