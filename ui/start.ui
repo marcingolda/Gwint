@@ -58,7 +58,7 @@
           <string>Elfy</string>
          </property>
          <property name="icon">
-          <iconset>
+          <iconset resource="../resources/cards.qrc">
            <normaloff>:/ikony/ikona3.png</normaloff>:/ikony/ikona3.png</iconset>
          </property>
         </item>
@@ -67,7 +67,7 @@
           <string>Krolestwo Polnocy</string>
          </property>
          <property name="icon">
-          <iconset>
+          <iconset resource="../resources/cards.qrc">
            <normaloff>:/ikony/ikona1.png</normaloff>:/ikony/ikona1.png</iconset>
          </property>
         </item>
@@ -76,7 +76,7 @@
           <string>Nilfgaard</string>
          </property>
          <property name="icon">
-          <iconset>
+          <iconset resource="../resources/cards.qrc">
            <normaloff>:/ikony/ikona2.png</normaloff>:/ikony/ikona2.png</iconset>
          </property>
         </item>
@@ -85,7 +85,7 @@
           <string>Potwory</string>
          </property>
          <property name="icon">
-          <iconset>
+          <iconset resource="../resources/cards.qrc">
            <normaloff>:/ikony/ikona4.png</normaloff>:/ikony/ikona4.png</iconset>
          </property>
         </item>
@@ -126,7 +126,7 @@
       <bool>true</bool>
      </property>
      <property name="title">
-      <string>Network</string>
+      <string>Siec</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="0" colspan="4">
@@ -285,7 +285,7 @@
         <bool>true</bool>
        </property>
        <property name="text">
-        <string>Exit</string>
+        <string>Wyjscie</string>
        </property>
        <property name="icon">
         <iconset resource="../resources/cards.qrc">
