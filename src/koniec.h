@@ -15,7 +15,6 @@ public:
     enum Werdykt
 	{
 		Zwyciestwo,
-		Remis,
         Porazka
 	};
 

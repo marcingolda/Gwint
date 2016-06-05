@@ -6,7 +6,7 @@ Thread::Thread(QObject *parent) :
     gracz = -1;
 }
 
-void Thread::setGiocatore(int _gracz)
+void Thread::ustawGracza(int _gracz)
 {
     gracz = _gracz;
 }

@@ -47,7 +47,7 @@ void Talia::inicjalizuj(QString c)
                 dir=":talie/ptwr/rodzaj.txt";
                 dir2=":talie/ptwr/sila.txt";
                 dir3=":talie/ptwr/moc.txt";
-                dir4=":taliue/ptwr/bohater.txt";
+                dir4=":talie/ptwr/bohater.txt";
                 }
             else
                 {

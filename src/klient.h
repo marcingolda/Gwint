@@ -24,12 +24,13 @@ public:
 	virtual ~Klient();
     QString rodzajTaliiG2;
 
+
 	void wyslijWiadomosc(QString);
     void inicjuj();
+    void inicjujKolejnaPartie();
 
 	void wrocDoMenu();
 
-//    void ustawKolorKupki(QString);
 	void ustawNickSerwera(QString);
     void ustawKarty(QString c);
     void ustawLiczbeKartG2(QString);
@@ -38,9 +39,12 @@ public:
 	void ustawKarteSerwera(QString);
 	void aktualizujPunkty(QString);
     void aktualizujPunktySerwera(QString);
-	void niewidoczneKarty(QString);
     void wydajWerdykt();
 	void serwerOdlaczony(QString);
+    void ustawLiczbeRund(QString);
+    void przeciwnikPas(QString);
+    void niewidoczneG1();
+    void niewidoczneG2();
 
 protected:
 	virtual void closeEvent(QCloseEvent *);
@@ -68,11 +72,12 @@ private:
 	QString ip;
 	int port;
 	int posServer;
-
+    bool rywalPas;
+    bool Pas;
 	QTcpSocket *socket;
 	QBuffer *buffer;
 
-    void (Klient::*metoda[10])(QString);
+    void (Klient::*metoda[11])(QString);
 
 };
 

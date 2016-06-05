@@ -11,7 +11,7 @@ Q_OBJECT
 public:
 	Thread(QObject *parent = 0);
 
-	void setGiocatore(int);
+	void ustawGracza(int);
 	void setSleepMs(int);
 
 protected:

@@ -28,9 +28,9 @@ public:
     QString rodzajTaliiG1;
 
     void inicjujPartie(QString);
+    void inicjujKolejnaPartie();
     int ktoZaczyna();
-    void controllaGiocata(int);
-    int controllaGiocate();
+    void przyznajPunkty(int);
     void aktywnyGracz(int);
 
     void wyslijWiadomosc(QString);
@@ -44,6 +44,10 @@ public:
     void ustawLiczbeKartG1();
     void ustawTure(int);
     void wydajWerdykt();
+    void ustawLiczbeRund(QString);
+    void przeciwnikPas(QString);
+    void niewidoczneG1();
+    void niewidoczneG2();
 
     void wrocDoMenu();
     void ustawIkony();
@@ -87,9 +91,11 @@ private:
     int pos1;
     int pos2;
     Thread *th;
+    bool Pas;
+    bool rywalPas;
 
 
-    void (Server::*metoda[3])(QString);
+    void (Server::*metoda[6])(QString);
 
 };
 

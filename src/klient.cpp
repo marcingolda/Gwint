@@ -43,12 +43,12 @@ Klient::Klient(QString _nick, QString _ip, int _port, QWidget *parent) :
     metoda[3] = &Klient::ustawTure;
     metoda[4] = &Klient::ustawKarteSerwera;
     metoda[5] = &Klient::aktualizujPunkty;
-    metoda[6] = &Klient::niewidoczneKarty;
-    metoda[7] = &Klient::aktualizujPunktySerwera;
-    metoda[8] = &Klient::serwerOdlaczony;
-    metoda[9] = &Klient::ustawLiczbeKartG1;
+    metoda[6] = &Klient::aktualizujPunktySerwera;
+    metoda[7] = &Klient::serwerOdlaczony;
+    metoda[8] = &Klient::ustawLiczbeKartG1;
+    metoda[9] = &Klient::ustawLiczbeRund;
+    metoda[10] = &Klient::przeciwnikPas;
 
-//    metoda[10] = &Klient::ustawKolorKupki;
 }
 
 void Klient::blad(QAbstractSocket::SocketError se)
@@ -77,9 +77,21 @@ void Klient::inicjuj()
 	groupBoxG1->setTitle(nick);
     lineEditPktG1->setText("0");
     lineEditPktG2->setText("0");
-	pushButtonG2C1->setEnabled(false);
-	pushButtonG2C2->setEnabled(false);
-	pushButtonG2C3->setEnabled(false);
+    lineEditRundyG1->setText("0");
+    lineEditRundyG2->setText("0");
+    niewidoczneG2();
+    rywalPas = false;
+    Pas = false;
+
+
+
+}
+
+void Klient::niewidoczneG2()
+{
+    pushButtonG2C1->setEnabled(false);
+    pushButtonG2C2->setEnabled(false);
+    pushButtonG2C3->setEnabled(false);
     pushButtonG2C4->setEnabled(false);
     pushButtonG2C5->setEnabled(false);
     pushButtonG2C6->setEnabled(false);
@@ -87,8 +99,7 @@ void Klient::inicjuj()
     pushButtonG2C8->setEnabled(false);
     pushButtonG2C9->setEnabled(false);
     pushButtonG2C10->setEnabled(false);
-
-
+    pushButtonPasG2->setEnabled(false);
 }
 
 void Klient::wyslijWiadomosc(QString message)
@@ -132,20 +143,6 @@ void Klient::wrocDoMenu()
 	destroy();
 }
 
-void Klient::niewidoczneKarty(QString)
-{
-	pushButtonG1C1->setEnabled(false);
-	pushButtonG1C2->setEnabled(false);
-	pushButtonG1C3->setEnabled(false);
-    pushButtonG1C4->setEnabled(false);
-    pushButtonG1C5->setEnabled(false);
-    pushButtonG1C6->setEnabled(false);
-    pushButtonG1C7->setEnabled(false);
-    pushButtonG1C8->setEnabled(false);
-    pushButtonG1C9->setEnabled(false);
-    pushButtonG1C10->setEnabled(false);
-
-}
 
 
 void Klient::aktualizujPunkty(QString p)
@@ -239,6 +236,7 @@ void Klient::ustawTure(QString)
     pushButtonG1C8->setEnabled(true);
     pushButtonG1C9->setEnabled(true);
     pushButtonG1C10->setEnabled(true);
+    pushButtonPasG1->setEnabled(true);
 
 }
 
@@ -326,7 +324,8 @@ void Klient::ustawNickSerwera(QString c)
 }
 
 
-void Klient::klikKarta1()
+
+void Klient::niewidoczneG1()
 {
     pushButtonG1C1->setEnabled(false);
     pushButtonG1C2->setEnabled(false);
@@ -338,6 +337,13 @@ void Klient::klikKarta1()
     pushButtonG1C8->setEnabled(false);
     pushButtonG1C9->setEnabled(false);
     pushButtonG1C10->setEnabled(false);
+    pushButtonPasG1->setEnabled(false);
+}
+
+void Klient::klikKarta1()
+{
+
+    niewidoczneG1();
 
     QIcon icon = pushButtonG1C1->icon();
     QPixmap pixmap = icon.pixmap(75, 134);
@@ -383,16 +389,7 @@ void Klient::klikKarta1()
 
 void Klient::klikKarta2()
 {
-    pushButtonG1C1->setEnabled(false);
-    pushButtonG1C2->setEnabled(false);
-    pushButtonG1C3->setEnabled(false);
-    pushButtonG1C4->setEnabled(false);
-    pushButtonG1C5->setEnabled(false);
-    pushButtonG1C6->setEnabled(false);
-    pushButtonG1C7->setEnabled(false);
-    pushButtonG1C8->setEnabled(false);
-    pushButtonG1C9->setEnabled(false);
-    pushButtonG1C10->setEnabled(false);
+    niewidoczneG1();
 
     QIcon icon = pushButtonG1C2->icon();
     QPixmap pixmap = icon.pixmap(75, 134);
@@ -437,16 +434,7 @@ void Klient::klikKarta2()
 
 void Klient::klikKarta3()
 {
-    pushButtonG1C1->setEnabled(false);
-    pushButtonG1C2->setEnabled(false);
-    pushButtonG1C3->setEnabled(false);
-    pushButtonG1C4->setEnabled(false);
-    pushButtonG1C5->setEnabled(false);
-    pushButtonG1C6->setEnabled(false);
-    pushButtonG1C7->setEnabled(false);
-    pushButtonG1C8->setEnabled(false);
-    pushButtonG1C9->setEnabled(false);
-    pushButtonG1C10->setEnabled(false);
+    niewidoczneG1();
 
     QIcon icon = pushButtonG1C3->icon();
     QPixmap pixmap = icon.pixmap(75, 134);
@@ -491,16 +479,7 @@ void Klient::klikKarta3()
 
 void Klient::klikKarta4()
 {
-    pushButtonG1C1->setEnabled(false);
-    pushButtonG1C2->setEnabled(false);
-    pushButtonG1C3->setEnabled(false);
-    pushButtonG1C4->setEnabled(false);
-    pushButtonG1C5->setEnabled(false);
-    pushButtonG1C6->setEnabled(false);
-    pushButtonG1C7->setEnabled(false);
-    pushButtonG1C8->setEnabled(false);
-    pushButtonG1C9->setEnabled(false);
-    pushButtonG1C10->setEnabled(false);
+    niewidoczneG1();
 
     QIcon icon = pushButtonG1C4->icon();
     QPixmap pixmap = icon.pixmap(75, 134);
@@ -545,16 +524,7 @@ void Klient::klikKarta4()
 
 void Klient::klikKarta5()
 {
-    pushButtonG1C1->setEnabled(false);
-    pushButtonG1C2->setEnabled(false);
-    pushButtonG1C3->setEnabled(false);
-    pushButtonG1C4->setEnabled(false);
-    pushButtonG1C5->setEnabled(false);
-    pushButtonG1C6->setEnabled(false);
-    pushButtonG1C7->setEnabled(false);
-    pushButtonG1C8->setEnabled(false);
-    pushButtonG1C9->setEnabled(false);
-    pushButtonG1C10->setEnabled(false);
+     niewidoczneG1();
 
     QIcon icon = pushButtonG1C5->icon();
     QPixmap pixmap = icon.pixmap(75, 134);
@@ -600,16 +570,7 @@ void Klient::klikKarta5()
 
 void Klient::klikKarta6()
 {
-    pushButtonG1C1->setEnabled(false);
-    pushButtonG1C2->setEnabled(false);
-    pushButtonG1C3->setEnabled(false);
-    pushButtonG1C4->setEnabled(false);
-    pushButtonG1C5->setEnabled(false);
-    pushButtonG1C6->setEnabled(false);
-    pushButtonG1C7->setEnabled(false);
-    pushButtonG1C8->setEnabled(false);
-    pushButtonG1C9->setEnabled(false);
-    pushButtonG1C10->setEnabled(false);
+    niewidoczneG1();
 
     QIcon icon = pushButtonG1C6->icon();
     QPixmap pixmap = icon.pixmap(75, 134);
@@ -654,16 +615,7 @@ void Klient::klikKarta6()
 
 void Klient::klikKarta7()
 {
-    pushButtonG1C1->setEnabled(false);
-    pushButtonG1C2->setEnabled(false);
-    pushButtonG1C3->setEnabled(false);
-    pushButtonG1C4->setEnabled(false);
-    pushButtonG1C5->setEnabled(false);
-    pushButtonG1C6->setEnabled(false);
-    pushButtonG1C7->setEnabled(false);
-    pushButtonG1C8->setEnabled(false);
-    pushButtonG1C9->setEnabled(false);
-    pushButtonG1C10->setEnabled(false);
+    niewidoczneG1();
 
     QIcon icon = pushButtonG1C7->icon();
     QPixmap pixmap = icon.pixmap(75, 134);
@@ -708,16 +660,7 @@ void Klient::klikKarta7()
 
 void Klient::klikKarta8()
 {
-    pushButtonG1C1->setEnabled(false);
-    pushButtonG1C2->setEnabled(false);
-    pushButtonG1C3->setEnabled(false);
-    pushButtonG1C4->setEnabled(false);
-    pushButtonG1C5->setEnabled(false);
-    pushButtonG1C6->setEnabled(false);
-    pushButtonG1C7->setEnabled(false);
-    pushButtonG1C8->setEnabled(false);
-    pushButtonG1C9->setEnabled(false);
-    pushButtonG1C10->setEnabled(false);
+    niewidoczneG1();
 
     QIcon icon = pushButtonG1C8->icon();
     QPixmap pixmap = icon.pixmap(75, 134);
@@ -762,16 +705,7 @@ void Klient::klikKarta8()
 
 void Klient::klikKarta9()
 {
-    pushButtonG1C1->setEnabled(false);
-    pushButtonG1C2->setEnabled(false);
-    pushButtonG1C3->setEnabled(false);
-    pushButtonG1C4->setEnabled(false);
-    pushButtonG1C5->setEnabled(false);
-    pushButtonG1C6->setEnabled(false);
-    pushButtonG1C7->setEnabled(false);
-    pushButtonG1C8->setEnabled(false);
-    pushButtonG1C9->setEnabled(false);
-    pushButtonG1C10->setEnabled(false);
+    niewidoczneG1();
 
     QIcon icon = pushButtonG1C9->icon();
     QPixmap pixmap = icon.pixmap(75, 134);
@@ -816,16 +750,7 @@ void Klient::klikKarta9()
 
 void Klient::klikKarta10()
 {
-    pushButtonG1C1->setEnabled(false);
-    pushButtonG1C2->setEnabled(false);
-    pushButtonG1C3->setEnabled(false);
-    pushButtonG1C4->setEnabled(false);
-    pushButtonG1C5->setEnabled(false);
-    pushButtonG1C6->setEnabled(false);
-    pushButtonG1C7->setEnabled(false);
-    pushButtonG1C8->setEnabled(false);
-    pushButtonG1C9->setEnabled(false);
-    pushButtonG1C10->setEnabled(false);
+    niewidoczneG1();
 
     QIcon icon = pushButtonG1C10->icon();
     QPixmap pixmap = icon.pixmap(75, 134);
@@ -871,39 +796,152 @@ void Klient::klikKarta10()
 
 void Klient::wydajWerdykt()
 {
+    if(rywalPas == true && Pas == true)
+    {
     int pkt1 = lineEditPktG1->text().toInt();
     int pkt2 = lineEditPktG2->text().toInt();
+    int rnd1 = lineEditRundyG1->text().toInt();
+    int rnd2 = lineEditRundyG2->text().toInt();
+    QString r1, r2;
 
     int werdykt;
 
-    if (pkt1 > pkt2)
-        werdykt = Koniec::Zwyciestwo;
-    else if (pkt1 < pkt2)
-        werdykt = Koniec::Porazka;
+    if (pkt1 < pkt2)
+    {
+        rnd2++;
+        r2.setNum(rnd2);
+        lineEditRundyG2->setText(r2);
+        inicjujKolejnaPartie();
+    }
+    else if (pkt1 > pkt2)
+    {
+        rnd1++;
+        r1.setNum(rnd1);
+        lineEditRundyG1->setText(r1);
+        inicjujKolejnaPartie();
+    }
     else
-        werdykt = Koniec::Remis;
+    {
+        rnd1++;
+        rnd2++;
+        r1.setNum(rnd1);
+        r2.setNum(rnd2);
+        lineEditRundyG1->setText(r1);
+        lineEditRundyG2->setText(r2);
+        inicjujKolejnaPartie();
+    }
 
-    Koniec *koniec = new Koniec(werdykt, pkt1, pkt2, nick, groupBoxG2->title());
-    koniec->exec();
+    wyslijWiadomosc("04" +r1+r2);
 
 
-    wrocDoMenu();
+        if(rnd1==2 || rnd2==2)
+        {
+            if(rnd1==2)
+                werdykt = Koniec::Zwyciestwo;
+            else if (rnd2==2)
+                werdykt = Koniec::Porazka;
+
+
+            Koniec *koniec = new Koniec(werdykt, rnd1, rnd2, nick, groupBoxG2->title());
+            koniec->exec();
+
+
+            wrocDoMenu();
+        }
+}
 }
 
+void Klient::inicjujKolejnaPartie()
+{
+    Pas = false;
+    rywalPas = false;
+    pushButtonPasG2->setText("Pas");
+    lineEditPktG1->setText("0");
+    lineEditPktG2->setText("0");
+    pushButtonPasG1->setEnabled(true);
+
+
+    QString pixmap = ":ikony/null.png";
+
+    labelG2->setPixmap(pixmap);
+    labelG2->setEnabled(false);
+    label1G2->setPixmap(pixmap);
+    label1G2->setEnabled(false);
+    label2G2->setPixmap(pixmap);
+    label2G2->setEnabled(false);
+    label3G2->setPixmap(pixmap);
+    label3G2->setEnabled(false);
+    label4G2->setPixmap(pixmap);
+    label4G2->setEnabled(false);
+    label5G2->setPixmap(pixmap);
+    label5G2->setEnabled(false);
+    label6G2->setPixmap(pixmap);
+    label6G2->setEnabled(false);
+
+    labelG1->setPixmap(pixmap);
+    labelG1->setEnabled(false);
+    label1G1->setPixmap(pixmap);
+    label1G1->setEnabled(false);
+    label2G1->setPixmap(pixmap);
+    label2G1->setEnabled(false);
+    label3G1->setPixmap(pixmap);
+    label3G1->setEnabled(false);
+    label4G1->setPixmap(pixmap);
+    label4G1->setEnabled(false);
+    label5G1->setPixmap(pixmap);
+    label5G1->setEnabled(false);
+    label6G1->setPixmap(pixmap);
+    label6G1->setEnabled(false);
+
+}
 
 void Klient::klikPas()
 {
+    Pas = true;
+    niewidoczneG1();
+    pushButtonPasG1->setEnabled(false);
     wydajWerdykt();
+
+    if (rywalPas == false)
+            wyslijWiadomosc("05PAS");
 }
 
+void Klient::ustawLiczbeRund(QString c)
+{
+    int werdykt;
 
-//void Klient::wyjscieZgry()
-//{
-//    int odp = QMessageBox::question(this, tr("Uwaga"), tr("Czy na pewno chcesz wyjsc?"), QMessageBox::No | QMessageBox::Yes);
-//    if (odp == QMessageBox::Yes) {
-//        wrocDoMenu();
-//	}
-//}
+
+    lineEditRundyG1->setText(c.mid(0,1));
+    lineEditRundyG2->setText(c.mid(0,1));
+
+    int rnd1 = c.mid(0,1).toInt();
+    int rnd2 = c.mid (1,1).toInt();
+
+    if (rnd1 == 2 || rnd2 == 2)
+    {
+        if(rnd2==2)
+            werdykt = Koniec::Porazka;
+        else if (rnd1==2)
+            werdykt = Koniec::Zwyciestwo;
+
+        Koniec *koniec = new Koniec(werdykt, rnd1, rnd2, nick, groupBoxG2->title());
+        koniec->exec();
+
+
+        wrocDoMenu();
+    }
+    else
+    inicjujKolejnaPartie();
+
+}
+
+void Klient::przeciwnikPas(QString c)
+{
+    rywalPas = true;
+    niewidoczneG2();
+    pushButtonPasG2->setText(c);
+}
+
 
 void Klient::closeEvent(QCloseEvent *event)
 {

@@ -25,6 +25,8 @@ Server::Server(QString _nick, int _p_port, QWidget *parent) :
     metoda[1] = &Server::kartyKlienta;
     metoda[2] = &Server::klientOdlaczony;
     metoda[3] = &Server::inicjujPartie;
+    metoda[4] = &Server::ustawLiczbeRund;
+    metoda[5] = &Server::przeciwnikPas;
 
     server = new QTcpServer();
     server->listen(QHostAddress::Any, port);
@@ -62,6 +64,17 @@ void Server::inicjuj()
     groupBoxG2->setTitle(nick);
     lineEditPktG1->setText("0");
     lineEditPktG2->setText("0");
+    lineEditRundyG1->setText("0");
+    lineEditRundyG2->setText("0");
+    niewidoczneG1();
+    rywalPas = false;
+    Pas = false;
+
+
+}
+
+void Server::niewidoczneG1()
+{
     pushButtonG1C1->setEnabled(false);
     pushButtonG1C2->setEnabled(false);
     pushButtonG1C3->setEnabled(false);
@@ -72,7 +85,7 @@ void Server::inicjuj()
     pushButtonG1C8->setEnabled(false);
     pushButtonG1C9->setEnabled(false);
     pushButtonG1C10->setEnabled(false);
-
+    pushButtonPasG1->setEnabled(false);
 }
 
 void Server::dodajPolaczenie()
@@ -201,6 +214,7 @@ void Server::ustawTure(int g)
         pushButtonG2C8->setEnabled(true);
         pushButtonG2C9->setEnabled(true);
         pushButtonG2C10->setEnabled(true);
+        pushButtonPasG2->setEnabled(true);
     } else {
         wyslijWiadomosc("03Tura|");
     }
@@ -305,7 +319,7 @@ void Server::kartyKlienta(QString c)
         label6G1->setPixmap(carta1);
 }
 
-    controllaGiocata(1);
+    przyznajPunkty(1);
 }
 
 void Server::ustawLiczbeKartG2()
@@ -323,22 +337,22 @@ void Server::ustawLiczbeKartG1()
     num.setNum(talia1->getMax());
     lineEditCardsG1->setText(num);
 
-    wyslijWiadomosc("09" + num + "|");
+    wyslijWiadomosc("08" + num + "|");
 }
 
 void Server::aktywnyGracz(int g)
 {
     if (g == 1) {
-        th->setGiocatore(1);
+        th->ustawGracza(1);
         th->start();
     } else if (g == 2) {
-        th->setGiocatore(2);
+        th->ustawGracza(2);
         th->start();
     }
 }
 
 
-void Server::controllaGiocata(int i)
+void Server::przyznajPunkty(int i)
 {
 
 
@@ -347,7 +361,7 @@ void Server::controllaGiocata(int i)
         QString punkty2;
         punkty2.setNum(g2->getPunkty());
         lineEditPktG2->setText(punkty2);
-        wyslijWiadomosc("07" + punkty2 + "|");
+        wyslijWiadomosc("06" + punkty2 + "|");
         if (g1->getRzucona() == NULL) {
             ustawTure(1);
         } else {
@@ -499,21 +513,11 @@ void Server::ustawIkony()
 }
 
 
-// eventi server
 void Server::klikKarta1()
 {
     g2->rzuconaKarta(0);
     pushButtonG2C1->setIcon(QIcon(":/ikony/null.png"));
-    pushButtonG2C1->setEnabled(false);
-    pushButtonG2C2->setEnabled(false);
-    pushButtonG2C3->setEnabled(false);
-    pushButtonG2C4->setEnabled(false);
-    pushButtonG2C5->setEnabled(false);
-    pushButtonG2C6->setEnabled(false);
-    pushButtonG2C7->setEnabled(false);
-    pushButtonG2C8->setEnabled(false);
-    pushButtonG2C9->setEnabled(false);
-    pushButtonG2C10->setEnabled(false);
+    niewidoczneG2();
 
 
     QString tmp1;
@@ -559,23 +563,14 @@ void Server::klikKarta1()
 
 
     pos2 = 0;
-    controllaGiocata(2);
+    przyznajPunkty(2);
 }
 
 void Server::klikKarta2()
 {
     g2->rzuconaKarta(1);
     pushButtonG2C2->setIcon(QIcon(":/ikony/null.png"));
-    pushButtonG2C1->setEnabled(false);
-    pushButtonG2C2->setEnabled(false);
-    pushButtonG2C3->setEnabled(false);
-    pushButtonG2C4->setEnabled(false);
-    pushButtonG2C5->setEnabled(false);
-    pushButtonG2C6->setEnabled(false);
-    pushButtonG2C7->setEnabled(false);
-    pushButtonG2C8->setEnabled(false);
-    pushButtonG2C9->setEnabled(false);
-    pushButtonG2C10->setEnabled(false);
+    niewidoczneG2();
 
     QString tmp2;
     tmp2.setNum(g2->getRzucona()->getNumer());
@@ -617,23 +612,14 @@ void Server::klikKarta2()
     }
 
     pos2 = 1;
-    controllaGiocata(2);
+    przyznajPunkty(2);
 }
 
 void Server::klikKarta3()
 {
     g2->rzuconaKarta(2);
     pushButtonG2C3->setIcon(QIcon(":/ikony/null.png"));
-    pushButtonG2C1->setEnabled(false);
-    pushButtonG2C2->setEnabled(false);
-    pushButtonG2C3->setEnabled(false);
-    pushButtonG2C4->setEnabled(false);
-    pushButtonG2C5->setEnabled(false);
-    pushButtonG2C6->setEnabled(false);
-    pushButtonG2C7->setEnabled(false);
-    pushButtonG2C8->setEnabled(false);
-    pushButtonG2C9->setEnabled(false);
-    pushButtonG2C10->setEnabled(false);
+    niewidoczneG2();
 
     QString tmp3;
     tmp3.setNum(g2->getRzucona()->getNumer());
@@ -675,23 +661,14 @@ void Server::klikKarta3()
     }
 
     pos2 = 2;
-    controllaGiocata(2);
+    przyznajPunkty(2);
 }
 
 void Server::klikKarta4()
 {
     g2->rzuconaKarta(3);
     pushButtonG2C4->setIcon(QIcon(":/ikony/null.png"));
-    pushButtonG2C1->setEnabled(false);
-    pushButtonG2C2->setEnabled(false);
-    pushButtonG2C3->setEnabled(false);
-    pushButtonG2C4->setEnabled(false);
-    pushButtonG2C5->setEnabled(false);
-    pushButtonG2C6->setEnabled(false);
-    pushButtonG2C7->setEnabled(false);
-    pushButtonG2C8->setEnabled(false);
-    pushButtonG2C9->setEnabled(false);
-    pushButtonG2C10->setEnabled(false);
+    niewidoczneG2();
 
     QString tmp4;
     tmp4.setNum(g2->getRzucona()->getNumer());
@@ -734,23 +711,14 @@ void Server::klikKarta4()
 
 
     pos2 = 3;
-    controllaGiocata(2);
+    przyznajPunkty(2);
 }
 
 void Server::klikKarta5()
 {
     g2->rzuconaKarta(4);
     pushButtonG2C5->setIcon(QIcon(":/ikony/null.png"));
-    pushButtonG2C1->setEnabled(false);
-    pushButtonG2C2->setEnabled(false);
-    pushButtonG2C3->setEnabled(false);
-    pushButtonG2C4->setEnabled(false);
-    pushButtonG2C5->setEnabled(false);
-    pushButtonG2C6->setEnabled(false);
-    pushButtonG2C7->setEnabled(false);
-    pushButtonG2C8->setEnabled(false);
-    pushButtonG2C9->setEnabled(false);
-    pushButtonG2C10->setEnabled(false);
+    niewidoczneG2();
 
     QString tmp5;
     tmp5.setNum(g2->getRzucona()->getNumer());
@@ -792,23 +760,14 @@ void Server::klikKarta5()
     }
 
     pos2 = 4;
-    controllaGiocata(2);
+    przyznajPunkty(2);
 }
 
 void Server::klikKarta6()
 {
     g2->rzuconaKarta(5);
     pushButtonG2C6->setIcon(QIcon(":/ikony/null.png"));
-    pushButtonG2C1->setEnabled(false);
-    pushButtonG2C2->setEnabled(false);
-    pushButtonG2C3->setEnabled(false);
-    pushButtonG2C4->setEnabled(false);
-    pushButtonG2C5->setEnabled(false);
-    pushButtonG2C6->setEnabled(false);
-    pushButtonG2C7->setEnabled(false);
-    pushButtonG2C8->setEnabled(false);
-    pushButtonG2C9->setEnabled(false);
-    pushButtonG2C10->setEnabled(false);
+   niewidoczneG2();
 
     QString tmp6;
     tmp6.setNum(g2->getRzucona()->getNumer());
@@ -850,23 +809,14 @@ void Server::klikKarta6()
     }
 
     pos2 = 5;
-    controllaGiocata(2);
+    przyznajPunkty(2);
 }
 
 void Server::klikKarta7()
 {
     g2->rzuconaKarta(6);
     pushButtonG2C7->setIcon(QIcon(":/ikony/null.png"));
-    pushButtonG2C1->setEnabled(false);
-    pushButtonG2C2->setEnabled(false);
-    pushButtonG2C3->setEnabled(false);
-    pushButtonG2C4->setEnabled(false);
-    pushButtonG2C5->setEnabled(false);
-    pushButtonG2C6->setEnabled(false);
-    pushButtonG2C7->setEnabled(false);
-    pushButtonG2C8->setEnabled(false);
-    pushButtonG2C9->setEnabled(false);
-    pushButtonG2C10->setEnabled(false);
+    niewidoczneG2();
 
     QString tmp7;
     tmp7.setNum(g2->getRzucona()->getNumer());
@@ -908,23 +858,14 @@ void Server::klikKarta7()
     }
 
     pos2 = 6;
-    controllaGiocata(2);
+    przyznajPunkty(2);
 }
 
 void Server::klikKarta8()
 {
     g2->rzuconaKarta(7);
     pushButtonG2C8->setIcon(QIcon(":/ikony/null.png"));
-    pushButtonG2C1->setEnabled(false);
-    pushButtonG2C2->setEnabled(false);
-    pushButtonG2C3->setEnabled(false);
-    pushButtonG2C4->setEnabled(false);
-    pushButtonG2C5->setEnabled(false);
-    pushButtonG2C6->setEnabled(false);
-    pushButtonG2C7->setEnabled(false);
-    pushButtonG2C8->setEnabled(false);
-    pushButtonG2C9->setEnabled(false);
-    pushButtonG2C10->setEnabled(false);
+    niewidoczneG2();
 
     QString tmp8;
     tmp8.setNum(g2->getRzucona()->getNumer());
@@ -966,23 +907,14 @@ void Server::klikKarta8()
     }
 
     pos2 = 7;
-    controllaGiocata(2);
+    przyznajPunkty(2);
 }
 
 void Server::klikKarta9()
 {
     g2->rzuconaKarta(8);
     pushButtonG2C9->setIcon(QIcon(":/ikony/null.png"));
-    pushButtonG2C1->setEnabled(false);
-    pushButtonG2C2->setEnabled(false);
-    pushButtonG2C3->setEnabled(false);
-    pushButtonG2C4->setEnabled(false);
-    pushButtonG2C5->setEnabled(false);
-    pushButtonG2C6->setEnabled(false);
-    pushButtonG2C7->setEnabled(false);
-    pushButtonG2C8->setEnabled(false);
-    pushButtonG2C9->setEnabled(false);
-    pushButtonG2C10->setEnabled(false);
+    niewidoczneG2();
 
     QString tmp9;
     tmp9.setNum(g2->getRzucona()->getNumer());
@@ -1024,23 +956,15 @@ void Server::klikKarta9()
     }
 
     pos2 = 8;
-    controllaGiocata(2);
+    przyznajPunkty(2);
 }
 
 void Server::klikKarta10()
 {
     g2->rzuconaKarta(9);
     pushButtonG2C10->setIcon(QIcon(":/ikony/null.png"));
-    pushButtonG2C1->setEnabled(false);
-    pushButtonG2C2->setEnabled(false);
-    pushButtonG2C3->setEnabled(false);
-    pushButtonG2C4->setEnabled(false);
-    pushButtonG2C5->setEnabled(false);
-    pushButtonG2C6->setEnabled(false);
-    pushButtonG2C7->setEnabled(false);
-    pushButtonG2C8->setEnabled(false);
-    pushButtonG2C9->setEnabled(false);
-    pushButtonG2C10->setEnabled(false);
+
+    niewidoczneG2();
 
     QString tmp10;
     tmp10.setNum(g2->getRzucona()->getNumer());
@@ -1083,34 +1007,175 @@ void Server::klikKarta10()
 
 
     pos2 = 9;
-    controllaGiocata(2);
+    przyznajPunkty(2);
+}
+
+void Server::niewidoczneG2()
+{
+    pushButtonG2C1->setEnabled(false);
+    pushButtonG2C2->setEnabled(false);
+    pushButtonG2C3->setEnabled(false);
+    pushButtonG2C4->setEnabled(false);
+    pushButtonG2C5->setEnabled(false);
+    pushButtonG2C6->setEnabled(false);
+    pushButtonG2C7->setEnabled(false);
+    pushButtonG2C8->setEnabled(false);
+    pushButtonG2C9->setEnabled(false);
+    pushButtonG2C10->setEnabled(false);
+    pushButtonPasG2->setEnabled(false);
 }
 
 void Server::wydajWerdykt()
 {
+    if(rywalPas == true && Pas == true)
+    {
     int pkt1 = lineEditPktG1->text().toInt();
     int pkt2 = lineEditPktG2->text().toInt();
+    int rnd1 = lineEditRundyG1->text().toInt();
+    int rnd2 = lineEditRundyG2->text().toInt();
+    QString r1,r2;
 
     int werdykt;
 
     if (pkt1 < pkt2)
-        werdykt = Koniec::Zwyciestwo;
+    {
+        rnd2++;
+        r2.setNum(rnd2);
+        lineEditRundyG2->setText(r2);
+        inicjujKolejnaPartie();
+    }
     else if (pkt1 > pkt2)
-        werdykt = Koniec::Porazka;
+    {
+        rnd1++;
+        r1.setNum(rnd1);
+        lineEditRundyG1->setText(r1);
+        inicjujKolejnaPartie();
+    }
     else
-        werdykt = Koniec::Remis;
+    {
+        rnd1++;
+        rnd2++;
+        r1.setNum(rnd1);
+        r2.setNum(rnd2);
+        lineEditRundyG1->setText(r1);
+        lineEditRundyG2->setText(r2);
+        inicjujKolejnaPartie();
+    }
 
-    Koniec *koniec = new Koniec(werdykt, pkt1, pkt2, nick, groupBoxG2->title());
-    koniec->exec();
+        wyslijWiadomosc("09"+r1+r2);
+
+        if(rnd1==2 || rnd2==2)
+        {
+            if(rnd1==2)
+                werdykt = Koniec::Porazka;
+            else if (rnd2==2)
+                werdykt = Koniec::Zwyciestwo;
 
 
-    wrocDoMenu();
+            Koniec *koniec = new Koniec(werdykt, rnd1, rnd2, nick, groupBoxG2->title());
+            koniec->exec();
+
+
+            wrocDoMenu();
+        }
+
+}
 }
 
 
 void Server::klikPas()
 {
+    Pas = true;
+    niewidoczneG2();
+    aktywnyGracz(1);
+    pushButtonPasG2->setEnabled(false);
     wydajWerdykt();
+
+    if (rywalPas == false)
+            wyslijWiadomosc("10SPASOWAŁ");
+
+}
+
+void Server::przeciwnikPas(QString c)
+{
+
+    rywalPas = true;
+    aktywnyGracz(2);
+    niewidoczneG1();
+    pushButtonPasG1->setText(c);
+
+}
+
+void Server::ustawLiczbeRund(QString c)
+{
+    int werdykt;
+
+
+    lineEditRundyG1->setText(c.mid(0,1));
+    lineEditRundyG2->setText(c.mid(0,1));
+
+    int rnd1 = c.mid(0,1).toInt();
+    int rnd2 = c.mid (1,1).toInt();
+
+    if (rnd1 == 2 || rnd2 == 2)
+    {
+        if(rnd1==2)
+            werdykt = Koniec::Porazka;
+        else if (rnd2==2)
+            werdykt = Koniec::Zwyciestwo;
+
+        Koniec *koniec = new Koniec(werdykt, rnd1, rnd2, nick, groupBoxG2->title());
+        koniec->exec();
+
+
+        wrocDoMenu();
+    }
+    else
+    inicjujKolejnaPartie();
+}
+
+
+
+void Server::inicjujKolejnaPartie()
+{
+    Pas = false;
+    rywalPas = false;
+    pushButtonPasG1->setText("Pas");
+    lineEditPktG1->setText("0");
+    lineEditPktG2->setText("0");
+    pushButtonPasG2->setEnabled(true);
+
+    labelG2->setPixmap(QPixmap(":/ikony/null.png"));
+    labelG2->setEnabled(false);
+    label1G2->setPixmap(QPixmap(":/ikony/null.png"));
+    label1G2->setEnabled(false);
+    label2G2->setPixmap(QPixmap(":/ikony/null.png"));
+    label2G2->setEnabled(false);
+    label3G2->setPixmap(QPixmap(":/ikony/null.png"));
+    label3G2->setEnabled(false);
+    label4G2->setPixmap(QPixmap(":/ikony/null.png"));
+    label4G2->setEnabled(false);
+    label5G2->setPixmap(QPixmap(":/ikony/null.png"));
+    label5G2->setEnabled(false);
+    label6G2->setPixmap(QPixmap(":/ikony/null.png"));
+    label6G2->setEnabled(false);
+
+    labelG1->setPixmap(QPixmap(":/ikony/null.png"));
+    labelG1->setEnabled(false);
+    label1G1->setPixmap(QPixmap(":/ikony/null.png"));
+    label1G1->setEnabled(false);
+    label2G1->setPixmap(QPixmap(":/ikony/null.png"));
+    label2G1->setEnabled(false);
+    label3G1->setPixmap(QPixmap(":/ikony/null.png"));
+    label3G1->setEnabled(false);
+    label4G1->setPixmap(QPixmap(":/ikony/null.png"));
+    label4G1->setEnabled(false);
+    label5G1->setPixmap(QPixmap(":/ikony/null.png"));
+    label5G1->setEnabled(false);
+    label6G1->setPixmap(QPixmap(":/ikony/null.png"));
+    label6G1->setEnabled(false);
+
+
 }
 
 void Server::odbierzSygnalG1()
@@ -1119,23 +1184,20 @@ void Server::odbierzSygnalG1()
     g2->setNullRzucona();
 
 
-    tura = 1;
-
 
 //        g1->dodajKarte(pos1, talia1->dajKarte());
 //        g2->dodajKarte(pos2, talia->dajKarte());
 //        ustawLiczbeKartG1();
 //        ustawLiczbeKartG2();
 //        QString num, pos;
-//        num.setNum(g1->getKarta(pos1)->getNumero());
+//        num.setNum(g1->getKarta(pos1)->getNumer());
 //        pos.setNum(pos1);
 //        wyslijWiadomosc("01" + pos + num + "|");
 
 
 
-    wyslijWiadomosc("06|");
-    ustawTure(1);
-//    ustawIkony();
+      ustawTure(1);
+
 
 }
 
@@ -1145,15 +1207,12 @@ void Server::odbierzSygnalG2()
     g2->setNullRzucona();
 
 
-    tura = 2;
-
-
 //        g2->dodajKarte(pos2, talia->dajKarte());
 //        g1->dodajKarte(pos1, talia1->dajKarte());
 //        ustawLiczbeKartG1();
 //        ustawLiczbeKartG2();
 //        QString num, pos;
-//        num.setNum(g1->getKarta(pos1)->getNumero());
+//        num.setNum(g1->getKarta(pos1)->getNumer());
 //        pos.setNum(pos1);
 //        wyslijWiadomosc("01" + pos + num  + "|");
 
@@ -1161,16 +1220,9 @@ void Server::odbierzSygnalG2()
 
 
     ustawTure(2);
-//    ustawIkony();
 }
 
-//void Server::wyjdzZgry()
-//{
-//    int odp = QMessageBox::question(this, tr("Uwaga"), tr("Czy na pewno chcesz wyjsc?"), QMessageBox::No | QMessageBox::Yes);
-//    if (odp == QMessageBox::Yes) {
-//        wrocDoMenu();
-//    }
-//}
+
 
 void Server::closeEvent(QCloseEvent *event)
 {
@@ -1178,7 +1230,7 @@ void Server::closeEvent(QCloseEvent *event)
     int odp = QMessageBox::question(this, tr("Uwaga"), tr("Czy na pewno chcesz wyjsc?"), QMessageBox::No | QMessageBox::Yes);
     if (odp == QMessageBox::Yes) {
         wrocDoMenu();
-        wyslijWiadomosc("08|");
+        wyslijWiadomosc("07|");
     }
 }
 
