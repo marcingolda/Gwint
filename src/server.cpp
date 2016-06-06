@@ -18,6 +18,8 @@ Server::Server(QString _nick, int _p_port, QWidget *parent) :
     QRect dim = widget->screenGeometry();
     setGeometry((dim.width() - width()) / 2, (dim.height() - height()) / 2, width(), height());
 
+
+
     th = new Thread();
     th->setSleepMs(1700);
 
@@ -27,6 +29,7 @@ Server::Server(QString _nick, int _p_port, QWidget *parent) :
     metoda[3] = &Server::inicjujPartie;
     metoda[4] = &Server::ustawLiczbeRund;
     metoda[5] = &Server::przeciwnikPas;
+    metoda[6] = &Server::rodzajKlienta;
 
     server = new QTcpServer();
     server->listen(QHostAddress::Any, port);
@@ -255,69 +258,162 @@ void Server::ustawNickKlienta(QString nickClient)
     setWindowTitle("Gwint - " + nick + " vs " + nickClient);
 }
 
-
-void Server::kartyKlienta(QString c)
+void Server::rodzajKlienta(QString c)
 {
-    int carta = c.mid(1,1).toInt();
-    QString poz = c.mid(0, 1);
-    pos1 = carta;
+    int karta = c.mid(0,1).toInt();
+    pos1 = karta;
     g1->rzuconaKarta(pos1);
 
-    if (carta == 0) {
+    QString tmp1;
+    tmp1.setNum(g1->getRzucona()->getNumer());
+
+    QString r = g1->getRzucona()->getRodzaj();
+
+    wyslijWiadomosc("11"+r+tmp1+"|");
+
+    if (karta == 0) {
         pushButtonG1C1->setIcon(QIcon(":/ikony/null.png"));
-    } else if (carta == 1) {
+    } else if (karta == 1) {
         pushButtonG1C2->setIcon(QIcon(":/ikony/null.png"));
-    } else if (carta == 2) {
+    } else if (karta == 2) {
         pushButtonG1C3->setIcon(QIcon(":/ikony/null.png"));
-    }  else if (carta == 3) {
+    }  else if (karta == 3) {
         pushButtonG1C4->setIcon(QIcon(":/ikony/null.png"));
-    } else if (carta == 4) {
+    } else if (karta == 4) {
         pushButtonG1C5->setIcon(QIcon(":/ikony/null.png"));
-    } else if (carta == 5) {
+    } else if (karta == 5) {
         pushButtonG1C6->setIcon(QIcon(":/ikony/null.png"));
-    } else if (carta == 6) {
+    } else if (karta == 6) {
         pushButtonG1C7->setIcon(QIcon(":/ikony/null.png"));
-    } else if (carta == 7) {
+    } else if (karta == 7) {
         pushButtonG1C8->setIcon(QIcon(":/ikony/null.png"));
-    } else if (carta == 8) {
+    } else if (karta == 8) {
         pushButtonG1C9->setIcon(QIcon(":/ikony/null.png"));
-    } else if (carta == 9) {
+    } else if (karta == 9) {
         pushButtonG1C10->setIcon(QIcon(":/ikony/null.png"));
     }
 
+}
+
+void Server::kartyKlienta(QString c)
+{
+    QString poz = c.mid(0, 1);
 
         QString tmp1;
         tmp1.setNum(g1->getRzucona()->getNumer());
         QString carta1 = ":talie/" + rodzajTaliiG1 + "/" + tmp1 + ".png";
+        QString r = g1->getRzucona()->getRodzaj();
 
-    if (poz == "0") {
-        labelG1->setEnabled(true);
-        labelG1->setPixmap(carta1);
-    }
-    else if (poz == "1") {
-        label1G1->setEnabled(true);
-        label1G1->setPixmap(carta1);
-    }
-    else if (poz == "2") {
-        label2G1->setEnabled(true);
-        label2G1->setPixmap(carta1);
-    }
-    else if (poz == "3") {
-        label3G1->setEnabled(true);
-        label3G1->setPixmap(carta1);
-    }
-    else if (poz == "4") {
-        label4G1->setEnabled(true);
-        label4G1->setPixmap(carta1);
-    }
-    else if (poz == "5") {
-        label5G1->setEnabled(true);
-        label5G1->setPixmap(carta1);
+        if (r == "k")
+        {
+        if (poz == "0") {
+            kata1G1->setEnabled(true);
+            kata1G1->setPixmap(QPixmap(carta1));
         }
-    else{
-        label6G1->setEnabled(true);
-        label6G1->setPixmap(carta1);
-}
+        else if (poz == "1") {
+            kata2G1->setEnabled(true);
+            kata2G1->setPixmap(QPixmap(carta1));
+        }
+        else if (poz == "2") {
+            kata3G1->setEnabled(true);
+            kata3G1->setPixmap(QPixmap(carta1));
+        }
+        else if (poz == "3") {
+            kata4G1->setEnabled(true);
+            kata4G1->setPixmap(QPixmap(carta1));
+        }
+        else if (poz == "4") {
+            kata5G1->setEnabled(true);
+            kata5G1->setPixmap(QPixmap(carta1));
+        }
+        else if (poz == "5") {
+            kata6G1->setEnabled(true);
+            kata6G1->setPixmap(QPixmap(carta1));
+        }
+        else if (poz == "6") {
+            kata7G1->setEnabled(true);
+            kata7G1->setPixmap(QPixmap(carta1));
+        }
+        else{
+            kata8G1->setEnabled(true);
+            kata8G1->setPixmap(QPixmap(carta1));
+    }
+    }
+        else if (r=="l")
+        {
+            if (poz == "0") {
+                luk1G1->setEnabled(true);
+                luk1G1->setPixmap(QPixmap(carta1));
+            }
+            else if (poz == "1") {
+                luk2G1->setEnabled(true);
+                luk2G1->setPixmap(QPixmap(carta1));
+            }
+            else if (poz == "2") {
+                luk3G1->setEnabled(true);
+                luk3G1->setPixmap(QPixmap(carta1));
+            }
+            else if (poz == "3") {
+                luk4G1->setEnabled(true);
+                luk4G1->setPixmap(QPixmap(carta1));
+            }
+            else if (poz == "4") {
+                luk5G1->setEnabled(true);
+                luk5G1->setPixmap(QPixmap(carta1));
+            }
+            else if (poz == "5") {
+                luk6G1->setEnabled(true);
+                luk6G1->setPixmap(QPixmap(carta1));
+            }
+            else if (poz == "6") {
+                luk7G1->setEnabled(true);
+                luk7G1->setPixmap(QPixmap(carta1));
+            }
+            else{
+                luk8G1->setEnabled(true);
+                luk8G1->setPixmap(QPixmap(carta1));
+        }
+        }
+        else if (r=="m" || r == "h")
+        {
+            if (poz == "0") {
+                miecz1G1->setPixmap(QPixmap(carta1));
+                miecz1G1->setEnabled(true);
+            }
+            else if (poz == "1") {
+                miecz2G1->setEnabled(true);
+                miecz2G1->setPixmap(QPixmap(carta1));
+            }
+            else if (poz == "2") {
+                miecz3G1->setEnabled(true);
+                miecz3G1->setPixmap(QPixmap(carta1));
+            }
+            else if (poz == "3") {
+                miecz4G1->setEnabled(true);
+                miecz4G1->setPixmap(QPixmap(carta1));
+            }
+            else if (poz == "4") {
+                miecz5G1->setEnabled(true);
+                miecz5G1->setPixmap(QPixmap(carta1));
+            }
+            else if (poz == "5") {
+                miecz6G1->setEnabled(true);
+                miecz6G1->setPixmap(QPixmap(carta1));
+            }
+            else if (poz == "6") {
+                miecz7G1->setEnabled(true);
+                miecz7G1->setPixmap(QPixmap(carta1));
+            }
+            else{
+                miecz8G1->setEnabled(true);
+                miecz8G1->setPixmap(QPixmap(carta1));
+        }
+            }
+        else
+        {
+            specG1->setPixmap(QPixmap(carta1));
+            specG1->setEnabled(true);
+        }
 
     przyznajPunkty(1);
 }
@@ -526,58 +622,166 @@ void Server::ustawIkony()
         pushButtonG2C10->setIcon(QIcon(":ikony/null.png"));
 }
 
-
-void Server::klikKarta1()
+void Server::klikKarta()
 {
-    g2->rzuconaKarta(0);
-    pushButtonG2C1->setIcon(QIcon(":/ikony/null.png"));
-    niewidoczneG2();
-
 
     QString tmp1;
     tmp1.setNum(g2->getRzucona()->getNumer());
     QString carta1 = ":talie/" + rodzajTalii + "/" + tmp1 + ".png";
 
-    if (labelG2->isEnabled() == false) {
-    labelG2->setPixmap(carta1);
-    labelG2->setEnabled(true);
-     wyslijWiadomosc("0400" + tmp1 + "|");
+    QString tmp2 = g2->getRzucona()->getRodzaj();
+
+    if(tmp2=="k")
+    {
+    if (kata1G2->isEnabled() == false) {
+    kata1G2->setPixmap(carta1);
+    kata1G2->setEnabled(true);
+     wyslijWiadomosc("04k0" + tmp1 + "|");
     }
-    else if (label1G2->isEnabled() == false) {
-        label1G2->setPixmap(carta1);
-        label1G2->setEnabled(true);
-         wyslijWiadomosc("0410" + tmp1 + "|");
+    else if (kata2G2->isEnabled() == false) {
+        kata2G2->setPixmap(carta1);
+        kata2G2->setEnabled(true);
+         wyslijWiadomosc("04k1" + tmp1 + "|");
     }
-    else if (label2G2->isEnabled() == false) {
-        label2G2->setPixmap(carta1);
-        label2G2->setEnabled(true);
-         wyslijWiadomosc("0420" + tmp1 + "|");
+    else if (kata3G2->isEnabled() == false) {
+        kata3G2->setPixmap(carta1);
+        kata3G2->setEnabled(true);
+         wyslijWiadomosc("04k2" + tmp1 + "|");
     }
-    else if (label3G2->isEnabled() == false) {
-        label3G2->setPixmap(carta1);
-        label3G2->setEnabled(true);
-         wyslijWiadomosc("0430" + tmp1 + "|");
+    else if (kata4G2->isEnabled() == false) {
+        kata4G2->setPixmap(carta1);
+        kata4G2->setEnabled(true);
+         wyslijWiadomosc("04k3" + tmp1 + "|");
     }
-    else if (label4G2->isEnabled() == false) {
-        label4G2->setPixmap(carta1);
-        label4G2->setEnabled(true);
-         wyslijWiadomosc("0440" + tmp1 + "|");
+    else if (kata5G2->isEnabled() == false) {
+        kata5G2->setPixmap(carta1);
+        kata5G2->setEnabled(true);
+         wyslijWiadomosc("04k4" + tmp1 + "|");
     }
-    else if (label5G2->isEnabled() == false) {
-        label5G2->setPixmap(carta1);
-        label5G2->setEnabled(true);
-         wyslijWiadomosc("0450" + tmp1 + "|");
+    else if (kata6G2->isEnabled() == false) {
+        kata6G2->setPixmap(carta1);
+        kata6G2->setEnabled(true);
+         wyslijWiadomosc("04k5" + tmp1 + "|");
+    }
+    else if (kata7G2->isEnabled() == false) {
+        kata7G2->setPixmap(carta1);
+        kata7G2->setEnabled(true);
+         wyslijWiadomosc("04k6" + tmp1 + "|");
     }
     else {
-        label6G2->setPixmap(carta1);
-        label6G2->setEnabled(true);
-         wyslijWiadomosc("0460" + tmp1 + "|");
+        kata8G2->setPixmap(carta1);
+        kata8G2->setEnabled(true);
+         wyslijWiadomosc("04k7" + tmp1 + "|");
+    }
+}
+    else if(tmp2 == "l")
+    {
+        if (luk1G2->isEnabled() == false) {
+        luk1G2->setPixmap(carta1);
+        luk1G2->setEnabled(true);
+         wyslijWiadomosc("04l0" + tmp1 + "|");
+        }
+        else if (luk2G2->isEnabled() == false) {
+            luk2G2->setPixmap(carta1);
+            luk2G2->setEnabled(true);
+             wyslijWiadomosc("04l1" + tmp1 + "|");
+        }
+        else if (luk3G2->isEnabled() == false) {
+            luk3G2->setPixmap(carta1);
+            luk3G2->setEnabled(true);
+             wyslijWiadomosc("04l2" + tmp1 + "|");
+        }
+        else if (luk4G2->isEnabled() == false) {
+            luk4G2->setPixmap(carta1);
+            luk4G2->setEnabled(true);
+             wyslijWiadomosc("04l3" + tmp1 + "|");
+        }
+        else if (luk5G2->isEnabled() == false) {
+            luk5G2->setPixmap(carta1);
+            luk5G2->setEnabled(true);
+             wyslijWiadomosc("04l4" + tmp1 + "|");
+        }
+        else if (luk6G2->isEnabled() == false) {
+            luk6G2->setPixmap(carta1);
+            luk6G2->setEnabled(true);
+             wyslijWiadomosc("04l5" + tmp1 + "|");
+        }
+        else if (luk7G2->isEnabled() == false) {
+            luk7G2->setPixmap(carta1);
+            luk7G2->setEnabled(true);
+             wyslijWiadomosc("04l6" + tmp1 + "|");
+        }
+        else {
+            luk8G2->setPixmap(carta1);
+            luk8G2->setEnabled(true);
+             wyslijWiadomosc("04l7" + tmp1 + "|");
+        }
+    }
+    else if (tmp2 == "m" || tmp2 == "h")
+    {
+        if (miecz1G2->isEnabled() == false) {
+        miecz1G2->setPixmap(carta1);
+        miecz1G2->setEnabled(true);
+         wyslijWiadomosc("04m0" + tmp1 + "|");
+        }
+        else if (miecz2G2->isEnabled() == false) {
+            miecz2G2->setPixmap(carta1);
+            miecz2G2->setEnabled(true);
+             wyslijWiadomosc("04m1" + tmp1 + "|");
+        }
+        else if (miecz3G2->isEnabled() == false) {
+            miecz3G2->setPixmap(carta1);
+            miecz3G2->setEnabled(true);
+             wyslijWiadomosc("04m2" + tmp1 + "|");
+        }
+        else if (miecz4G2->isEnabled() == false) {
+            miecz4G2->setPixmap(carta1);
+            miecz4G2->setEnabled(true);
+             wyslijWiadomosc("04m3" + tmp1 + "|");
+        }
+        else if (miecz5G2->isEnabled() == false) {
+            miecz5G2->setPixmap(carta1);
+            miecz5G2->setEnabled(true);
+             wyslijWiadomosc("04m4" + tmp1 + "|");
+        }
+        else if (miecz6G2->isEnabled() == false) {
+            miecz6G2->setPixmap(carta1);
+            miecz6G2->setEnabled(true);
+             wyslijWiadomosc("04m5" + tmp1 + "|");
+        }
+        else if (miecz7G2->isEnabled() == false) {
+            miecz7G2->setPixmap(carta1);
+            miecz7G2->setEnabled(true);
+             wyslijWiadomosc("04m6" + tmp1 + "|");
+        }
+        else {
+            miecz8G2->setPixmap(carta1);
+            miecz8G2->setEnabled(true);
+             wyslijWiadomosc("04m7" + tmp1 + "|");
+        }
+    }
+    else
+    {
+        specG2->setPixmap(carta1);
+        specG2->setEnabled(true);
+        wyslijWiadomosc("0430" + tmp1 + "|");
     }
 
+    przyznajPunkty(2);
 
+}
+
+void Server::klikKarta1()
+{
+    g2->rzuconaKarta(0);
+    pushButtonG2C1->setIcon(QIcon(""));
+    niewidoczneG2();
+
+    wyslijWiadomosc("120|");
+    klikKarta();
 
     pos2 = 0;
-    przyznajPunkty(2);
+
 }
 
 void Server::klikKarta2()
@@ -586,47 +790,10 @@ void Server::klikKarta2()
     pushButtonG2C2->setIcon(QIcon(":/ikony/null.png"));
     niewidoczneG2();
 
-    QString tmp2;
-    tmp2.setNum(g2->getRzucona()->getNumer());
-    QString carta2 = ":talie/" + rodzajTalii + "/" + tmp2 + ".png";
-    if (labelG2->isEnabled() == false) {
-    labelG2->setPixmap(carta2);
-    labelG2->setEnabled(true);
-     wyslijWiadomosc("0401" + tmp2 + "|");
-    }
-    else if (label1G2->isEnabled() == false) {
-        label1G2->setPixmap(carta2);
-        label1G2->setEnabled(true);
-         wyslijWiadomosc("0411" + tmp2 + "|");
-    }
-    else if (label2G2->isEnabled() == false) {
-        label2G2->setPixmap(carta2);
-        label2G2->setEnabled(true);
-         wyslijWiadomosc("0421" + tmp2 + "|");
-    }
-    else if (label3G2->isEnabled() == false) {
-        label3G2->setPixmap(carta2);
-        label3G2->setEnabled(true);
-         wyslijWiadomosc("0431" + tmp2 + "|");
-    }
-    else if (label4G2->isEnabled() == false) {
-        label4G2->setPixmap(carta2);
-        label4G2->setEnabled(true);
-         wyslijWiadomosc("0441" + tmp2 + "|");
-    }
-    else if (label5G2->isEnabled() == false) {
-        label5G2->setPixmap(carta2);
-        label5G2->setEnabled(true);
-         wyslijWiadomosc("0451" + tmp2 + "|");
-    }
-    else {
-        label6G2->setPixmap(carta2);
-        label6G2->setEnabled(true);
-         wyslijWiadomosc("0461" + tmp2 + "|");
-    }
+    wyslijWiadomosc("121|");
+    klikKarta();
 
     pos2 = 1;
-    przyznajPunkty(2);
 }
 
 void Server::klikKarta3()
@@ -635,47 +802,10 @@ void Server::klikKarta3()
     pushButtonG2C3->setIcon(QIcon(":/ikony/null.png"));
     niewidoczneG2();
 
-    QString tmp3;
-    tmp3.setNum(g2->getRzucona()->getNumer());
-    QString carta3 = ":talie/" + rodzajTalii + "/" + tmp3 + + ".png";
-    if (labelG2->isEnabled() == false) {
-    labelG2->setPixmap(carta3);
-    labelG2->setEnabled(true);
-     wyslijWiadomosc("0402" + tmp3 + "|");
-    }
-    else if (label1G2->isEnabled() == false) {
-        label1G2->setPixmap(carta3);
-        label1G2->setEnabled(true);
-         wyslijWiadomosc("0412" + tmp3 + "|");
-    }
-    else if (label2G2->isEnabled() == false) {
-        label2G2->setPixmap(carta3);
-        label2G2->setEnabled(true);
-         wyslijWiadomosc("0422" + tmp3 + "|");
-    }
-    else if (label3G2->isEnabled() == false) {
-        label3G2->setPixmap(carta3);
-        label3G2->setEnabled(true);
-         wyslijWiadomosc("0432" + tmp3 + "|");
-    }
-    else if (label4G2->isEnabled() == false) {
-        label4G2->setPixmap(carta3);
-        label4G2->setEnabled(true);
-         wyslijWiadomosc("0442" + tmp3 + "|");
-    }
-    else if (label5G2->isEnabled() == false) {
-        label5G2->setPixmap(carta3);
-        label5G2->setEnabled(true);
-         wyslijWiadomosc("0452" + tmp3 + "|");
-    }
-    else {
-        label6G2->setPixmap(carta3);
-        label6G2->setEnabled(true);
-         wyslijWiadomosc("0462" + tmp3 + "|");
-    }
+    wyslijWiadomosc("122|");
+    klikKarta();
 
     pos2 = 2;
-    przyznajPunkty(2);
 }
 
 void Server::klikKarta4()
@@ -684,48 +814,10 @@ void Server::klikKarta4()
     pushButtonG2C4->setIcon(QIcon(":/ikony/null.png"));
     niewidoczneG2();
 
-    QString tmp4;
-    tmp4.setNum(g2->getRzucona()->getNumer());
-    QString carta4 = ":talie/" + rodzajTalii + "/" + tmp4 + ".png";
-    if (labelG2->isEnabled() == false) {
-    labelG2->setPixmap(carta4);
-    labelG2->setEnabled(true);
-     wyslijWiadomosc("0403" + tmp4 + "|");
-    }
-    else if (label1G2->isEnabled() == false) {
-        label1G2->setPixmap(carta4);
-        label1G2->setEnabled(true);
-         wyslijWiadomosc("0413" + tmp4 + "|");
-    }
-    else if (label2G2->isEnabled() == false) {
-        label2G2->setPixmap(carta4);
-        label2G2->setEnabled(true);
-         wyslijWiadomosc("0423" + tmp4 + "|");
-    }
-    else if (label3G2->isEnabled() == false) {
-        label3G2->setPixmap(carta4);
-        label3G2->setEnabled(true);
-         wyslijWiadomosc("0433" + tmp4 + "|");
-    }
-    else if (label4G2->isEnabled() == false) {
-        label4G2->setPixmap(carta4);
-        label4G2->setEnabled(true);
-         wyslijWiadomosc("0443" + tmp4 + "|");
-    }
-    else if (label5G2->isEnabled() == false) {
-        label5G2->setPixmap(carta4);
-        label5G2->setEnabled(true);
-         wyslijWiadomosc("0453" + tmp4 + "|");
-    }
-    else {
-        label6G2->setPixmap(carta4);
-        label6G2->setEnabled(true);
-         wyslijWiadomosc("0463" + tmp4 + "|");
-    }
-
+    wyslijWiadomosc("123|");
+    klikKarta();
 
     pos2 = 3;
-    przyznajPunkty(2);
 }
 
 void Server::klikKarta5()
@@ -734,47 +826,9 @@ void Server::klikKarta5()
     pushButtonG2C5->setIcon(QIcon(":/ikony/null.png"));
     niewidoczneG2();
 
-    QString tmp5;
-    tmp5.setNum(g2->getRzucona()->getNumer());
-    QString carta5 = ":talie/" + rodzajTalii + "/" + tmp5 + ".png";
-    if (labelG2->isEnabled() == false) {
-    labelG2->setPixmap(carta5);
-    labelG2->setEnabled(true);
-     wyslijWiadomosc("0404" + tmp5 + "|");
-    }
-    else if (label1G2->isEnabled() == false) {
-        label1G2->setPixmap(carta5);
-        label1G2->setEnabled(true);
-         wyslijWiadomosc("0414" + tmp5 + "|");
-    }
-    else if (label2G2->isEnabled() == false) {
-        label2G2->setPixmap(carta5);
-        label2G2->setEnabled(true);
-         wyslijWiadomosc("0424" + tmp5 + "|");
-    }
-    else if (label3G2->isEnabled() == false) {
-        label3G2->setPixmap(carta5);
-        label3G2->setEnabled(true);
-         wyslijWiadomosc("0434" + tmp5 + "|");
-    }
-    else if (label4G2->isEnabled() == false) {
-        label4G2->setPixmap(carta5);
-        label4G2->setEnabled(true);
-         wyslijWiadomosc("0444" + tmp5 + "|");
-    }
-    else if (label5G2->isEnabled() == false) {
-        label5G2->setPixmap(carta5);
-        label5G2->setEnabled(true);
-         wyslijWiadomosc("0454" + tmp5 + "|");
-    }
-    else {
-        label6G2->setPixmap(carta5);
-        label6G2->setEnabled(true);
-         wyslijWiadomosc("0464" + tmp5 + "|");
-    }
-
+    wyslijWiadomosc("124|");
+    klikKarta();
     pos2 = 4;
-    przyznajPunkty(2);
 }
 
 void Server::klikKarta6()
@@ -782,48 +836,9 @@ void Server::klikKarta6()
     g2->rzuconaKarta(5);
     pushButtonG2C6->setIcon(QIcon(":/ikony/null.png"));
    niewidoczneG2();
-
-    QString tmp6;
-    tmp6.setNum(g2->getRzucona()->getNumer());
-    QString carta6 = ":talie/" + rodzajTalii + "/" + tmp6 + ".png";
-    if (labelG2->isEnabled() == false) {
-    labelG2->setPixmap(carta6);
-    labelG2->setEnabled(true);
-     wyslijWiadomosc("0405" + tmp6 + "|");
-    }
-    else if (label1G2->isEnabled() == false) {
-        label1G2->setPixmap(carta6);
-        label1G2->setEnabled(true);
-         wyslijWiadomosc("0415" + tmp6 + "|");
-    }
-    else if (label2G2->isEnabled() == false) {
-        label2G2->setPixmap(carta6);
-        label2G2->setEnabled(true);
-         wyslijWiadomosc("0425" + tmp6 + "|");
-    }
-    else if (label3G2->isEnabled() == false) {
-        label3G2->setPixmap(carta6);
-        label3G2->setEnabled(true);
-         wyslijWiadomosc("0435" + tmp6 + "|");
-    }
-    else if (label4G2->isEnabled() == false) {
-        label4G2->setPixmap(carta6);
-        label4G2->setEnabled(true);
-         wyslijWiadomosc("0445" + tmp6 + "|");
-    }
-    else if (label5G2->isEnabled() == false) {
-        label5G2->setPixmap(carta6);
-        label5G2->setEnabled(true);
-         wyslijWiadomosc("0455" + tmp6 + "|");
-    }
-    else {
-        label6G2->setPixmap(carta6);
-        label6G2->setEnabled(true);
-         wyslijWiadomosc("0465" + tmp6 + "|");
-    }
-
+   wyslijWiadomosc("125|");
+   klikKarta();
     pos2 = 5;
-    przyznajPunkty(2);
 }
 
 void Server::klikKarta7()
@@ -832,47 +847,10 @@ void Server::klikKarta7()
     pushButtonG2C7->setIcon(QIcon(":/ikony/null.png"));
     niewidoczneG2();
 
-    QString tmp7;
-    tmp7.setNum(g2->getRzucona()->getNumer());
-    QString carta7 = ":talie/" + rodzajTalii + "/" + tmp7 + ".png";
-    if (labelG2->isEnabled() == false) {
-    labelG2->setPixmap(carta7);
-    labelG2->setEnabled(true);
-     wyslijWiadomosc("0406" + tmp7 + "|");
-    }
-    else if (label1G2->isEnabled() == false) {
-        label1G2->setPixmap(carta7);
-        label1G2->setEnabled(true);
-         wyslijWiadomosc("0416" + tmp7 + "|");
-    }
-    else if (label2G2->isEnabled() == false) {
-        label2G2->setPixmap(carta7);
-        label2G2->setEnabled(true);
-         wyslijWiadomosc("0426" + tmp7 + "|");
-    }
-    else if (label3G2->isEnabled() == false) {
-        label3G2->setPixmap(carta7);
-        label3G2->setEnabled(true);
-         wyslijWiadomosc("0436" + tmp7 + "|");
-    }
-    else if (label4G2->isEnabled() == false) {
-        label4G2->setPixmap(carta7);
-        label4G2->setEnabled(true);
-         wyslijWiadomosc("0446" + tmp7 + "|");
-    }
-    else if (label5G2->isEnabled() == false) {
-        label5G2->setPixmap(carta7);
-        label5G2->setEnabled(true);
-         wyslijWiadomosc("0456" + tmp7 + "|");
-    }
-    else {
-        label6G2->setPixmap(carta7);
-        label6G2->setEnabled(true);
-         wyslijWiadomosc("0466" + tmp7 + "|");
-    }
+    wyslijWiadomosc("126|");
+    klikKarta();
 
     pos2 = 6;
-    przyznajPunkty(2);
 }
 
 void Server::klikKarta8()
@@ -881,47 +859,10 @@ void Server::klikKarta8()
     pushButtonG2C8->setIcon(QIcon(":/ikony/null.png"));
     niewidoczneG2();
 
-    QString tmp8;
-    tmp8.setNum(g2->getRzucona()->getNumer());
-    QString carta8 = ":talie/" + rodzajTalii + "/" + tmp8 + ".png";
-    if (labelG2->isEnabled() == false) {
-    labelG2->setPixmap(carta8);
-    labelG2->setEnabled(true);
-     wyslijWiadomosc("0407" + tmp8 + "|");
-    }
-    else if (label1G2->isEnabled() == false) {
-        label1G2->setPixmap(carta8);
-        label1G2->setEnabled(true);
-         wyslijWiadomosc("0417" + tmp8 + "|");
-    }
-    else if (label2G2->isEnabled() == false) {
-        label2G2->setPixmap(carta8);
-        label2G2->setEnabled(true);
-         wyslijWiadomosc("0427" + tmp8 + "|");
-    }
-    else if (label3G2->isEnabled() == false) {
-        label3G2->setPixmap(carta8);
-        label3G2->setEnabled(true);
-         wyslijWiadomosc("0437" + tmp8 + "|");
-    }
-    else if (label4G2->isEnabled() == false) {
-        label4G2->setPixmap(carta8);
-        label4G2->setEnabled(true);
-         wyslijWiadomosc("0447" + tmp8 + "|");
-    }
-    else if (label5G2->isEnabled() == false) {
-        label5G2->setPixmap(carta8);
-        label5G2->setEnabled(true);
-         wyslijWiadomosc("0457" + tmp8 + "|");
-    }
-    else {
-        label6G2->setPixmap(carta8);
-        label6G2->setEnabled(true);
-         wyslijWiadomosc("0467" + tmp8 + "|");
-    }
-
+    wyslijWiadomosc("127|");
+    klikKarta();
     pos2 = 7;
-    przyznajPunkty(2);
+
 }
 
 void Server::klikKarta9()
@@ -930,47 +871,9 @@ void Server::klikKarta9()
     pushButtonG2C9->setIcon(QIcon(":/ikony/null.png"));
     niewidoczneG2();
 
-    QString tmp9;
-    tmp9.setNum(g2->getRzucona()->getNumer());
-    QString carta9 = ":talie/" + rodzajTalii + "/" + tmp9 + ".png";
-    if (labelG2->isEnabled() == false) {
-    labelG2->setPixmap(carta9);
-    labelG2->setEnabled(true);
-     wyslijWiadomosc("0408" + tmp9 + "|");
-    }
-    else if (label1G2->isEnabled() == false) {
-        label1G2->setPixmap(carta9);
-        label1G2->setEnabled(true);
-         wyslijWiadomosc("0418" + tmp9 + "|");
-    }
-    else if (label2G2->isEnabled() == false) {
-        label2G2->setPixmap(carta9);
-        label2G2->setEnabled(true);
-         wyslijWiadomosc("0428" + tmp9 + "|");
-    }
-    else if (label3G2->isEnabled() == false) {
-        label3G2->setPixmap(carta9);
-        label3G2->setEnabled(true);
-         wyslijWiadomosc("0438" + tmp9 + "|");
-    }
-    else if (label4G2->isEnabled() == false) {
-        label4G2->setPixmap(carta9);
-        label4G2->setEnabled(true);
-         wyslijWiadomosc("0448" + tmp9 + "|");
-    }
-    else if (label5G2->isEnabled() == false) {
-        label5G2->setPixmap(carta9);
-        label5G2->setEnabled(true);
-         wyslijWiadomosc("0458" + tmp9 + "|");
-    }
-    else {
-        label6G2->setPixmap(carta9);
-        label6G2->setEnabled(true);
-         wyslijWiadomosc("0468" + tmp9 + "|");
-    }
-
+    wyslijWiadomosc("128|");
+    klikKarta();
     pos2 = 8;
-    przyznajPunkty(2);
 }
 
 void Server::klikKarta10()
@@ -980,48 +883,10 @@ void Server::klikKarta10()
 
     niewidoczneG2();
 
-    QString tmp10;
-    tmp10.setNum(g2->getRzucona()->getNumer());
-    QString carta10 = ":talie/" + rodzajTalii + "/" + tmp10 + ".png";
-    if (labelG2->isEnabled() == false) {
-    labelG2->setPixmap(carta10);
-    labelG2->setEnabled(true);
-     wyslijWiadomosc("0409" + tmp10 + "|");
-    }
-    else if (label1G2->isEnabled() == false) {
-        label1G2->setPixmap(carta10);
-        label1G2->setEnabled(true);
-         wyslijWiadomosc("0419" + tmp10 + "|");
-    }
-    else if (label2G2->isEnabled() == false) {
-        label2G2->setPixmap(carta10);
-        label2G2->setEnabled(true);
-         wyslijWiadomosc("0429" + tmp10 + "|");
-    }
-    else if (label3G2->isEnabled() == false) {
-        label3G2->setPixmap(carta10);
-        label3G2->setEnabled(true);
-         wyslijWiadomosc("0439" + tmp10 + "|");
-    }
-    else if (label4G2->isEnabled() == false) {
-        label4G2->setPixmap(carta10);
-        label4G2->setEnabled(true);
-         wyslijWiadomosc("0449" + tmp10 + "|");
-    }
-    else if (label5G2->isEnabled() == false) {
-        label5G2->setPixmap(carta10);
-        label5G2->setEnabled(true);
-         wyslijWiadomosc("0459" + tmp10 + "|");
-    }
-    else {
-        label6G2->setPixmap(carta10);
-        label6G2->setEnabled(true);
-         wyslijWiadomosc("0469" + tmp10 + "|");
-    }
-
+    wyslijWiadomosc("129|");
+    klikKarta();
 
     pos2 = 9;
-    przyznajPunkty(2);
 }
 
 void Server::niewidoczneG2()
@@ -1078,13 +943,13 @@ void Server::wydajWerdykt()
         inicjujKolejnaPartie();
     }
 
-        wyslijWiadomosc("09"+r1+r2);
+        wyslijWiadomosc("09"+r1+r2+"|");
 
         if(rnd1==2 || rnd2==2)
         {
             if(rnd1==2)
                 werdykt = Koniec::Porazka;
-            else if (rnd2==2)
+            else
                 werdykt = Koniec::Zwyciestwo;
 
 
@@ -1102,23 +967,32 @@ void Server::wydajWerdykt()
 void Server::klikPas()
 {
     Pas = true;
-    niewidoczneG2();
-    aktywnyGracz(1);
-    pushButtonPasG2->setEnabled(false);
+
+    if(rywalPas == true)
     wydajWerdykt();
-
-    if (rywalPas == false)
-            wyslijWiadomosc("10SPASOWAL");
-
+    else
+    {
+            wyslijWiadomosc("10SPASOWAL|");
+            aktywnyGracz(1);
+            niewidoczneG2();
 }
+}
+
+
 
 void Server::przeciwnikPas(QString c)
 {
-
     rywalPas = true;
+
+    if (Pas == true)
+        wydajWerdykt();
+    else
+    {
     aktywnyGracz(2);
+    pushButtonPasG1->setMinimumWidth(70);
     pushButtonPasG1->setMaximumWidth(70);
     pushButtonPasG1->setText(c);
+    }
 
 }
 
@@ -1156,41 +1030,124 @@ void Server::inicjujKolejnaPartie()
 {
     Pas = false;
     rywalPas = false;
+    pushButtonPasG1->setMinimumWidth(50);
     pushButtonPasG1->setMaximumWidth(50);
     pushButtonPasG1->setText("Pas");
     lineEditPktG1->setText("0");
     lineEditPktG2->setText("0");
     pushButtonPasG2->setEnabled(true);
 
-    labelG2->setPixmap(QPixmap(":/ikony/null.png"));
-    labelG2->setEnabled(false);
-    label1G2->setPixmap(QPixmap(":/ikony/null.png"));
-    label1G2->setEnabled(false);
-    label2G2->setPixmap(QPixmap(":/ikony/null.png"));
-    label2G2->setEnabled(false);
-    label3G2->setPixmap(QPixmap(":/ikony/null.png"));
-    label3G2->setEnabled(false);
-    label4G2->setPixmap(QPixmap(":/ikony/null.png"));
-    label4G2->setEnabled(false);
-    label5G2->setPixmap(QPixmap(":/ikony/null.png"));
-    label5G2->setEnabled(false);
-    label6G2->setPixmap(QPixmap(":/ikony/null.png"));
-    label6G2->setEnabled(false);
 
-    labelG1->setPixmap(QPixmap(":/ikony/null.png"));
-    labelG1->setEnabled(false);
-    label1G1->setPixmap(QPixmap(":/ikony/null.png"));
-    label1G1->setEnabled(false);
-    label2G1->setPixmap(QPixmap(":/ikony/null.png"));
-    label2G1->setEnabled(false);
-    label3G1->setPixmap(QPixmap(":/ikony/null.png"));
-    label3G1->setEnabled(false);
-    label4G1->setPixmap(QPixmap(":/ikony/null.png"));
-    label4G1->setEnabled(false);
-    label5G1->setPixmap(QPixmap(":/ikony/null.png"));
-    label5G1->setEnabled(false);
-    label6G1->setPixmap(QPixmap(":/ikony/null.png"));
-    label6G1->setEnabled(false);
+    QString pixmap = ":ikony/null.png";
+
+
+    kata1G1->setPixmap(pixmap);
+    kata1G1->setEnabled(false);
+    kata2G1->setPixmap(pixmap);
+    kata2G1->setEnabled(false);
+    kata3G1->setPixmap(pixmap);
+    kata3G1->setEnabled(false);
+    kata4G1->setPixmap(pixmap);
+    kata4G1->setEnabled(false);
+    kata5G1->setPixmap(pixmap);
+    kata5G1->setEnabled(false);
+    kata6G1->setPixmap(pixmap);
+    kata6G1->setEnabled(false);
+    kata7G1->setPixmap(pixmap);
+    kata7G1->setEnabled(false);
+    kata8G1->setPixmap(pixmap);
+    kata8G1->setEnabled(false);
+
+    luk1G1->setPixmap(pixmap);
+    luk1G1->setEnabled(false);
+    luk2G1->setPixmap(pixmap);
+    luk2G1->setEnabled(false);
+    luk3G1->setPixmap(pixmap);
+    luk3G1->setEnabled(false);
+    luk4G1->setPixmap(pixmap);
+    luk4G1->setEnabled(false);
+    luk5G1->setPixmap(pixmap);
+    luk5G1->setEnabled(false);
+    luk6G1->setPixmap(pixmap);
+    luk6G1->setEnabled(false);
+    luk7G1->setPixmap(pixmap);
+    luk7G1->setEnabled(false);
+    luk8G1->setPixmap(pixmap);
+    luk8G1->setEnabled(false);
+
+    miecz1G1->setPixmap(pixmap);
+    miecz1G1->setEnabled(false);
+    miecz2G1->setPixmap(pixmap);
+    miecz2G1->setEnabled(false);
+    miecz3G1->setPixmap(pixmap);
+    miecz3G1->setEnabled(false);
+    miecz4G1->setPixmap(pixmap);
+    miecz4G1->setEnabled(false);
+    miecz5G1->setPixmap(pixmap);
+    miecz5G1->setEnabled(false);
+    miecz6G1->setPixmap(pixmap);
+    miecz6G1->setEnabled(false);
+    miecz7G1->setPixmap(pixmap);
+    miecz7G1->setEnabled(false);
+    miecz8G1->setPixmap(pixmap);
+    miecz8G1->setEnabled(false);
+
+    kata1G2->setPixmap(pixmap);
+    kata1G2->setEnabled(false);
+    kata2G2->setPixmap(pixmap);
+    kata2G2->setEnabled(false);
+    kata3G2->setPixmap(pixmap);
+    kata3G2->setEnabled(false);
+    kata4G2->setPixmap(pixmap);
+    kata4G2->setEnabled(false);
+    kata5G2->setPixmap(pixmap);
+    kata5G2->setEnabled(false);
+    kata6G2->setPixmap(pixmap);
+    kata6G2->setEnabled(false);
+    kata7G2->setPixmap(pixmap);
+    kata7G2->setEnabled(false);
+    kata8G2->setPixmap(pixmap);
+    kata8G2->setEnabled(false);
+
+    luk1G2->setPixmap(pixmap);
+    luk1G2->setEnabled(false);
+    luk2G2->setPixmap(pixmap);
+    luk2G2->setEnabled(false);
+    luk3G2->setPixmap(pixmap);
+    luk3G2->setEnabled(false);
+    luk4G2->setPixmap(pixmap);
+    luk4G2->setEnabled(false);
+    luk5G2->setPixmap(pixmap);
+    luk5G2->setEnabled(false);
+    luk6G2->setPixmap(pixmap);
+    luk6G2->setEnabled(false);
+    luk7G2->setPixmap(pixmap);
+    luk7G2->setEnabled(false);
+    luk8G2->setPixmap(pixmap);
+    luk8G2->setEnabled(false);
+
+    miecz1G2->setPixmap(pixmap);
+    miecz1G2->setEnabled(false);
+    miecz2G2->setPixmap(pixmap);
+    miecz2G2->setEnabled(false);
+    miecz3G2->setPixmap(pixmap);
+    miecz3G2->setEnabled(false);
+    miecz4G2->setPixmap(pixmap);
+    miecz4G2->setEnabled(false);
+    miecz5G2->setPixmap(pixmap);
+    miecz5G2->setEnabled(false);
+    miecz6G2->setPixmap(pixmap);
+    miecz6G2->setEnabled(false);
+    miecz7G2->setPixmap(pixmap);
+    miecz7G2->setEnabled(false);
+    miecz8G2->setPixmap(pixmap);
+    miecz8G2->setEnabled(false);
+
+    specG1->setPixmap(pixmap);
+    specG1->setEnabled(false);
+
+    specG2->setPixmap(pixmap);
+    specG2->setEnabled(false);
 
 
 }

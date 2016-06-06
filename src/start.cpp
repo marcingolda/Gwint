@@ -110,6 +110,7 @@ void Start::ustawienia()
 	QDesktopWidget *widget = QApplication::desktop();
 	QRect dim = widget->screenGeometry();
 	setGeometry((dim.width() - w) / 2, (dim.height() - h) / 2, w, h);
+
 }
 
 void Start::wyjdz()

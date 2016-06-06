@@ -39,6 +39,7 @@ public:
     void ustawNickKlienta(QString);
     void kartyKlienta(QString);
     void klientOdlaczony(QString);
+    void rodzajKlienta(QString);
 
     void ustawLiczbeKartG2();
     void ustawLiczbeKartG1();
@@ -48,6 +49,7 @@ public:
     void przeciwnikPas(QString);
     void niewidoczneG1();
     void niewidoczneG2();
+    void klikKarta();
 
     void wrocDoMenu();
     void ustawIkony();
@@ -95,7 +97,7 @@ private:
     bool rywalPas;
 
 
-    void (Server::*metoda[6])(QString);
+    void (Server::*metoda[7])(QString);
 
 };
 

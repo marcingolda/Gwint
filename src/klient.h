@@ -36,7 +36,7 @@ public:
     void ustawLiczbeKartG2(QString);
     void ustawLiczbeKartG1(QString);
 	void ustawTure(QString);
-	void ustawKarteSerwera(QString);
+	void ustawKartySerwera(QString);
 	void aktualizujPunkty(QString);
     void aktualizujPunktySerwera(QString);
     void wydajWerdykt();
@@ -45,6 +45,8 @@ public:
     void przeciwnikPas(QString);
     void niewidoczneG1();
     void niewidoczneG2();
+    void klikKarta(QString);
+    void ktoraKartaSerwera(QString);
 
 protected:
 	virtual void closeEvent(QCloseEvent *);
@@ -77,7 +79,7 @@ private:
 	QTcpSocket *socket;
 	QBuffer *buffer;
 
-    void (Klient::*metoda[11])(QString);
+    void (Klient::*metoda[13])(QString);
 
 };
 
