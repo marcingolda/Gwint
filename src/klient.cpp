@@ -166,25 +166,25 @@ void Klient::ktoraKartaSerwera(QString c)
 
 
     if (pos == "0")
-        pushButtonG2C1->setIcon(QIcon(":/ikony/null.png"));
+        pushButtonG2C1->setHidden(true);
     else if (pos == "1")
-        pushButtonG2C2->setIcon(QIcon(":/ikony/null.png"));
+        pushButtonG2C2->setHidden(true);
     else if (pos == "2")
-        pushButtonG2C3->setIcon(QIcon(":/ikony/null.png"));
+        pushButtonG2C3->setHidden(true);
     else if (pos == "3")
-        pushButtonG2C4->setIcon(QIcon(":/ikony/null.png"));
+        pushButtonG2C4->setHidden(true);
     else if (pos == "4")
-        pushButtonG2C5->setIcon(QIcon(":/ikony/null.png"));
+        pushButtonG2C5->setHidden(true);
     else if (pos == "5")
-        pushButtonG2C6->setIcon(QIcon(":/ikony/null.png"));
+        pushButtonG2C6->setHidden(true);
     else if (pos == "6")
-        pushButtonG2C7->setIcon(QIcon(":/ikony/null.png"));
+        pushButtonG2C7->setHidden(true);
     else if (pos == "7")
-        pushButtonG2C8->setIcon(QIcon(":/ikony/null.png"));
+        pushButtonG2C8->setHidden(true);
     else if (pos == "8")
-        pushButtonG2C9->setIcon(QIcon(":/ikony/null.png"));
+        pushButtonG2C9->setHidden(true);
     else
-        pushButtonG2C10->setIcon(QIcon(":/ikony/null.png"));
+        pushButtonG2C10->setHidden(true);
 }
 
 
@@ -565,7 +565,7 @@ void Klient::klikKarta1()
     niewidoczneG1();
 
 
-    pushButtonG1C1->setIcon(QIcon(":/ikony/null.png"));
+    pushButtonG1C1->setHidden(true);
 
 }
 
@@ -573,7 +573,7 @@ void Klient::klikKarta2()
 {
     wyslijWiadomosc("061|");
     niewidoczneG1();
-    pushButtonG1C2->setIcon(QIcon(":/ikony/null.png"));
+    pushButtonG1C2->setHidden(true);
 
 }
 
@@ -581,7 +581,7 @@ void Klient::klikKarta3()
 {
     wyslijWiadomosc("062|");
     niewidoczneG1();
-    pushButtonG1C3->setIcon(QIcon(":/ikony/null.png"));
+    pushButtonG1C3->setHidden(true);
 
 }
 
@@ -589,7 +589,7 @@ void Klient::klikKarta4()
 {
     wyslijWiadomosc("063|");
     niewidoczneG1();
-    pushButtonG1C4->setIcon(QIcon(":/ikony/null.png"));
+    pushButtonG1C4->setHidden(true);
 
 }
 
@@ -597,7 +597,7 @@ void Klient::klikKarta5()
 {
     wyslijWiadomosc("064|");
      niewidoczneG1();
-    pushButtonG1C5->setIcon(QIcon(":/ikony/null.png"));
+    pushButtonG1C5->setHidden(true);
 
 
 }
@@ -606,7 +606,7 @@ void Klient::klikKarta6()
 {
     wyslijWiadomosc("065|");
     niewidoczneG1();
-    pushButtonG1C6->setIcon(QIcon(":/ikony/null.png"));
+    pushButtonG1C6->setHidden(true);
 
 }
 
@@ -614,7 +614,7 @@ void Klient::klikKarta7()
 {
     wyslijWiadomosc("066|");
     niewidoczneG1();
-    pushButtonG1C7->setIcon(QIcon(":/ikony/null.png"));
+    pushButtonG1C7->setHidden(true);
 
 }
 
@@ -622,7 +622,7 @@ void Klient::klikKarta8()
 {
     wyslijWiadomosc("067|");
     niewidoczneG1();
-    pushButtonG1C8->setIcon(QIcon(":/ikony/null.png"));
+    pushButtonG1C8->setHidden(true);
 
 }
 
@@ -630,7 +630,7 @@ void Klient::klikKarta9()
 {
     wyslijWiadomosc("068|");
     niewidoczneG1();
-    pushButtonG1C9->setIcon(QIcon(":/ikony/null.png"));
+    pushButtonG1C9->setHidden(true);
 
 }
 
@@ -638,7 +638,7 @@ void Klient::klikKarta10()
 {
     wyslijWiadomosc("069|");
     niewidoczneG1();
-    pushButtonG1C10->setIcon(QIcon(":/ikony/null.png"));
+    pushButtonG1C10->setHidden(true);
 
 }
 
