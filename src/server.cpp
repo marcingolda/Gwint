@@ -301,7 +301,7 @@ void Server::kartyKlienta(QString c)
 
         QString tmp1;
         tmp1.setNum(g1->getRzucona()->getNumer());
-        QString carta1 = ":talie/" + rodzajTaliiG1 + "/" + tmp1 + ".png";
+        QString carta1 = ":talie2/" + rodzajTaliiG1 + "/" + tmp1 + ".png";
         QString r = g1->getRzucona()->getRodzaj();
 
         if (r == "k")
@@ -627,7 +627,7 @@ void Server::klikKarta()
 
     QString tmp1;
     tmp1.setNum(g2->getRzucona()->getNumer());
-    QString carta1 = ":talie/" + rodzajTalii + "/" + tmp1 + ".png";
+    QString carta1 = ":talie2/" + rodzajTalii + "/" + tmp1 + ".png";
 
     QString tmp2 = g2->getRzucona()->getRodzaj();
 
@@ -777,6 +777,7 @@ void Server::klikKarta1()
     pushButtonG2C1->setIcon(QIcon(""));
     niewidoczneG2();
 
+
     wyslijWiadomosc("120|");
     klikKarta();
 
@@ -789,6 +790,8 @@ void Server::klikKarta2()
     g2->rzuconaKarta(1);
     pushButtonG2C2->setIcon(QIcon(":/ikony/null.png"));
     niewidoczneG2();
+
+    pushButtonG2C2->setDisabled(true);
 
     wyslijWiadomosc("121|");
     klikKarta();

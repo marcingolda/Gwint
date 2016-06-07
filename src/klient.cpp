@@ -196,7 +196,7 @@ void Klient::ustawKartySerwera(QString c)
     int tmp = c.mid(2).toInt();
     QString numer;
     numer.setNum(tmp);
-    QString iconaG2 = ":talie/" + rodzajTaliiG2 + "/" + numer + ".png";
+    QString iconaG2 = ":talie2/" + rodzajTaliiG2 + "/" + numer + ".png";
 
 
 
@@ -419,7 +419,7 @@ QString tmp2 = c.mid(0,1);
 QString numer;
 numer.setNum(c.mid(1).toInt());
 
-QString pixmap = ":talie/" + rodzajTalii + "/" + numer + ".png";
+QString pixmap = ":talie2/" + rodzajTalii + "/" + numer + ".png";
 QString null = ":ikony/null.png";
 
 

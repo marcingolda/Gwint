@@ -51,21 +51,21 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>590</x>
+      <x>570</x>
       <y>240</y>
-      <width>50</width>
+      <width>42</width>
       <height>80</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
+      <width>42</width>
       <height>80</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
+      <width>42</width>
       <height>80</height>
      </size>
     </property>
@@ -82,21 +82,21 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>190</x>
       <y>400</y>
-      <width>410</width>
+      <width>344</width>
       <height>240</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>410</width>
+      <width>344</width>
       <height>240</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>410</width>
+      <width>344</width>
       <height>240</height>
      </size>
     </property>
@@ -109,21 +109,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>50</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -139,19 +139,19 @@
       <rect>
        <x>10</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -165,21 +165,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>90</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -196,21 +196,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>130</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -227,21 +227,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>260</x>
+       <x>210</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -258,21 +258,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>310</x>
+       <x>250</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -291,19 +291,19 @@
       <rect>
        <x>10</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -320,21 +320,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>50</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -351,21 +351,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>90</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -382,21 +382,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>130</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -413,21 +413,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>170</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -444,21 +444,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>260</x>
+       <x>210</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -475,21 +475,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>310</x>
+       <x>250</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -506,21 +506,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>360</x>
+       <x>290</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -537,21 +537,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>360</x>
+       <x>290</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -570,19 +570,19 @@
       <rect>
        <x>10</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -599,21 +599,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>50</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -630,21 +630,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>90</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -661,21 +661,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>130</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -692,21 +692,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>170</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -723,21 +723,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>260</x>
+       <x>210</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -754,21 +754,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>310</x>
+       <x>250</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -785,21 +785,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>360</x>
+       <x>290</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -816,21 +816,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>170</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1013,21 +1013,21 @@
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>190</x>
       <y>160</y>
-      <width>410</width>
+      <width>344</width>
       <height>240</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>410</width>
+      <width>344</width>
       <height>240</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>410</width>
+      <width>344</width>
       <height>240</height>
      </size>
     </property>
@@ -1040,21 +1040,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>130</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1071,21 +1071,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>170</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1102,21 +1102,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>260</x>
+       <x>210</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1133,21 +1133,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>310</x>
+       <x>250</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1164,21 +1164,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>130</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1195,21 +1195,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>260</x>
+       <x>210</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1226,21 +1226,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>310</x>
+       <x>250</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1257,21 +1257,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>130</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1288,21 +1288,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>90</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1319,21 +1319,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>170</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1350,21 +1350,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>260</x>
+       <x>210</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1381,21 +1381,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>310</x>
+       <x>250</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1412,21 +1412,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>50</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1445,19 +1445,19 @@
       <rect>
        <x>10</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1474,21 +1474,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>90</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1505,21 +1505,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>50</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1538,19 +1538,19 @@
       <rect>
        <x>10</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1567,21 +1567,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>50</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1600,19 +1600,19 @@
       <rect>
        <x>10</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1629,21 +1629,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>90</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1660,21 +1660,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>360</x>
+       <x>290</x>
        <y>0</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1691,21 +1691,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>360</x>
+       <x>290</x>
        <y>80</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1722,21 +1722,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>360</x>
+       <x>290</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -1753,21 +1753,21 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>170</x>
        <y>160</y>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>50</width>
+       <width>42</width>
        <height>80</height>
       </size>
      </property>
@@ -2833,21 +2833,21 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>590</x>
+      <x>570</x>
       <y>480</y>
-      <width>50</width>
+      <width>42</width>
       <height>80</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
+      <width>42</width>
       <height>80</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
+      <width>42</width>
       <height>80</height>
      </size>
     </property>
