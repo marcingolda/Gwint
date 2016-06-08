@@ -205,112 +205,112 @@ void Klient::ustawKartySerwera(QString c)
     if (r == "k")
     {
     if (poz == "0") {
-        kata1G2->setEnabled(true);
+        kata1G2->setAccessibleName("zajete");
         kata1G2->setPixmap(QPixmap(iconaG2));
     }
     else if (poz == "1") {
-        kata2G2->setEnabled(true);
+        kata2G2->setAccessibleName("zajete");
         kata2G2->setPixmap(QPixmap(iconaG2));
     }
     else if (poz == "2") {
-        kata3G2->setEnabled(true);
+        kata3G2->setAccessibleName("zajete");
         kata3G2->setPixmap(QPixmap(iconaG2));
     }
     else if (poz == "3") {
-        kata4G2->setEnabled(true);
+        kata4G2->setAccessibleName("zajete");
         kata4G2->setPixmap(QPixmap(iconaG2));
     }
     else if (poz == "4") {
-        kata5G2->setEnabled(true);
+        kata5G2->setAccessibleName("zajete");
         kata5G2->setPixmap(QPixmap(iconaG2));
     }
     else if (poz == "5") {
-        kata6G2->setEnabled(true);
+        kata6G2->setAccessibleName("zajete");
         kata6G2->setPixmap(QPixmap(iconaG2));
     }
     else if (poz == "6") {
-        kata7G2->setEnabled(true);
+        kata7G2->setAccessibleName("zajete");
         kata7G2->setPixmap(QPixmap(iconaG2));
     }
     else{
-        kata8G2->setEnabled(true);
+        kata8G2->setAccessibleName("zajete");
         kata8G2->setPixmap(QPixmap(iconaG2));
 }
 }
     else if (r=="l")
     {
         if (poz == "0") {
-            luk1G2->setEnabled(true);
+            luk1G2->setAccessibleName("zajete");
             luk1G2->setPixmap(iconaG2);
         }
         else if (poz == "1") {
-            luk2G2->setEnabled(true);
+            luk2G2->setAccessibleName("zajete");
             luk2G2->setPixmap(QPixmap(iconaG2));
         }
         else if (poz == "2") {
-            luk3G2->setEnabled(true);
+            luk3G2->setAccessibleName("zajete");
             luk3G2->setPixmap(QPixmap(iconaG2));
         }
         else if (poz == "3") {
-            luk4G2->setEnabled(true);
+            luk4G2->setAccessibleName("zajete");
             luk4G2->setPixmap(QPixmap(iconaG2));
         }
         else if (poz == "4") {
-            luk5G2->setEnabled(true);
+            luk5G2->setAccessibleName("zajete");
             luk5G2->setPixmap(QPixmap(iconaG2));
         }
         else if (poz == "5") {
-            luk6G2->setEnabled(true);
+            luk6G2->setAccessibleName("zajete");
             luk6G2->setPixmap(QPixmap(iconaG2));
         }
         else if (poz == "6") {
-            luk7G2->setEnabled(true);
+            luk7G2->setAccessibleName("zajete");
             luk7G2->setPixmap(QPixmap(iconaG2));
         }
         else{
-            luk8G2->setEnabled(true);
+            luk8G2->setAccessibleName("zajete");
             luk8G2->setPixmap(QPixmap(iconaG2));
     }
     }
     else if (r=="m")
     {
         if (poz == "0") {
-            miecz1G2->setEnabled(true);
+            miecz1G2->setAccessibleName("zajete");
             miecz1G2->setPixmap(QPixmap(iconaG2));
         }
         else if (poz == "1") {
-            miecz2G2->setEnabled(true);
+            miecz2G2->setAccessibleName("zajete");
             miecz2G2->setPixmap(QPixmap(iconaG2));
         }
         else if (poz == "2") {
-            miecz3G2->setEnabled(true);
+            miecz3G2->setAccessibleName("zajete");
             miecz3G2->setPixmap(QPixmap(iconaG2));
         }
         else if (poz == "3") {
-            miecz4G2->setEnabled(true);
+            miecz4G2->setAccessibleName("zajete");
             miecz4G2->setPixmap(QPixmap(iconaG2));
         }
         else if (poz == "4") {
-            miecz5G2->setEnabled(true);
+            miecz5G2->setAccessibleName("zajete");
             miecz5G2->setPixmap(QPixmap(iconaG2));
         }
         else if (poz == "5") {
-            miecz6G2->setEnabled(true);
+            miecz6G2->setAccessibleName("zajete");
             miecz6G2->setPixmap(QPixmap(iconaG2));
         }
         else if (poz == "6") {
-            miecz7G2->setEnabled(true);
+            miecz7G2->setAccessibleName("zajete");
             miecz7G2->setPixmap(QPixmap(iconaG2));
         }
         else {
-            miecz8G2->setEnabled(true);
+            miecz8G2->setAccessibleName("zajete");
             miecz8G2->setPixmap(QPixmap(iconaG2));
     }
         }
     else
     {
         specG2->setPixmap(QPixmap(iconaG2));
-        specG2->setEnabled(true);
+        specG2->setAccessibleName("zajete");
     }
 
 
@@ -420,140 +420,141 @@ QString numer;
 numer.setNum(c.mid(1).toInt());
 
 QString pixmap = ":talie2/" + rodzajTalii + "/" + numer + ".png";
-QString null = ":ikony/null.png";
 
 
     if (tmp2 == "k")
     {
-    if (kata1G1->isEnabled() == false) {
+    if (kata1G1->accessibleName()=="wolne") {
     kata1G1->setPixmap(pixmap);
-    kata1G1->setEnabled("TRUE");
+    kata1G1->setAccessibleName("zajete");
      wyslijWiadomosc("010|");
     }
-    else if (kata2G1->isEnabled() == false) {
+    else if (kata2G1->accessibleName()=="wolne") {
         kata2G1->setPixmap(pixmap);
-        kata2G1->setEnabled(true);
+        kata2G1->setAccessibleName("zajete");
          wyslijWiadomosc("011|");
     }
-    else if (kata3G1->isEnabled() == false) {
+    else if (kata3G1->accessibleName()=="wolne") {
         kata3G1->setPixmap(pixmap);
-        kata3G1->setEnabled(true);
+        kata3G1->setAccessibleName("zajete");
          wyslijWiadomosc("012|");
     }
-    else if (kata4G1->isEnabled() == false) {
+    else if (kata4G1->accessibleName()=="wolne") {
         kata4G1->setPixmap(pixmap);
-        kata4G1->setEnabled(true);
+        kata4G1->setAccessibleName("zajete");
          wyslijWiadomosc("013|");
     }
-    else if (kata5G1->isEnabled() == false) {
+    else if (kata5G1->accessibleName()=="wolne") {
         kata5G1->setPixmap(pixmap);
-        kata5G1->setEnabled(true);
+        kata5G1->setAccessibleName("zajete");
          wyslijWiadomosc("014|");
     }
-    else if (kata6G1->isEnabled() == false) {
+    else if (kata6G1->accessibleName()=="wolne") {
         kata6G1->setPixmap(pixmap);
-        kata6G1->setEnabled(true);
+        kata6G1->setAccessibleName("zajete");
         wyslijWiadomosc("015|");
     }
-    else if (kata7G1->isEnabled() == false) {
+    else if (kata7G1->accessibleName()=="wolne") {
         kata7G1->setPixmap(pixmap);
-        kata7G1->setEnabled(true);
+        kata7G1->setAccessibleName("zajete");
         wyslijWiadomosc("016|");
     }
     else {
         kata8G1->setPixmap(pixmap);
-        kata8G1->setEnabled(true);
+        kata8G1->setAccessibleName("zajete");
          wyslijWiadomosc("017|");
     }
 }
     else if (tmp2 == "l")
     {
-        if (luk1G1->isEnabled() == false) {
+        if (luk1G1->accessibleName()=="wolne") {
         luk1G1->setPixmap(pixmap);
-        luk1G1->setEnabled(true);
+        luk1G1->setAccessibleName("zajete");
          wyslijWiadomosc("010|");
         }
-        else if (luk1G1->isEnabled() == false) {
+        else if (luk2G1->accessibleName()=="wolne") {
             luk2G1->setPixmap(pixmap);
-            luk2G1->setEnabled(true);
+            luk2G1->setAccessibleName("zajete");
              wyslijWiadomosc("011|");
         }
-        else if (luk3G1->isEnabled() == false) {
+        else if (luk3G1->accessibleName()=="wolne") {
             luk3G1->setPixmap(pixmap);
-            luk3G1->setEnabled(true);
+            luk3G1->setAccessibleName("zajete");
              wyslijWiadomosc("012|");
         }
-        else if (luk4G1->isEnabled() == false) {
+        else if (luk4G1->accessibleName()=="wolne") {
             luk4G1->setPixmap(pixmap);
-            luk4G1->setEnabled(true);
+            luk4G1->setAccessibleName("zajete");
              wyslijWiadomosc("013|");
         }
-        else if (luk5G1->isEnabled() == false) {
+        else if (luk5G1->accessibleName()=="wolne") {
             luk5G1->setPixmap(pixmap);
-            luk5G1->setEnabled(true);
+            luk5G1->setAccessibleName("zajete");
              wyslijWiadomosc("014|");
         }
-        else if (luk6G1->isEnabled() == false) {
+        else if (luk6G1->accessibleName()=="wolne") {
             luk6G1->setPixmap(pixmap);
-            luk6G1->setEnabled(true);
+            luk6G1->setAccessibleName("zajete");
             wyslijWiadomosc("015|");
         }
-        else if (luk7G1->isEnabled() == false) {
+        else if (luk7G1->accessibleName()=="wolne") {
             luk7G1->setPixmap(pixmap);
-            luk7G1->setEnabled(true);
+            luk7G1->setAccessibleName("zajete");
             wyslijWiadomosc("016|");
         }
         else {
             luk8G1->setPixmap(pixmap);
-            luk8G1->setEnabled(true);
+            luk8G1->setAccessibleName("zajete");
              wyslijWiadomosc("017|");
         }
     }
     else if (tmp2 == "m" || tmp2 == "h")
     {
-        if (miecz1G1->pixmap() == 0) {
+        if (miecz1G1->accessibleName()=="wolne") {
         miecz1G1->setPixmap(pixmap);
+        miecz1G1->setAccessibleName("zajete");
          wyslijWiadomosc("010|");
         }
-        else if (miecz2G1->pixmap() == 0) {
+        else if (miecz2G1->accessibleName()=="wolne") {
             miecz2G1->setPixmap(pixmap);
+            miecz2G1->setAccessibleName("zajete");
              wyslijWiadomosc("011|");
         }
-        else if (miecz3G1->isEnabled() == false) {
+        else if (miecz3G1->accessibleName()=="wolne") {
             miecz3G1->setPixmap(pixmap);
-            miecz3G1->setEnabled(true);
+            miecz3G1->setAccessibleName("zajete");
              wyslijWiadomosc("012|");
         }
-        else if (miecz4G1->isEnabled() == false) {
+        else if (miecz4G1->accessibleName()=="wolne") {
             miecz4G1->setPixmap(pixmap);
-            miecz4G1->setEnabled(true);
+            miecz4G1->setAccessibleName("zajete");
              wyslijWiadomosc("013|");
         }
-        else if (miecz5G1->isEnabled() == false) {
+        else if (miecz5G1->accessibleName()=="wolne") {
             miecz5G1->setPixmap(pixmap);
-            miecz5G1->setEnabled(true);
+            miecz5G1->setAccessibleName("zajete");
              wyslijWiadomosc("014|");
         }
-        else if (miecz6G1->isEnabled() == false) {
+        else if (miecz6G1->accessibleName()=="wolne") {
             miecz6G1->setPixmap(pixmap);
-            miecz6G1->setEnabled(true);
+            miecz6G1->setAccessibleName("zajete");
             wyslijWiadomosc("015|");
         }
-        else if (miecz7G1->isEnabled() == false) {
+        else if (miecz7G1->accessibleName()=="wolne") {
             miecz7G1->setPixmap(pixmap);
-            miecz7G1->setEnabled(true);
+            miecz7G1->setAccessibleName("zajete");
             wyslijWiadomosc("016|");
         }
         else {
             miecz8G1->setPixmap(pixmap);
-            miecz8G1->setEnabled(true);
+            miecz8G1->setAccessibleName("zajete");
              wyslijWiadomosc("017|");
         }
     }
     else
     {
         specG1->setPixmap(pixmap);
-        specG1->setEnabled(true);
+        specG1->setAccessibleName("zajete");
         wyslijWiadomosc("018|");
     }
 }
@@ -715,119 +716,117 @@ void Klient::inicjujKolejnaPartie()
     pushButtonPasG1->setEnabled(true);
 
 
-    QString pixmap = ":ikony/null.png";
+    QPixmap pixmap(42,80);
+    pixmap.fill(Qt::transparent);
 
     kata1G1->setPixmap(pixmap);
-    kata1G1->setEnabled(false);
+    kata1G1->setAccessibleName("wolne");
     kata2G1->setPixmap(pixmap);
-    kata2G1->setEnabled(false);
+    kata2G1->setAccessibleName("wolne");
     kata3G1->setPixmap(pixmap);
-    kata3G1->setEnabled(false);
+    kata3G1->setAccessibleName("wolne");
     kata4G1->setPixmap(pixmap);
-    kata4G1->setEnabled(false);
+    kata4G1->setAccessibleName("wolne");
     kata5G1->setPixmap(pixmap);
-    kata5G1->setEnabled(false);
+    kata5G1->setAccessibleName("wolne");
     kata6G1->setPixmap(pixmap);
-    kata6G1->setEnabled(false);
+    kata6G1->setAccessibleName("wolne");
     kata7G1->setPixmap(pixmap);
-    kata7G1->setEnabled(false);
+    kata7G1->setAccessibleName("wolne");
     kata8G1->setPixmap(pixmap);
-    kata8G1->setEnabled(false);
+    kata8G1->setAccessibleName("wolne");
 
     luk1G1->setPixmap(pixmap);
-    luk1G1->setEnabled(false);
+    luk1G1->setAccessibleName("wolne");
     luk2G1->setPixmap(pixmap);
-    luk2G1->setEnabled(false);
+    luk2G1->setAccessibleName("wolne");
     luk3G1->setPixmap(pixmap);
-    luk3G1->setEnabled(false);
+    luk3G1->setAccessibleName("wolne");
     luk4G1->setPixmap(pixmap);
-    luk4G1->setEnabled(false);
+    luk4G1->setAccessibleName("wolne");
     luk5G1->setPixmap(pixmap);
-    luk5G1->setEnabled(false);
+    luk5G1->setAccessibleName("wolne");
     luk6G1->setPixmap(pixmap);
-    luk6G1->setEnabled(false);
+    luk6G1->setAccessibleName("wolne");
     luk7G1->setPixmap(pixmap);
-    luk7G1->setEnabled(false);
+    luk7G1->setAccessibleName("wolne");
     luk8G1->setPixmap(pixmap);
-    luk8G1->setEnabled(false);
-
-    QPixmap pm4(50,80);
-    pm4.fill(Qt::transparent); //
+    luk8G1->setAccessibleName("wolne");
 
 
     miecz1G1->setPixmap(pixmap);
-    miecz1G1->setEnabled(false);
+    miecz1G1->setAccessibleName("wolne");
     miecz2G1->setPixmap(pixmap);
-    miecz2G1->setEnabled(false);
+    miecz2G1->setAccessibleName("wolne");
     miecz3G1->setPixmap(pixmap);
-    miecz3G1->setEnabled(false);
+    miecz3G1->setAccessibleName("wolne");
     miecz4G1->setPixmap(pixmap);
-    miecz4G1->setEnabled(false);
+    miecz4G1->setAccessibleName("wolne");
     miecz5G1->setPixmap(pixmap);
-    miecz5G1->setEnabled(false);
+    miecz5G1->setAccessibleName("wolne");
     miecz6G1->setPixmap(pixmap);
-    miecz6G1->setEnabled(false);
+    miecz6G1->setAccessibleName("wolne");
     miecz7G1->setPixmap(pixmap);
-    miecz7G1->setEnabled(false);
+    miecz7G1->setAccessibleName("wolne");
     miecz8G1->setPixmap(pixmap);
-    miecz8G1->setEnabled(false);
+    miecz8G1->setAccessibleName("wolne");
 
     kata1G2->setPixmap(pixmap);
-    kata1G2->setEnabled(false);
+    kata1G2->setAccessibleName("wolne");
     kata2G2->setPixmap(pixmap);
-    kata2G2->setEnabled(false);
+    kata2G2->setAccessibleName("wolne");
     kata3G2->setPixmap(pixmap);
-    kata3G2->setEnabled(false);
+    kata3G2->setAccessibleName("wolne");
     kata4G2->setPixmap(pixmap);
-    kata4G2->setEnabled(false);
+    kata4G2->setAccessibleName("wolne");
     kata5G2->setPixmap(pixmap);
-    kata5G2->setEnabled(false);
+    kata5G2->setAccessibleName("wolne");
     kata6G2->setPixmap(pixmap);
-    kata6G2->setEnabled(false);
+    kata6G2->setAccessibleName("wolne");
     kata7G2->setPixmap(pixmap);
-    kata7G2->setEnabled(false);
+    kata7G2->setAccessibleName("wolne");
     kata8G2->setPixmap(pixmap);
-    kata8G2->setEnabled(false);
+    kata8G2->setAccessibleName("wolne");
 
     luk1G2->setPixmap(pixmap);
-    luk1G2->setEnabled(false);
+    luk1G2->setAccessibleName("wolne");
     luk2G2->setPixmap(pixmap);
-    luk2G2->setEnabled(false);
+    luk2G2->setAccessibleName("wolne");
     luk3G2->setPixmap(pixmap);
-    luk3G2->setEnabled(false);
+    luk3G2->setAccessibleName("wolne");
     luk4G2->setPixmap(pixmap);
-    luk4G2->setEnabled(false);
+    luk4G2->setAccessibleName("wolne");
     luk5G2->setPixmap(pixmap);
-    luk5G2->setEnabled(false);
+    luk5G2->setAccessibleName("wolne");
     luk6G2->setPixmap(pixmap);
-    luk6G2->setEnabled(false);
+    luk6G2->setAccessibleName("wolne");
     luk7G2->setPixmap(pixmap);
-    luk7G2->setEnabled(false);
+    luk7G2->setAccessibleName("wolne");
     luk8G2->setPixmap(pixmap);
-    luk8G2->setEnabled(false);
+    luk8G2->setAccessibleName("wolne");
 
     miecz1G2->setPixmap(pixmap);
-    miecz1G2->setEnabled(false);
+    miecz1G2->setAccessibleName("wolne");
     miecz2G2->setPixmap(pixmap);
-    miecz2G2->setEnabled(false);
+    miecz2G2->setAccessibleName("wolne");
     miecz3G2->setPixmap(pixmap);
-    miecz3G2->setEnabled(false);
+    miecz3G2->setAccessibleName("wolne");
     miecz4G2->setPixmap(pixmap);
-    miecz4G2->setEnabled(false);
+    miecz4G2->setAccessibleName("wolne");
     miecz5G2->setPixmap(pixmap);
-    miecz5G2->setEnabled(false);
+    miecz5G2->setAccessibleName("wolne");
     miecz6G2->setPixmap(pixmap);
-    miecz6G2->setEnabled(false);
+    miecz6G2->setAccessibleName("wolne");
     miecz7G2->setPixmap(pixmap);
-    miecz7G2->setEnabled(false);
+    miecz7G2->setAccessibleName("wolne");
     miecz8G2->setPixmap(pixmap);
-    miecz8G2->setEnabled(false);
+    miecz8G2->setAccessibleName("wolne");
 
     specG1->setPixmap(pixmap);
-    specG1->setEnabled(false);
+    specG1->setAccessibleName("wolne");
 
     specG2->setPixmap(pixmap);
-    specG2->setEnabled(false);
+    specG2->setAccessibleName("wolne");
 
 
 

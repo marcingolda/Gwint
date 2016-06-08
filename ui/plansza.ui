@@ -47,7 +47,7 @@
    </property>
    <widget class="QLabel" name="specG2">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -69,16 +69,16 @@
       <height>80</height>
      </size>
     </property>
+    <property name="accessibleName">
+     <string>wolne</string>
+    </property>
     <property name="text">
      <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -105,7 +105,7 @@
     </property>
     <widget class="QLabel" name="miecz2G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -126,6 +126,9 @@
        <width>42</width>
        <height>80</height>
       </size>
+     </property>
+     <property name="accessibleName">
+      <string>wolne</string>
      </property>
      <property name="text">
       <string/>
@@ -133,7 +136,7 @@
     </widget>
     <widget class="QLabel" name="miecz1G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -154,6 +157,9 @@
        <width>42</width>
        <height>80</height>
       </size>
+     </property>
+     <property name="accessibleName">
+      <string>wolne</string>
      </property>
      <property name="text">
       <string/>
@@ -161,7 +167,7 @@
     </widget>
     <widget class="QLabel" name="miecz3G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -183,16 +189,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="miecz4G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -214,16 +220,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="miecz6G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -245,16 +251,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="miecz7G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -276,16 +282,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="luk1G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -307,16 +313,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="luk2G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -338,16 +344,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="luk3G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -369,16 +375,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="luk4G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -400,16 +406,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="luk5G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -431,16 +437,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="luk6G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -462,16 +468,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="luk7G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -493,16 +499,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="miecz8G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -524,16 +530,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="luk8G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -555,16 +561,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata1G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -586,16 +592,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata2G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -617,16 +623,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata3G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -648,16 +654,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata4G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -679,16 +685,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata5G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -710,16 +716,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata6G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -741,16 +747,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata7G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -772,16 +778,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata8G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -803,16 +809,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="miecz5G1">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -834,11 +840,11 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
    </widget>
@@ -1036,7 +1042,7 @@
     </property>
     <widget class="QLabel" name="luk4G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1058,16 +1064,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="luk5G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1089,16 +1095,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="luk6G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1120,16 +1126,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="luk7G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1151,16 +1157,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="miecz4G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1182,16 +1188,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="miecz6G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1213,16 +1219,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="miecz7G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1244,16 +1250,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata4G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1275,16 +1281,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata3G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1306,16 +1312,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata5G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1337,16 +1343,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata6G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1368,16 +1374,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata7G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1399,16 +1405,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata2G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1430,16 +1436,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata1G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1461,16 +1467,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="luk3G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1492,16 +1498,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="luk2G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1523,16 +1529,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="luk1G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1554,16 +1560,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="miecz2G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1585,16 +1591,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="miecz1G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1616,16 +1622,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="miecz3G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1647,16 +1653,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="kata8G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1678,16 +1684,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="luk8G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1709,16 +1715,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="miecz8G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1740,16 +1746,16 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="miecz5G2">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1771,11 +1777,11 @@
        <height>80</height>
       </size>
      </property>
+     <property name="accessibleName">
+      <string>wolne</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
      </property>
     </widget>
    </widget>
@@ -2706,10 +2712,10 @@
          <cursorShape>ArrowCursor</cursorShape>
         </property>
         <property name="text">
-         <string>0</string>
+         <string/>
         </property>
         <property name="cursorPosition">
-         <number>1</number>
+         <number>0</number>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -2829,7 +2835,7 @@
    </widget>
    <widget class="QLabel" name="specG1">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -2851,11 +2857,11 @@
       <height>80</height>
      </size>
     </property>
+    <property name="accessibleName">
+     <string>wolne</string>
+    </property>
     <property name="text">
      <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../resources/cards.qrc">:/ikony/null.png</pixmap>
     </property>
    </widget>
   </widget>
