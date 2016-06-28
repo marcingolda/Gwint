@@ -1,7 +1,7 @@
 #ifndef H_KONIEC
 #define H_KONIEC
 
-#include <QtGui>
+#include <QtWidgets>
 
 #include "ui_koniec.h"
 

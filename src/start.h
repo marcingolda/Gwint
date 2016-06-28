@@ -1,7 +1,7 @@
 #ifndef H_START
 #define H_START
 
-#include <QtGui>
+#include <QtWidgets>
 
 
 #include "ui_start.h"
