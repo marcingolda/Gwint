@@ -45,7 +45,7 @@
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <widget class="QLabel" name="specG2">
+   <widget class="clickablelabel" name="specG2">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -103,7 +103,7 @@
     <property name="title">
      <string/>
     </property>
-    <widget class="QLabel" name="miecz2G1">
+    <widget class="clickablelabel" name="miecz2G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -134,7 +134,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="miecz1G1">
+    <widget class="clickablelabel" name="miecz1G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -165,7 +165,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="miecz3G1">
+    <widget class="clickablelabel" name="miecz3G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -196,7 +196,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="miecz4G1">
+    <widget class="clickablelabel" name="miecz4G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -227,7 +227,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="miecz6G1">
+    <widget class="clickablelabel" name="miecz6G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -258,7 +258,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="miecz7G1">
+    <widget class="clickablelabel" name="miecz7G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -289,7 +289,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="luk1G1">
+    <widget class="clickablelabel" name="luk1G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -320,7 +320,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="luk2G1">
+    <widget class="clickablelabel" name="luk2G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -351,7 +351,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="luk3G1">
+    <widget class="clickablelabel" name="luk3G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -382,7 +382,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="luk4G1">
+    <widget class="clickablelabel" name="luk4G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -413,7 +413,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="luk5G1">
+    <widget class="clickablelabel" name="luk5G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -444,7 +444,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="luk6G1">
+    <widget class="clickablelabel" name="luk6G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -475,7 +475,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="luk7G1">
+    <widget class="clickablelabel" name="luk7G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -506,7 +506,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="miecz8G1">
+    <widget class="clickablelabel" name="miecz8G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -537,7 +537,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="luk8G1">
+    <widget class="clickablelabel" name="luk8G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -568,7 +568,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata1G1">
+    <widget class="clickablelabel" name="kata1G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -599,7 +599,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata2G1">
+    <widget class="clickablelabel" name="kata2G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -630,7 +630,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata3G1">
+    <widget class="clickablelabel" name="kata3G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -661,7 +661,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata4G1">
+    <widget class="clickablelabel" name="kata4G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -692,7 +692,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata5G1">
+    <widget class="clickablelabel" name="kata5G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -723,7 +723,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata6G1">
+    <widget class="clickablelabel" name="kata6G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -754,7 +754,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata7G1">
+    <widget class="clickablelabel" name="kata7G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -785,7 +785,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata8G1">
+    <widget class="clickablelabel" name="kata8G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -816,7 +816,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="miecz5G1">
+    <widget class="clickablelabel" name="miecz5G1">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1040,7 +1040,7 @@
     <property name="title">
      <string/>
     </property>
-    <widget class="QLabel" name="luk4G2">
+    <widget class="clickablelabel" name="luk4G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1071,7 +1071,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="luk5G2">
+    <widget class="clickablelabel" name="luk5G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1102,7 +1102,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="luk6G2">
+    <widget class="clickablelabel" name="luk6G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1133,7 +1133,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="luk7G2">
+    <widget class="clickablelabel" name="luk7G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1164,7 +1164,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="miecz4G2">
+    <widget class="clickablelabel" name="miecz4G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1195,7 +1195,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="miecz6G2">
+    <widget class="clickablelabel" name="miecz6G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1226,7 +1226,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="miecz7G2">
+    <widget class="clickablelabel" name="miecz7G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1257,7 +1257,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata4G2">
+    <widget class="clickablelabel" name="kata4G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1288,7 +1288,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata3G2">
+    <widget class="clickablelabel" name="kata3G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1319,7 +1319,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata5G2">
+    <widget class="clickablelabel" name="kata5G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1350,7 +1350,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata6G2">
+    <widget class="clickablelabel" name="kata6G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1381,7 +1381,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata7G2">
+    <widget class="clickablelabel" name="kata7G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1412,7 +1412,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata2G2">
+    <widget class="clickablelabel" name="kata2G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1443,7 +1443,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata1G2">
+    <widget class="clickablelabel" name="kata1G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1474,7 +1474,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="luk3G2">
+    <widget class="clickablelabel" name="luk3G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1505,7 +1505,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="luk2G2">
+    <widget class="clickablelabel" name="luk2G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1536,7 +1536,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="luk1G2">
+    <widget class="clickablelabel" name="luk1G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1567,7 +1567,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="miecz2G2">
+    <widget class="clickablelabel" name="miecz2G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1598,7 +1598,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="miecz1G2">
+    <widget class="clickablelabel" name="miecz1G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1629,7 +1629,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="miecz3G2">
+    <widget class="clickablelabel" name="miecz3G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1660,7 +1660,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="kata8G2">
+    <widget class="clickablelabel" name="kata8G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1691,7 +1691,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="luk8G2">
+    <widget class="clickablelabel" name="luk8G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1722,7 +1722,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="miecz8G2">
+    <widget class="clickablelabel" name="miecz8G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1753,7 +1753,7 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="miecz5G2">
+    <widget class="clickablelabel" name="miecz5G2">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -2833,7 +2833,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="specG1">
+   <widget class="clickablelabel" name="specG1">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -2855,6 +2855,37 @@
      <size>
       <width>42</width>
       <height>80</height>
+     </size>
+    </property>
+    <property name="accessibleName">
+     <string>wolne</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="clickablelabel" name="kartaPodglad">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>340</y>
+      <width>70</width>
+      <height>130</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>70</width>
+      <height>130</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>70</width>
+      <height>130</height>
      </size>
     </property>
     <property name="accessibleName">
@@ -2891,6 +2922,13 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>clickablelabel</class>
+   <extends>QLabel</extends>
+   <header>clickablelabel.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>lineEditCardsG2</tabstop>
   <tabstop>lineEditRundyG2</tabstop>

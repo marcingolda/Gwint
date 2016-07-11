@@ -21,7 +21,8 @@ HEADERS += src/gracz.h \
            src/server.h \
            src/start.h \
            src/talia.h \
-           src/thread.h
+           src/thread.h \
+    src/clickablelabel.h
 FORMS +=   ui/koniec.ui \
            ui/plansza.ui \
            ui/start.ui
@@ -34,6 +35,7 @@ SOURCES += src/gracz.cpp \
            src/server.cpp \
            src/start.cpp \
            src/talia.cpp \
-           src/thread.cpp
+           src/thread.cpp \
+    src/clickablelabel.cpp
 RESOURCES += resources/cards.qrc
 

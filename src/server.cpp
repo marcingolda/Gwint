@@ -622,14 +622,10 @@ void Server::ustawIkony()
         pushButtonG2C10->setIcon(QIcon(":ikony/null.png"));
 }
 
-void Server::klikKarta()
+void Server::rzucKarte(QString tmp1, std::string tmp2)
 {
-
-    QString tmp1;
     tmp1.setNum(g2->getRzucona()->getNumer());
     QString carta1 = ":talie2/" + rodzajTalii + "/" + tmp1 + ".png";
-
-    QString tmp2 = g2->getRzucona()->getRodzaj();
 
     if(tmp2=="k")
     {
@@ -679,7 +675,7 @@ void Server::klikKarta()
         if (luk1G2->accessibleName()=="wolne") {
         luk1G2->setPixmap(carta1);
         luk1G2->setAccessibleName("zajete");
-         wyslijWiadomosc("04l0" + tmp1 + "|");
+         wyslijWiadomosc("04l0|");
         }
         else if (luk2G2->accessibleName()=="wolne") {
             luk2G2->setPixmap(carta1);
@@ -717,7 +713,7 @@ void Server::klikKarta()
              wyslijWiadomosc("04l7" + tmp1 + "|");
         }
     }
-    else if (tmp2 == "m" || tmp2 == "h")
+    else if (tmp2 == "m")
     {
         if (miecz1G2->accessibleName()=="wolne") {
         miecz1G2->setPixmap(carta1);
@@ -767,19 +763,166 @@ void Server::klikKarta()
         wyslijWiadomosc("0430" + tmp1 + "|");
     }
 
+    int temp = tmp1.toInt();
+    switch (temp){
+        case 1:
+            pushButtonG2C1->setHidden(true);
+            break;
+        case 2:
+            pushButtonG2C2->setHidden(true);
+            break;
+        case 3:
+            pushButtonG2C3->setHidden(true);
+            break;
+        case 4:
+            pushButtonG2C4->setHidden(true);
+            break;
+        case 5:
+            pushButtonG2C5->setHidden(true);
+            break;
+        case 6:
+            pushButtonG2C6->setHidden(true);
+            break;
+        case 7:
+            pushButtonG2C7->setHidden(true);
+            break;
+        case 8:
+            pushButtonG2C8->setHidden(true);
+            break;
+    }
+
+    miecz1G2->setAutoFillBackground(false);
+    miecz2G2->setAutoFillBackground(false);
+    miecz3G2->setAutoFillBackground(false);
+    miecz4G2->setAutoFillBackground(false);
+    miecz5G2->setAutoFillBackground(false);
+    miecz6G2->setAutoFillBackground(false);
+    miecz7G2->setAutoFillBackground(false);
+    miecz8G2->setAutoFillBackground(false);
+    luk1G2->setAutoFillBackground(false);
+    luk2G2->setAutoFillBackground(false);
+    luk3G2->setAutoFillBackground(false);
+    luk4G2->setAutoFillBackground(false);
+    luk5G2->setAutoFillBackground(false);
+    luk6G2->setAutoFillBackground(false);
+    luk7G2->setAutoFillBackground(false);
+    luk8G2->setAutoFillBackground(false);
+    kata1G2->setAutoFillBackground(false);
+    kata2G2->setAutoFillBackground(false);
+    kata3G2->setAutoFillBackground(false);
+    kata4G2->setAutoFillBackground(false);
+    kata5G2->setAutoFillBackground(false);
+    kata6G2->setAutoFillBackground(false);
+    kata7G2->setAutoFillBackground(false);
+    kata8G2->setAutoFillBackground(false);
+
+    niewidoczneG2();
+    wyslijWiadomosc("12" + tmp1 +"|");
     przyznajPunkty(2);
 
 }
 
+void Server::klikKarta(int tmp1)
+{
+    Karta* karta = g2->getRzucona();
+    QString podglad = ":talie/" + rodzajTalii + "/" + karta->getNumer() + ".png";
+    kartaPodglad->setPixmap(podglad);
+
+
+
+    QPalette sample_palette;
+    sample_palette.setColor(QPalette::Window, QColor(220, 220, 70, 127));
+
+    if (karta->getRodzaj() == "m" || karta->getRodzaj() == "h" || karta->getRodzaj() == "rog" || karta->getRodzaj() == "mroz" || karta->getRodzaj() == "spec"){
+        miecz1G2->setAutoFillBackground(true);
+        miecz1G2->setPalette(sample_palette);
+        miecz2G2->setAutoFillBackground(true);
+        miecz2G2->setPalette(sample_palette);
+        miecz3G2->setAutoFillBackground(true);
+        miecz3G2->setPalette(sample_palette);
+        miecz4G2->setAutoFillBackground(true);
+        miecz4G2->setPalette(sample_palette);
+        miecz5G2->setAutoFillBackground(true);
+        miecz5G2->setPalette(sample_palette);
+        miecz6G2->setAutoFillBackground(true);
+        miecz6G2->setPalette(sample_palette);
+        miecz7G2->setAutoFillBackground(true);
+        miecz7G2->setPalette(sample_palette);
+        miecz8G2->setAutoFillBackground(true);
+        miecz8G2->setPalette(sample_palette);
+        connect(miecz1G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "m")));
+        connect(miecz2G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "m")));
+        connect(miecz3G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "m")));
+        connect(miecz4G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "m")));
+        connect(miecz5G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "m")));
+        connect(miecz6G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "m")));
+        connect(miecz7G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "m")));
+        connect(miecz8G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "m")));
+    }
+    if (karta->getRodzaj() == "l" || karta->getRodzaj() == "h" || karta->getRodzaj() == "rog" || karta->getRodzaj() == "mgla" || karta->getRodzaj() == "spec"){
+        luk1G2->setAutoFillBackground(true);
+        luk1G2->setPalette(sample_palette);
+        luk2G2->setAutoFillBackground(true);
+        luk2G2->setPalette(sample_palette);
+        luk3G2->setAutoFillBackground(true);
+        luk3G2->setPalette(sample_palette);
+        luk4G2->setAutoFillBackground(true);
+        luk4G2->setPalette(sample_palette);
+        luk5G2->setAutoFillBackground(true);
+        luk5G2->setPalette(sample_palette);
+        luk6G2->setAutoFillBackground(true);
+        luk6G2->setPalette(sample_palette);
+        luk7G2->setAutoFillBackground(true);
+        luk7G2->setPalette(sample_palette);
+        luk8G2->setAutoFillBackground(true);
+        luk8G2->setPalette(sample_palette);
+        connect(luk1G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "l")));
+        connect(luk2G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "l")));
+        connect(luk3G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "l")));
+        connect(luk4G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "l")));
+        connect(luk5G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "l")));
+        connect(luk6G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "l")));
+        connect(luk7G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "l")));
+        connect(luk8G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "l")));
+    }
+    if (karta->getRodzaj() == "k" || karta->getRodzaj() == "rog" || karta->getRodzaj() == "mgla" || karta->getRodzaj() == "spec"){
+        kata1G2->setAutoFillBackground(true);
+        kata1G2->setPalette(sample_palette);
+        kata2G2->setAutoFillBackground(true);
+        kata2G2->setPalette(sample_palette);
+        kata3G2->setAutoFillBackground(true);
+        kata3G2->setPalette(sample_palette);
+        kata4G2->setAutoFillBackground(true);
+        kata4G2->setPalette(sample_palette);
+        kata5G2->setAutoFillBackground(true);
+        kata5G2->setPalette(sample_palette);
+        kata6G2->setAutoFillBackground(true);
+        kata6G2->setPalette(sample_palette);
+        kata7G2->setAutoFillBackground(true);
+        kata7G2->setPalette(sample_palette);
+        kata8G2->setAutoFillBackground(true);
+        kata8G2->setPalette(sample_palette);
+        connect(kata1G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "k")));
+        connect(kata2G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "k")));
+        connect(kata3G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "k")));
+        connect(kata4G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "k")));
+        connect(kata5G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "k")));
+        connect(kata6G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "k")));
+        connect(kata7G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "k")));
+        connect(kata8G2, SIGNAL(clicked()), this, SLOT(rzucKarte(tmp1, "k")));
+    }
+}
+
+
 void Server::klikKarta1()
 {
     g2->rzuconaKarta(0);
-    pushButtonG2C1->setHidden(true);
-    niewidoczneG2();
+    //pushButtonG2C1->setHidden(true);
+    //niewidoczneG2();
 
 
-    wyslijWiadomosc("120|");
-    klikKarta();
+    //wyslijWiadomosc("120|");
+    klikKarta(0);
 
     pos2 = 0;
 
@@ -788,14 +931,14 @@ void Server::klikKarta1()
 void Server::klikKarta2()
 {
     g2->rzuconaKarta(1);
-    pushButtonG2C2->setHidden(true);
-    niewidoczneG2();
+    //pushButtonG2C2->setHidden(true);
+    //niewidoczneG2();
 
 
 
 
-    wyslijWiadomosc("121|");
-    klikKarta();
+    //wyslijWiadomosc("121|");
+    klikKarta(1);
 
     pos2 = 1;
 }
@@ -803,13 +946,13 @@ void Server::klikKarta2()
 void Server::klikKarta3()
 {
     g2->rzuconaKarta(2);
-    pushButtonG2C3->setHidden(true);
-    niewidoczneG2();
+   // pushButtonG2C3->setHidden(true);
+    //niewidoczneG2();
 
 
 
-    wyslijWiadomosc("122|");
-    klikKarta();
+  //  wyslijWiadomosc("122|");
+    klikKarta(2);
 
     pos2 = 2;
 }
@@ -817,11 +960,11 @@ void Server::klikKarta3()
 void Server::klikKarta4()
 {
     g2->rzuconaKarta(3);
-    pushButtonG2C4->setHidden(true);
-    niewidoczneG2();
+  //  pushButtonG2C4->setHidden(true);
+   // niewidoczneG2();
 
-    wyslijWiadomosc("123|");
-    klikKarta();
+   // wyslijWiadomosc("123|");
+    klikKarta(3);
 
     pos2 = 3;
 }
@@ -829,32 +972,32 @@ void Server::klikKarta4()
 void Server::klikKarta5()
 {
     g2->rzuconaKarta(4);
-    pushButtonG2C5->setHidden(true);
-    niewidoczneG2();
+  //  pushButtonG2C5->setHidden(true);
+  //  niewidoczneG2();
 
-    wyslijWiadomosc("124|");
-    klikKarta();
+  //  wyslijWiadomosc("124|");
+    klikKarta(4);
     pos2 = 4;
 }
 
 void Server::klikKarta6()
 {
     g2->rzuconaKarta(5);
-    pushButtonG2C6->setHidden(true);
-   niewidoczneG2();
-   wyslijWiadomosc("125|");
-   klikKarta();
+   // pushButtonG2C6->setHidden(true);
+ //  niewidoczneG2();
+ //  wyslijWiadomosc("125|");
+   klikKarta(5);
     pos2 = 5;
 }
 
 void Server::klikKarta7()
 {
     g2->rzuconaKarta(6);
-    pushButtonG2C7->setHidden(true);
-    niewidoczneG2();
+ //   pushButtonG2C7->setHidden(true);
+ //   niewidoczneG2();
 
-    wyslijWiadomosc("126|");
-    klikKarta();
+  //  wyslijWiadomosc("126|");
+    klikKarta(6);
 
     pos2 = 6;
 }
@@ -862,11 +1005,11 @@ void Server::klikKarta7()
 void Server::klikKarta8()
 {
     g2->rzuconaKarta(7);
-    pushButtonG2C8->setHidden(true);
-    niewidoczneG2();
+  //  pushButtonG2C8->setHidden(true);
+  //  niewidoczneG2();
 
-    wyslijWiadomosc("127|");
-    klikKarta();
+ //   wyslijWiadomosc("127|");
+    klikKarta(7);
     pos2 = 7;
 
 }
@@ -874,23 +1017,23 @@ void Server::klikKarta8()
 void Server::klikKarta9()
 {
     g2->rzuconaKarta(8);
-    pushButtonG2C9->setHidden(true);
-    niewidoczneG2();
+  //  pushButtonG2C9->setHidden(true);
+  //  niewidoczneG2();
 
-    wyslijWiadomosc("128|");
-    klikKarta();
+  //  wyslijWiadomosc("128|");
+    klikKarta(8);
     pos2 = 8;
 }
 
 void Server::klikKarta10()
 {
     g2->rzuconaKarta(9);
-    pushButtonG2C10->setHidden(true);
+  //  pushButtonG2C10->setHidden(true);
 
-    niewidoczneG2();
+  //  niewidoczneG2();
 
-    wyslijWiadomosc("129|");
-    klikKarta();
+  //  wyslijWiadomosc("129|");
+    klikKarta(9);
 
     pos2 = 9;
 }

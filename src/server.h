@@ -6,6 +6,7 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlResult>
+#include <string>
 
 #include "talia.h"
 #include "thread.h"
@@ -13,6 +14,8 @@
 #include "gracz.h"
 #include "koniec.h"
 #include "start.h"
+#include "clickablelabel.h"
+
 
 #include "ui_plansza.h"
 
@@ -49,7 +52,8 @@ public:
     void przeciwnikPas(QString);
     void niewidoczneG1();
     void niewidoczneG2();
-    void klikKarta();
+    void rzucKarte(QString tmp1, std::string tmp2);
+    void klikKarta(int tmp1);
 
     void wrocDoMenu();
     void ustawIkony();
@@ -95,7 +99,6 @@ private:
     Thread *th;
     bool Pas;
     bool rywalPas;
-
 
     void (Server::*metoda[7])(QString);
 

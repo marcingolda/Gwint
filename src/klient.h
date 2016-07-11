@@ -9,6 +9,7 @@
 
 #include "koniec.h"
 #include "start.h"
+#include "clickablelabel.h"
 
 
 #include "ui_plansza.h"
