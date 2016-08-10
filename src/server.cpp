@@ -299,10 +299,12 @@ void Server::kartyKlienta(QString c)
 {
     QString poz = c.mid(0, 1);
 
+
         QString tmp1;
         tmp1.setNum(g1->getRzucona()->getNumer());
         QString carta1 = ":talie2/" + rodzajTaliiG1 + "/" + tmp1 + ".png";
         QString r = g1->getRzucona()->getRodzaj();
+
 
         if (r == "k")
         {
@@ -413,6 +415,14 @@ void Server::kartyKlienta(QString c)
         {
             specG1->setPixmap(QPixmap(carta1));
             specG1->setAccessibleName("zajete");
+
+
+                for(int i=0;i<10;i++)
+                   g1->zwiekszPunkty(g1->rzuconeKartyMiecz[i]->getSila());
+
+
+
+
         }
 
     przyznajPunkty(1);
@@ -765,6 +775,11 @@ void Server::klikKarta()
         specG2->setPixmap(carta1);
         specG2->setAccessibleName("zajete");
         wyslijWiadomosc("0430" + tmp1 + "|");
+
+            for(int i=0;i<10;i++)
+               g2->zwiekszPunkty(g2->rzuconeKartyMiecz[i]->getSila());
+
+
     }
 
     przyznajPunkty(2);
@@ -1156,6 +1171,17 @@ void Server::inicjujKolejnaPartie()
     specG2->setPixmap(pixmap);
     specG2->setAccessibleName("wolne");
 
+  /*
+    g1->rzuconeKartyKata[i] = null;
+    g1->rzuconeKartyLuk[i] = null;
+    g1->rzuconeKartyMiecz[i] = null;
+
+
+
+    g2->rzuconeKartyKata[i] = null;
+    g2->rzuconeKartyLuk[i] = null;
+    g2->rzuconeKartyMiecz[i] = null;
+    */
 
 }
 

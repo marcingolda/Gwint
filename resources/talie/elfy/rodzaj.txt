@@ -33,7 +33,5 @@ m
 m
 l
 m
-brak
-brak
-brak
+rd
 

@@ -2,6 +2,9 @@
 
 Gracz::Gracz(Karta *c1, Karta *c2, Karta *c3, Karta *c4, Karta *c5, Karta *c6, Karta *c7, Karta *c8, Karta *c9, Karta *c10)
 {
+    rzuconeKartyMiecz = new Karta*[10];
+    rzuconeKartyKata = new Karta*[10];
+    rzuconeKartyLuk = new Karta*[10];
     karta = new Karta*[10];
     karta[0] = c1;
     karta[1] = c2;
@@ -14,8 +17,19 @@ Gracz::Gracz(Karta *c1, Karta *c2, Karta *c3, Karta *c4, Karta *c5, Karta *c6, K
     karta[8] = c9;
     karta[9] = c10;
     punkty = 0;
-    rzucona = NULL;
+    Ki = 0;
+    Li = 0;
+    Mi = 0;
+
+    for(int i=0;i<10;i++)
+    {
+        rzuconeKartyMiecz[i]=new Karta(0);
+        rzuconeKartyKata[i]=new Karta(0);
+        rzuconeKartyLuk[i]=new Karta(0);
+    }
+
 }
+
 
 Gracz::~Gracz()
 {
@@ -28,9 +42,19 @@ Karta* Gracz::getKarta(int i)
     return karta[i];
 }
 
+
 void Gracz::rzuconaKarta(int i)
 {
     rzucona = karta[i];
+
+    QString rodzaj = rzucona->getRodzaj();
+
+    if(rodzaj == "m")
+        rzuconeKartyMiecz[Mi++] = rzucona;
+    else if(rodzaj =="l")
+        rzuconeKartyLuk[Li++] = rzucona;
+    else
+        rzuconeKartyKata[Ki++] = rzucona;
 }
 
 void Gracz::setNullKarta(int i)
@@ -61,4 +85,9 @@ int Gracz::getPunkty()
 void Gracz::zwiekszPunkty(int p)
 {
     punkty += p;
+}
+
+void Gracz::zmniejszPunkty(int p)
+{
+    punkty -=p;
 }

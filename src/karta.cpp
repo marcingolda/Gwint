@@ -9,6 +9,11 @@ Karta::Karta(QString r, int n, int s, QString m, int b)
     bohater = b;
 }
 
+Karta::Karta(int s)
+{
+    sila = s;
+}
+
 QString Karta::getRodzaj()
 {
     return rodzaj;

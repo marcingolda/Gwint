@@ -36,8 +36,6 @@
         <file>talie/ptwr/34.png</file>
         <file>talie/ptwr/35.png</file>
         <file>talie/ptwr/36.png</file>
-        <file>talie/ptwr/37.png</file>
-        <file>talie/ptwr/38.png</file>
         <file>talie/ptwr/bohater.txt</file>
         <file>talie/ptwr/legenda.txt</file>
         <file>talie/ptwr/moc.txt</file>
@@ -79,8 +77,6 @@
         <file>talie/ngrd/34.png</file>
         <file>talie/ngrd/35.png</file>
         <file>talie/ngrd/36.png</file>
-        <file>talie/ngrd/37.png</file>
-        <file>talie/ngrd/38.png</file>
         <file>talie/ngrd/bohater.txt</file>
         <file>talie/ngrd/legenda.txt</file>
         <file>talie/ngrd/moc.txt</file>
@@ -122,8 +118,6 @@
         <file>talie/kpln/34.png</file>
         <file>talie/kpln/35.png</file>
         <file>talie/kpln/36.png</file>
-        <file>talie/kpln/37.png</file>
-        <file>talie/kpln/38.png</file>
         <file>talie/kpln/bohater.txt</file>
         <file>talie/kpln/legenda.txt</file>
         <file>talie/kpln/moc.txt</file>
@@ -165,8 +159,6 @@
         <file>talie/elfy/34.png</file>
         <file>talie/elfy/35.png</file>
         <file>talie/elfy/36.png</file>
-        <file>talie/elfy/37.png</file>
-        <file>talie/elfy/38.png</file>
         <file>talie/elfy/bohater.txt</file>
         <file>talie/elfy/legenda.txt</file>
         <file>talie/elfy/moc.txt</file>
@@ -225,13 +217,6 @@
         <file>talie2/ptwr/34.png</file>
         <file>talie2/ptwr/35.png</file>
         <file>talie2/ptwr/36.png</file>
-        <file>talie2/ptwr/37.png</file>
-        <file>talie2/ptwr/38.png</file>
-        <file>talie2/ptwr/bohater.txt</file>
-        <file>talie2/ptwr/legenda.txt</file>
-        <file>talie2/ptwr/moc.txt</file>
-        <file>talie2/ptwr/rodzaj.txt</file>
-        <file>talie2/ptwr/sila.txt</file>
         <file>talie2/ngrd/1.png</file>
         <file>talie2/ngrd/2.png</file>
         <file>talie2/ngrd/3.png</file>
@@ -268,13 +253,6 @@
         <file>talie2/ngrd/34.png</file>
         <file>talie2/ngrd/35.png</file>
         <file>talie2/ngrd/36.png</file>
-        <file>talie2/ngrd/37.png</file>
-        <file>talie2/ngrd/38.png</file>
-        <file>talie2/ngrd/bohater.txt</file>
-        <file>talie2/ngrd/legenda.txt</file>
-        <file>talie2/ngrd/moc.txt</file>
-        <file>talie2/ngrd/rodzaj.txt</file>
-        <file>talie2/ngrd/sila.txt</file>
         <file>talie2/kpln/1.png</file>
         <file>talie2/kpln/2.png</file>
         <file>talie2/kpln/3.png</file>
@@ -311,13 +289,6 @@
         <file>talie2/kpln/34.png</file>
         <file>talie2/kpln/35.png</file>
         <file>talie2/kpln/36.png</file>
-        <file>talie2/kpln/37.png</file>
-        <file>talie2/kpln/38.png</file>
-        <file>talie2/kpln/bohater.txt</file>
-        <file>talie2/kpln/legenda.txt</file>
-        <file>talie2/kpln/moc.txt</file>
-        <file>talie2/kpln/rodzaj.txt</file>
-        <file>talie2/kpln/sila.txt</file>
         <file>talie2/elfy/1.png</file>
         <file>talie2/elfy/2.png</file>
         <file>talie2/elfy/3.png</file>
@@ -354,12 +325,5 @@
         <file>talie2/elfy/34.png</file>
         <file>talie2/elfy/35.png</file>
         <file>talie2/elfy/36.png</file>
-        <file>talie2/elfy/37.png</file>
-        <file>talie2/elfy/38.png</file>
-        <file>talie2/elfy/bohater.txt</file>
-        <file>talie2/elfy/legenda.txt</file>
-        <file>talie2/elfy/moc.txt</file>
-        <file>talie2/elfy/rodzaj.txt</file>
-        <file>talie2/elfy/sila.txt</file>
     </qresource>
 </RCC>

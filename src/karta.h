@@ -14,10 +14,12 @@ private:
 
 public:
     Karta(QString, int, int, QString, int);
+    Karta(int);
 
 	QString getRodzaj();
 	int getNumer();
 	int getSila();
+    void setSila(int);
     QString getMoc();
     int getBohater();
 

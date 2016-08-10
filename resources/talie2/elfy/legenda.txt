@@ -1,9 +1,0 @@
-b - braterstwo
-sz - szpiegostwo
-z - zrecznosc
-zm - zmartwychstanie
-w - wiez
-wm - wysokie morale 
-40 - pozoga
-30 - róg dowódcy
-20 - manekin do cwiczen

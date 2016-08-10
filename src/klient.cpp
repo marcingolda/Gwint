@@ -200,8 +200,6 @@ void Klient::ustawKartySerwera(QString c)
 
 
 
-
-
     if (r == "k")
     {
     if (poz == "0") {
