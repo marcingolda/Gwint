@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WyborRzedu</class>
+ <widget class="QDialog" name="WyborRzedu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>210</width>
+    <height>280</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Wybór Rzędu</string>
+  </property>
+  <widget class="QPushButton" name="obleznicze">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>60</y>
+     <width>140</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Jednostki oblężnicze</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="strzeleckie">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>120</y>
+     <width>140</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Jednostki strzeleckie</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="walczace">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>180</y>
+     <width>140</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Jednostki walczące</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

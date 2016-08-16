@@ -21,12 +21,7 @@ Gracz::Gracz(Karta *c1, Karta *c2, Karta *c3, Karta *c4, Karta *c5, Karta *c6, K
     Li = 0;
     Mi = 0;
 
-    for(int i=0;i<10;i++)
-    {
-        rzuconeKartyMiecz[i]=new Karta(0);
-        rzuconeKartyKata[i]=new Karta(0);
-        rzuconeKartyLuk[i]=new Karta(0);
-    }
+    wyczyscKarty();
 
 }
 
@@ -42,6 +37,15 @@ Karta* Gracz::getKarta(int i)
     return karta[i];
 }
 
+void Gracz::wyczyscKarty()
+{
+    for(int i=0;i<10;i++)
+    {
+        rzuconeKartyMiecz[i]=new Karta(0);
+        rzuconeKartyKata[i]=new Karta(0);
+        rzuconeKartyLuk[i]=new Karta(0);
+    }
+}
 
 void Gracz::rzuconaKarta(int i)
 {

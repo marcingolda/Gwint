@@ -553,7 +553,24 @@ QString pixmap = ":talie2/" + rodzajTalii + "/" + numer + ".png";
     {
         specG1->setPixmap(pixmap);
         specG1->setAccessibleName("zajete");
-        wyslijWiadomosc("018|");
+
+
+
+        WyborRzedu *wyborRzedu = new WyborRzedu();
+        wyborRzedu->exec();
+
+        if(wyborRzedu->getRzad() == "walczace")
+        {
+            wyslijWiadomosc("018w|");
+        }
+        else if(wyborRzedu->getRzad() == "strzeleckie")
+        {
+           wyslijWiadomosc("018s");
+        }
+        else
+        {
+           wyslijWiadomosc("018o");
+        }
     }
 }
 

@@ -6,7 +6,7 @@
 Talia::Talia(QString _talia)
 {
 
-    max = 36;
+    max = 38;
     kartaWtalii = new Karta*[max];
     losowaKarta = new Random(time(0));
     inicjalizuj(_talia);
@@ -73,7 +73,7 @@ void Talia::inicjalizuj(QString c)
             if (!plik.open(QIODevice::ReadOnly | QIODevice::Text) || (!plik2.open(QIODevice::ReadOnly | QIODevice::Text)) || (!plik3.open(QIODevice::ReadOnly | QIODevice::Text) || (!plik4.open(QIODevice::ReadOnly | QIODevice::Text))))
                     return;
 
-                  for (count=0;count<36;count++)
+                  for (count=0;count<38;count++)
                 kartaWtalii[count] = new Karta(in.readLine(), num++, in2.readLine().toInt(), in3.readLine(), in4.readLine().toInt());
 
 

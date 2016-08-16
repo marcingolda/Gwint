@@ -298,7 +298,7 @@ void Server::rodzajKlienta(QString c)
 void Server::kartyKlienta(QString c)
 {
     QString poz = c.mid(0, 1);
-
+    QString rzad = c.mid(1,1);
 
         QString tmp1;
         tmp1.setNum(g1->getRzucona()->getNumer());
@@ -416,9 +416,21 @@ void Server::kartyKlienta(QString c)
             specG1->setPixmap(QPixmap(carta1));
             specG1->setAccessibleName("zajete");
 
-
+            if(rzad == "w")
+            {
                 for(int i=0;i<10;i++)
                    g1->zwiekszPunkty(g1->rzuconeKartyMiecz[i]->getSila());
+            }
+            else if(rzad == "s")
+            {
+                for(int i=0;i<10;i++)
+                   g1->zwiekszPunkty(g1->rzuconeKartyLuk[i]->getSila());
+            }
+            else
+            {
+                for(int i=0;i<10;i++)
+                   g1->zwiekszPunkty(g1->rzuconeKartyKata[i]->getSila());
+            }
 
 
 
@@ -776,9 +788,26 @@ void Server::klikKarta()
         specG2->setAccessibleName("zajete");
         wyslijWiadomosc("0430" + tmp1 + "|");
 
-            for(int i=0;i<10;i++)
-               g2->zwiekszPunkty(g2->rzuconeKartyMiecz[i]->getSila());
 
+
+      WyborRzedu *wyborRzedu = new WyborRzedu();
+      wyborRzedu->exec();
+
+      if(wyborRzedu->getRzad() == "walczace")
+      {
+          for(int i=0;i<10;i++)
+             g2->zwiekszPunkty(g2->rzuconeKartyMiecz[i]->getSila());
+      }
+      else if(wyborRzedu->getRzad() == "strzeleckie")
+      {
+          for(int i=0;i<10;i++)
+             g2->zwiekszPunkty(g2->rzuconeKartyLuk[i]->getSila());
+      }
+      else
+      {
+          for(int i=0;i<10;i++)
+             g2->zwiekszPunkty(g2->rzuconeKartyKata[i]->getSila());
+      }
 
     }
 
@@ -1171,17 +1200,10 @@ void Server::inicjujKolejnaPartie()
     specG2->setPixmap(pixmap);
     specG2->setAccessibleName("wolne");
 
-  /*
-    g1->rzuconeKartyKata[i] = null;
-    g1->rzuconeKartyLuk[i] = null;
-    g1->rzuconeKartyMiecz[i] = null;
+    g1->wyczyscKarty();
+    g2->wyczyscKarty();
 
 
-
-    g2->rzuconeKartyKata[i] = null;
-    g2->rzuconeKartyLuk[i] = null;
-    g2->rzuconeKartyMiecz[i] = null;
-    */
 
 }
 
@@ -1189,18 +1211,6 @@ void Server::odbierzSygnalG1()
 {
     g1->setNullRzucona();
     g2->setNullRzucona();
-
-
-
-//        g1->dodajKarte(pos1, talia1->dajKarte());
-//        g2->dodajKarte(pos2, talia->dajKarte());
-//        ustawLiczbeKartG1();
-//        ustawLiczbeKartG2();
-//        QString num, pos;
-//        num.setNum(g1->getKarta(pos1)->getNumer());
-//        pos.setNum(pos1);
-//        wyslijWiadomosc("01" + pos + num + "|");
-
 
 
       ustawTure(1);
@@ -1212,18 +1222,6 @@ void Server::odbierzSygnalG2()
 {
     g1->setNullRzucona();
     g2->setNullRzucona();
-
-
-//        g2->dodajKarte(pos2, talia->dajKarte());
-//        g1->dodajKarte(pos1, talia1->dajKarte());
-//        ustawLiczbeKartG1();
-//        ustawLiczbeKartG2();
-//        QString num, pos;
-//        num.setNum(g1->getKarta(pos1)->getNumer());
-//        pos.setNum(pos1);
-//        wyslijWiadomosc("01" + pos + num  + "|");
-
-
 
 
     ustawTure(2);

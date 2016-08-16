@@ -9,7 +9,7 @@
 
 #include "koniec.h"
 #include "start.h"
-
+#include "ui/wyborrzedu.h"
 
 #include "ui_plansza.h"
 

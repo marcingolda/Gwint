@@ -27,6 +27,7 @@ public:
 	void dodajKarte(int, Karta*);
 	Karta* getRzucona();
 	void setNullRzucona();
+    void wyczyscKarty();
 	int getPunkty();
 	void zwiekszPunkty(int);
     void zmniejszPunkty(int);
