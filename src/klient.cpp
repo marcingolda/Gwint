@@ -50,7 +50,7 @@ Klient::Klient(QString _nick, QString _ip, int _port, QWidget *parent) :
     metoda[8] = &Klient::ustawLiczbeKartG1;
     metoda[9] = &Klient::ustawLiczbeRund;
     metoda[10] = &Klient::przeciwnikPas;
-    metoda[11] = &Klient::klikKarta;
+    metoda[11] = &Klient::klikKartaKlient;
     metoda[12] = &Klient::ktoraKartaSerwera;
 
 }
@@ -410,14 +410,20 @@ void Klient::niewidoczneG1()
     pushButtonPasG1->setEnabled(false);
 }
 
-void Klient::klikKarta(QString c)
+void Klient::klikKarta(QString c, QString c1)
 {
 
-QString tmp2 = c.mid(0,1);
+QString tmp2;
 QString numer;
+
 numer.setNum(c.mid(1).toShort());
 
 QString pixmap = ":talie2/" + rodzajTalii + "/" + numer + ".png";
+
+if(c1 != "")
+    tmp2 = c1;
+else
+    tmp2 = c.mid(0,1);
 
 
     if (tmp2 == "k")
@@ -425,7 +431,7 @@ QString pixmap = ":talie2/" + rodzajTalii + "/" + numer + ".png";
     if (kata1G1->accessibleName()=="wolne") {
     kata1G1->setPixmap(pixmap);
     kata1G1->setAccessibleName("zajete");
-     wyslijWiadomosc("010|");
+     wyslijWiadomosc("01x0k|");
     }
     else if (kata2G1->accessibleName()=="wolne") {
         kata2G1->setPixmap(pixmap);
@@ -435,118 +441,132 @@ QString pixmap = ":talie2/" + rodzajTalii + "/" + numer + ".png";
     else if (kata3G1->accessibleName()=="wolne") {
         kata3G1->setPixmap(pixmap);
         kata3G1->setAccessibleName("zajete");
-         wyslijWiadomosc("012|");
+         wyslijWiadomosc("01x2k|");
     }
     else if (kata4G1->accessibleName()=="wolne") {
         kata4G1->setPixmap(pixmap);
         kata4G1->setAccessibleName("zajete");
-         wyslijWiadomosc("013|");
+         wyslijWiadomosc("01x3k|");
     }
     else if (kata5G1->accessibleName()=="wolne") {
         kata5G1->setPixmap(pixmap);
         kata5G1->setAccessibleName("zajete");
-         wyslijWiadomosc("014|");
+         wyslijWiadomosc("01x4k|");
     }
     else if (kata6G1->accessibleName()=="wolne") {
         kata6G1->setPixmap(pixmap);
         kata6G1->setAccessibleName("zajete");
-        wyslijWiadomosc("015|");
+        wyslijWiadomosc("01x5k|");
     }
     else if (kata7G1->accessibleName()=="wolne") {
         kata7G1->setPixmap(pixmap);
         kata7G1->setAccessibleName("zajete");
-        wyslijWiadomosc("016|");
+        wyslijWiadomosc("01x6k|");
     }
     else {
         kata8G1->setPixmap(pixmap);
         kata8G1->setAccessibleName("zajete");
-         wyslijWiadomosc("017|");
+         wyslijWiadomosc("01x7k|");
     }
 }
     else if (tmp2 == "l")
     {
         if (luk1G1->accessibleName()=="wolne") {
-        luk1G1->setPixmap(pixmap);
+        luk1G1->setPixmap(QPixmap(pixmap));
         luk1G1->setAccessibleName("zajete");
-         wyslijWiadomosc("010|");
+         wyslijWiadomosc("01x0l|");
         }
         else if (luk2G1->accessibleName()=="wolne") {
             luk2G1->setPixmap(pixmap);
             luk2G1->setAccessibleName("zajete");
-             wyslijWiadomosc("011|");
+             wyslijWiadomosc("01x1l|");
         }
         else if (luk3G1->accessibleName()=="wolne") {
             luk3G1->setPixmap(pixmap);
             luk3G1->setAccessibleName("zajete");
-             wyslijWiadomosc("012|");
+             wyslijWiadomosc("01x2l|");
         }
         else if (luk4G1->accessibleName()=="wolne") {
             luk4G1->setPixmap(pixmap);
             luk4G1->setAccessibleName("zajete");
-             wyslijWiadomosc("013|");
+             wyslijWiadomosc("01x3l|");
         }
         else if (luk5G1->accessibleName()=="wolne") {
             luk5G1->setPixmap(pixmap);
             luk5G1->setAccessibleName("zajete");
-             wyslijWiadomosc("014|");
+             wyslijWiadomosc("01x4l|");
         }
         else if (luk6G1->accessibleName()=="wolne") {
             luk6G1->setPixmap(pixmap);
             luk6G1->setAccessibleName("zajete");
-            wyslijWiadomosc("015|");
+            wyslijWiadomosc("01x5l|");
         }
         else if (luk7G1->accessibleName()=="wolne") {
             luk7G1->setPixmap(pixmap);
             luk7G1->setAccessibleName("zajete");
-            wyslijWiadomosc("016|");
+            wyslijWiadomosc("01x6l|");
         }
         else {
             luk8G1->setPixmap(pixmap);
             luk8G1->setAccessibleName("zajete");
-             wyslijWiadomosc("017|");
+             wyslijWiadomosc("01x7l|");
         }
     }
-    else if (tmp2 == "m" || tmp2 == "h")
+    else if (tmp2 == "m")
     {
         if (miecz1G1->accessibleName()=="wolne") {
-        miecz1G1->setPixmap(pixmap);
+        miecz1G1->setPixmap(QPixmap(pixmap));
         miecz1G1->setAccessibleName("zajete");
-         wyslijWiadomosc("010|");
+         wyslijWiadomosc("01x0m|");
         }
         else if (miecz2G1->accessibleName()=="wolne") {
             miecz2G1->setPixmap(pixmap);
             miecz2G1->setAccessibleName("zajete");
-             wyslijWiadomosc("011|");
+             wyslijWiadomosc("01x1m|");
         }
         else if (miecz3G1->accessibleName()=="wolne") {
             miecz3G1->setPixmap(pixmap);
             miecz3G1->setAccessibleName("zajete");
-             wyslijWiadomosc("012|");
+             wyslijWiadomosc("01x2m|");
         }
         else if (miecz4G1->accessibleName()=="wolne") {
             miecz4G1->setPixmap(pixmap);
             miecz4G1->setAccessibleName("zajete");
-             wyslijWiadomosc("013|");
+             wyslijWiadomosc("01x3m|");
         }
         else if (miecz5G1->accessibleName()=="wolne") {
             miecz5G1->setPixmap(pixmap);
             miecz5G1->setAccessibleName("zajete");
-             wyslijWiadomosc("014|");
+             wyslijWiadomosc("01x4m|");
         }
         else if (miecz6G1->accessibleName()=="wolne") {
             miecz6G1->setPixmap(pixmap);
             miecz6G1->setAccessibleName("zajete");
-            wyslijWiadomosc("015|");
+            wyslijWiadomosc("01x5m|");
         }
         else if (miecz7G1->accessibleName()=="wolne") {
             miecz7G1->setPixmap(pixmap);
             miecz7G1->setAccessibleName("zajete");
-            wyslijWiadomosc("016|");
+            wyslijWiadomosc("01x6m|");
         }
         else {
             miecz8G1->setPixmap(pixmap);
             miecz8G1->setAccessibleName("zajete");
-             wyslijWiadomosc("017|");
+             wyslijWiadomosc("01x7m|");
+        }
+    }
+    else if(tmp2 == "h")
+    {
+        WyborRzedu *wyborRzedu = new WyborRzedu("podwojnyZasieg");
+        wyborRzedu->exec();
+
+        if(wyborRzedu->getRzad() == "walczace")
+        {
+            klikKarta(c,"m");
+        }
+        else if(wyborRzedu->getRzad() == "strzeleckie")
+        {
+            klikKarta(c,"l");
         }
     }
     else
@@ -555,22 +575,27 @@ QString pixmap = ":talie2/" + rodzajTalii + "/" + numer + ".png";
         specG1->setAccessibleName("zajete");
 
 
-        WyborRzedu *wyborRzedu = new WyborRzedu();
+        WyborRzedu *wyborRzedu = new WyborRzedu("");
         wyborRzedu->exec();
 
         if(wyborRzedu->getRzad() == "walczace")
         {
-            wyslijWiadomosc("018w|");
+            wyslijWiadomosc("01w8x|");
         }
         else if(wyborRzedu->getRzad() == "strzeleckie")
         {
-           wyslijWiadomosc("018s");
+           wyslijWiadomosc("01s8x");
         }
         else
         {
-           wyslijWiadomosc("018o");
+           wyslijWiadomosc("01o8x");
         }
     }
+}
+
+void Klient::klikKartaKlient(QString c)
+{
+    klikKarta(c,"");
 }
 
 void Klient::klikKarta1()

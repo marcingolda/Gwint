@@ -5,7 +5,7 @@
 QString ktoryRzad = "null";
 
 
-WyborRzedu::WyborRzedu(QWidget *parent) :
+WyborRzedu::WyborRzedu(QString c, QWidget *parent) :
     QDialog(parent)
 {
     setupUi(this);
@@ -14,7 +14,14 @@ WyborRzedu::WyborRzedu(QWidget *parent) :
     connect(obleznicze, SIGNAL(clicked()), this, SLOT(jednObleznicze()));
     connect(strzeleckie, SIGNAL(clicked()), this, SLOT(jednStrzeleckie()));
 
+    if (c == "podwojnyZasieg")
+    {
+        obleznicze->setVisible(false);
+    }
+
 }
+
+
 
 void WyborRzedu::jednWalczace()
 {

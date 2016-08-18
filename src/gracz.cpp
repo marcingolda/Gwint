@@ -51,14 +51,19 @@ void Gracz::rzuconaKarta(int i)
 {
     rzucona = karta[i];
 
-    QString rodzaj = rzucona->getRodzaj();
+
+}
+
+void Gracz::rodzajRzuconejKarty(QString c)
+{
+    QString rodzaj = c;
 
     if(rodzaj == "m")
-        rzuconeKartyMiecz[Mi++] = rzucona;
+        rzuconeKartyMiecz[Mi++] = getRzucona();
     else if(rodzaj =="l")
-        rzuconeKartyLuk[Li++] = rzucona;
+        rzuconeKartyLuk[Li++] = getRzucona();
     else
-        rzuconeKartyKata[Ki++] = rzucona;
+        rzuconeKartyKata[Ki++] = getRzucona();
 }
 
 void Gracz::setNullKarta(int i)

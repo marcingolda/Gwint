@@ -50,7 +50,7 @@ public:
     void przeciwnikPas(QString);
     void niewidoczneG1();
     void niewidoczneG2();
-    void klikKarta();
+    void klikKarta(QString);
 
     void wrocDoMenu();
     void ustawIkony();

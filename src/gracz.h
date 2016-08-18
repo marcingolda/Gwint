@@ -22,7 +22,8 @@ public:
     Karta** rzuconeKartyLuk;
     Karta** rzuconeKartyKata;
 	Karta* getKarta(int);
-	void rzuconaKarta(int);
+    void rzuconaKarta(int);
+    void rodzajRzuconejKarty(QString);
     void setNullKarta(int);
 	void dodajKarte(int, Karta*);
 	Karta* getRzucona();

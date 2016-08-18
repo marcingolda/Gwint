@@ -297,17 +297,18 @@ void Server::rodzajKlienta(QString c)
 
 void Server::kartyKlienta(QString c)
 {
-    QString poz = c.mid(0, 1);
-    QString rzad = c.mid(1,1);
+    QString poz = c.mid(1, 1);
+    QString rzad = c.mid(0,1);
 
         QString tmp1;
         tmp1.setNum(g1->getRzucona()->getNumer());
         QString carta1 = ":talie2/" + rodzajTaliiG1 + "/" + tmp1 + ".png";
-        QString r = g1->getRzucona()->getRodzaj();
+        QString r = c.mid(2,1);
 
 
         if (r == "k")
         {
+        g1->rodzajRzuconejKarty(r);
         if (poz == "0") {
             kata1G1->setAccessibleName("zajete");
             kata1G1->setPixmap(QPixmap(carta1));
@@ -343,6 +344,7 @@ void Server::kartyKlienta(QString c)
     }
         else if (r=="l")
         {
+            g1->rodzajRzuconejKarty(r);
             if (poz == "0") {
                 luk1G1->setAccessibleName("zajete");
                 luk1G1->setPixmap(QPixmap(carta1));
@@ -376,8 +378,9 @@ void Server::kartyKlienta(QString c)
                 luk8G1->setPixmap(QPixmap(carta1));
         }
         }
-        else if (r=="m" || r == "h")
+        else if (r=="m")
         {
+            g1->rodzajRzuconejKarty(r);
             if (poz == "0") {
                 miecz1G1->setPixmap(QPixmap(carta1));
                 miecz1G1->setAccessibleName("zajete");
@@ -644,17 +647,23 @@ void Server::ustawIkony()
         pushButtonG2C10->setIcon(QIcon(":ikony/null.png"));
 }
 
-void Server::klikKarta()
+void Server::klikKarta(QString c)
 {
 
     QString tmp1;
     tmp1.setNum(g2->getRzucona()->getNumer());
     QString carta1 = ":talie2/" + rodzajTalii + "/" + tmp1 + ".png";
+    QString tmp2;
 
-    QString tmp2 = g2->getRzucona()->getRodzaj();
+    if(c != "")
+        tmp2 = c;
+    else
+        tmp2 = g2->getRzucona()->getRodzaj();
+
 
     if(tmp2=="k")
     {
+    g2->rodzajRzuconejKarty(tmp2);
     if (kata1G2->accessibleName()=="wolne") {
     kata1G2->setPixmap(carta1);
     kata1G2->setAccessibleName("zajete");
@@ -695,9 +704,11 @@ void Server::klikKarta()
         kata8G2->setAccessibleName("zajete");
          wyslijWiadomosc("04k7" + tmp1 + "|");
     }
+    przyznajPunkty(2);
 }
     else if(tmp2 == "l")
     {
+        g2->rodzajRzuconejKarty(tmp2);
         if (luk1G2->accessibleName()=="wolne") {
         luk1G2->setPixmap(carta1);
         luk1G2->setAccessibleName("zajete");
@@ -738,9 +749,11 @@ void Server::klikKarta()
             luk8G2->setAccessibleName("zajete");
              wyslijWiadomosc("04l7" + tmp1 + "|");
         }
+        przyznajPunkty(2);
     }
-    else if (tmp2 == "m" || tmp2 == "h")
+    else if (tmp2 == "m")
     {
+        g2->rodzajRzuconejKarty(tmp2);
         if (miecz1G2->accessibleName()=="wolne") {
         miecz1G2->setPixmap(carta1);
         miecz1G2->setAccessibleName("zajete");
@@ -781,6 +794,21 @@ void Server::klikKarta()
             miecz8G2->setAccessibleName("zajete");
              wyslijWiadomosc("04m7" + tmp1 + "|");
         }
+        przyznajPunkty(2);
+    }
+    else if (tmp2 == "h")
+    {
+        WyborRzedu *wyborRzedu = new WyborRzedu("podwojnyZasieg");
+        wyborRzedu->exec();
+
+        if(wyborRzedu->getRzad() == "walczace")
+        {
+            klikKarta("m");
+        }
+        else if(wyborRzedu->getRzad() == "strzeleckie")
+        {
+            klikKarta("l");
+        }
     }
     else
     {
@@ -790,7 +818,7 @@ void Server::klikKarta()
 
 
 
-      WyborRzedu *wyborRzedu = new WyborRzedu();
+      WyborRzedu *wyborRzedu = new WyborRzedu("");
       wyborRzedu->exec();
 
       if(wyborRzedu->getRzad() == "walczace")
@@ -811,7 +839,7 @@ void Server::klikKarta()
 
     }
 
-    przyznajPunkty(2);
+
 
 }
 
@@ -823,7 +851,7 @@ void Server::klikKarta1()
 
 
     wyslijWiadomosc("120|");
-    klikKarta();
+    klikKarta("");
 
     pos2 = 0;
 
@@ -839,7 +867,7 @@ void Server::klikKarta2()
 
 
     wyslijWiadomosc("121|");
-    klikKarta();
+    klikKarta("");
 
     pos2 = 1;
 }
@@ -853,7 +881,7 @@ void Server::klikKarta3()
 
 
     wyslijWiadomosc("122|");
-    klikKarta();
+    klikKarta("");
 
     pos2 = 2;
 }
@@ -865,7 +893,7 @@ void Server::klikKarta4()
     niewidoczneG2();
 
     wyslijWiadomosc("123|");
-    klikKarta();
+    klikKarta("");
 
     pos2 = 3;
 }
@@ -877,7 +905,7 @@ void Server::klikKarta5()
     niewidoczneG2();
 
     wyslijWiadomosc("124|");
-    klikKarta();
+    klikKarta("");
     pos2 = 4;
 }
 
@@ -887,7 +915,7 @@ void Server::klikKarta6()
     pushButtonG2C6->setHidden(true);
    niewidoczneG2();
    wyslijWiadomosc("125|");
-   klikKarta();
+   klikKarta("");
     pos2 = 5;
 }
 
@@ -898,7 +926,7 @@ void Server::klikKarta7()
     niewidoczneG2();
 
     wyslijWiadomosc("126|");
-    klikKarta();
+    klikKarta("");
 
     pos2 = 6;
 }
@@ -910,7 +938,7 @@ void Server::klikKarta8()
     niewidoczneG2();
 
     wyslijWiadomosc("127|");
-    klikKarta();
+    klikKarta("");
     pos2 = 7;
 
 }
@@ -922,7 +950,7 @@ void Server::klikKarta9()
     niewidoczneG2();
 
     wyslijWiadomosc("128|");
-    klikKarta();
+    klikKarta("");
     pos2 = 8;
 }
 
@@ -934,7 +962,7 @@ void Server::klikKarta10()
     niewidoczneG2();
 
     wyslijWiadomosc("129|");
-    klikKarta();
+    klikKarta("");
 
     pos2 = 9;
 }

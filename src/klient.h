@@ -45,8 +45,9 @@ public:
     void przeciwnikPas(QString);
     void niewidoczneG1();
     void niewidoczneG2();
-    void klikKarta(QString);
+    void klikKarta(QString, QString);
     void ktoraKartaSerwera(QString);
+    void klikKartaKlient(QString);
 
 protected:
 	virtual void closeEvent(QCloseEvent *);

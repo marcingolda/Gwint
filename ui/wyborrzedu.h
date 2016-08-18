@@ -15,7 +15,7 @@ class WyborRzedu : public QDialog, private Ui::WyborRzedu
     Q_OBJECT
 
 public:
-    explicit WyborRzedu(QWidget *parent = 0);
+    explicit WyborRzedu(QString, QWidget *parent = 0);
     void setRzad(QString);
     QString getRzad();
     QString ktoryRzad;
