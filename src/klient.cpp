@@ -415,7 +415,7 @@ void Klient::klikKarta(QString c)
 
 QString tmp2 = c.mid(0,1);
 QString numer;
-numer.setNum(c.mid(1).toInt());
+numer.setNum(c.mid(1).toShort());
 
 QString pixmap = ":talie2/" + rodzajTalii + "/" + numer + ".png";
 
@@ -551,9 +551,8 @@ QString pixmap = ":talie2/" + rodzajTalii + "/" + numer + ".png";
     }
     else
     {
-        specG1->setPixmap(pixmap);
+        specG1->setPixmap(QPixmap(pixmap));
         specG1->setAccessibleName("zajete");
-
 
 
         WyborRzedu *wyborRzedu = new WyborRzedu();

@@ -26,7 +26,6 @@ void Talia::inicjalizuj(QString c)
     QString tmp = c;
     QString dir,dir2,dir3,dir4;
     int count;
-    int num = 1;
 
             if(tmp=="elfy")
             {
@@ -74,7 +73,7 @@ void Talia::inicjalizuj(QString c)
                     return;
 
                   for (count=0;count<38;count++)
-                kartaWtalii[count] = new Karta(in.readLine(), num++, in2.readLine().toInt(), in3.readLine(), in4.readLine().toInt());
+                kartaWtalii[count] = new Karta(in.readLine(), count+1, in2.readLine().toInt(), in3.readLine(), in4.readLine().toInt());
 
 
 }
