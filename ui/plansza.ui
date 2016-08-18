@@ -2197,6 +2197,12 @@
           <height>16777215</height>
          </size>
         </property>
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
         <property name="readOnly">
          <bool>true</bool>
         </property>
@@ -2738,6 +2744,12 @@
           <width>30</width>
           <height>16777215</height>
          </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
         <property name="readOnly">
          <bool>true</bool>
