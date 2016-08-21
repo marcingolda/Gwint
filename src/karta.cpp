@@ -1,12 +1,11 @@
 #include "karta.h"
 
-Karta::Karta(QString r, int n, int s, QString m, int b)
+Karta::Karta(QString r, int n, int s, QString m)
 {
     rodzaj = r;
     numer = n;
     sila = s;
     moc = m;
-    bohater = b;
 }
 
 Karta::Karta(int s)
@@ -32,9 +31,4 @@ int Karta::getSila()
 QString Karta::getMoc()
 {
     return moc;
-}
-
-int Karta::getBohater()
-{
-    return bohater;
 }

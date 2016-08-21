@@ -9,11 +9,10 @@ private:
 	QString rodzaj;
 	int numer;
     QString moc;
-    int bohater;
 	int sila;
 
 public:
-    Karta(QString, int, int, QString, int);
+    Karta(QString, int, int, QString);
     Karta(int);
 
 	QString getRodzaj();
@@ -21,7 +20,6 @@ public:
 	int getSila();
     void setSila(int);
     QString getMoc();
-    int getBohater();
 
 };
 
