@@ -4,6 +4,10 @@ z - zrecznosc
 zm - zmartwychstanie
 w - wiez
 wm - wysokie morale 
-40 - pozoga
-30 - róg dowódcy
-20 - manekin do cwiczen
+p - pozoga
+r - róg dowódcy
+mdc - manekin do cwiczen
+t - trzaskajacy mroz
+g - gesta mgla
+c - czyste niebo
+u - ulewny deszcz

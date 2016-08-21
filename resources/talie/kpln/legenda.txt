@@ -5,5 +5,9 @@ zm - zmartwychstanie
 w - wiez
 wm - wysokie morale 
 p - pozoga
-rd - róg dowódcy
+r - róg dowódcy
 mdc - manekin do cwiczen
+t - trzaskajacy mroz
+g - gesta mgla
+c - czyste niebo
+u - ulewny deszcz
