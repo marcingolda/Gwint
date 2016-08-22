@@ -93,9 +93,11 @@ private:
     int tura;
     int pos1;
     int pos2;
+    int roznica;
     Thread *th;
     bool Pas;
     bool rywalPas;
+    int liczbaKart;
 
 
     void (Server::*metoda[7])(QString);

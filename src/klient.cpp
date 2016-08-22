@@ -571,24 +571,59 @@ else
     }
     else
     {
+        liczbaKart = 10;
         specG1->setPixmap(QPixmap(pixmap));
         specG1->setAccessibleName("zajete");
 
 
+        if(tmp2 == "r")
+        {
         WyborRzedu *wyborRzedu = new WyborRzedu("");
         wyborRzedu->exec();
 
         if(wyborRzedu->getRzad() == "walczace")
         {
-            wyslijWiadomosc("01w8x|");
+            wyslijWiadomosc("01w8r|");
         }
         else if(wyborRzedu->getRzad() == "strzeleckie")
         {
-           wyslijWiadomosc("01s8x");
+           wyslijWiadomosc("01s8r");
         }
         else
         {
-           wyslijWiadomosc("01o8x");
+           wyslijWiadomosc("01o8r");
+        }
+        }
+        else if (tmp2 == "t")
+        {
+
+            for(int i=0;i<liczbaKart;i++)
+            {
+
+               wyslijWiadomosc("01w8t");
+
+            }
+        }
+        else if (tmp2 == "g")
+        {
+            for(int i=0;i<liczbaKart;i++)
+            {
+
+               wyslijWiadomosc("01w8g");
+
+            }
+
+        }
+        else if (tmp2 == "u")
+        {
+            for(int i=0;i<liczbaKart;i++)
+            {
+               wyslijWiadomosc("01w8u");
+            }
+        }
+        else
+        {
+
         }
     }
 }

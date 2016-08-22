@@ -9,6 +9,7 @@ private:
 	Karta** karta;
 	Karta *rzucona;
     int punkty, Mi,Ki,Li;
+    int liczbaKart;
 
 
 
@@ -30,6 +31,7 @@ public:
 	void setNullRzucona();
     void wyczyscKarty();
 	int getPunkty();
+    int getLiczbaKart();
 	void zwiekszPunkty(int);
     void zmniejszPunkty(int);
 

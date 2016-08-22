@@ -79,7 +79,7 @@ private:
     bool Pas;
 	QTcpSocket *socket;
 	QBuffer *buffer;
-
+    int liczbaKart;
     void (Klient::*metoda[13])(QString);
 
 };

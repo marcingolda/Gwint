@@ -28,6 +28,10 @@ int Karta::getSila()
     return sila;
 }
 
+void Karta::setSila(int s) {
+    sila = s;
+}
+
 QString Karta::getMoc()
 {
     return moc;
