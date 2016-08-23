@@ -83,6 +83,7 @@ void Klient::inicjuj()
     lineEditPktG2->setText("0");
     lineEditRundyG1->setText("0");
     lineEditRundyG2->setText("0");
+    ustawIkony();
     niewidoczneG2();
     rywalPas = false;
     Pas = false;
@@ -104,6 +105,62 @@ void Klient::niewidoczneG2()
     pushButtonG2C9->setEnabled(false);
     pushButtonG2C10->setEnabled(false);
     pushButtonPasG2->setEnabled(false);
+}
+
+void Klient::ustawIkony()
+{
+    if (rodzajTaliiG2 == "kpln")
+    {
+        pushButtonG2C1->setIcon(QIcon(":ikony/ikona1.png"));
+        pushButtonG2C2->setIcon(QIcon(":ikony/ikona1.png"));
+        pushButtonG2C3->setIcon(QIcon(":ikony/ikona1.png"));
+        pushButtonG2C4->setIcon(QIcon(":ikony/ikona1.png"));
+        pushButtonG2C5->setIcon(QIcon(":ikony/ikona1.png"));
+        pushButtonG2C6->setIcon(QIcon(":ikony/ikona1.png"));
+        pushButtonG2C7->setIcon(QIcon(":ikony/ikona1.png"));
+        pushButtonG2C8->setIcon(QIcon(":ikony/ikona1.png"));
+        pushButtonG2C9->setIcon(QIcon(":ikony/ikona1.png"));
+        pushButtonG2C10->setIcon(QIcon(":ikony/ikona1.png"));
+    }
+             else if(rodzajTaliiG2 == "ngrd")
+        {
+            pushButtonG2C1->setIcon(QIcon(":ikony/ikona2.png"));
+            pushButtonG2C2->setIcon(QIcon(":ikony/ikona2.png"));
+            pushButtonG2C3->setIcon(QIcon(":ikony/ikona2.png"));
+            pushButtonG2C4->setIcon(QIcon(":ikony/ikona2.png"));
+            pushButtonG2C5->setIcon(QIcon(":ikony/ikona2.png"));
+            pushButtonG2C6->setIcon(QIcon(":ikony/ikona2.png"));
+            pushButtonG2C7->setIcon(QIcon(":ikony/ikona2.png"));
+            pushButtonG2C8->setIcon(QIcon(":ikony/ikona2.png"));
+            pushButtonG2C9->setIcon(QIcon(":ikony/ikona2.png"));
+            pushButtonG2C10->setIcon(QIcon(":ikony/ikona2.png"));
+        }
+             else if(rodzajTaliiG2 == "elfy")
+            {
+                pushButtonG2C1->setIcon(QIcon(":ikony/ikona3.png"));
+                pushButtonG2C2->setIcon(QIcon(":ikony/ikona3.png"));
+                pushButtonG2C3->setIcon(QIcon(":ikony/ikona3.png"));
+                pushButtonG2C4->setIcon(QIcon(":ikony/ikona3.png"));
+                pushButtonG2C5->setIcon(QIcon(":ikony/ikona3.png"));
+                pushButtonG2C6->setIcon(QIcon(":ikony/ikona3.png"));
+                pushButtonG2C7->setIcon(QIcon(":ikony/ikona3.png"));
+                pushButtonG2C8->setIcon(QIcon(":ikony/ikona3.png"));
+                pushButtonG2C9->setIcon(QIcon(":ikony/ikona3.png"));
+                pushButtonG2C10->setIcon(QIcon(":ikony/ikona3.png"));
+            }
+            else
+                {
+                    pushButtonG2C1->setIcon(QIcon(":ikony/ikona4.png"));
+                    pushButtonG2C2->setIcon(QIcon(":ikony/ikona4.png"));
+                    pushButtonG2C3->setIcon(QIcon(":ikony/ikona4.png"));
+                    pushButtonG2C4->setIcon(QIcon(":ikony/ikona4.png"));
+                    pushButtonG2C5->setIcon(QIcon(":ikony/ikona4.png"));
+                    pushButtonG2C6->setIcon(QIcon(":ikony/ikona4.png"));
+                    pushButtonG2C7->setIcon(QIcon(":ikony/ikona4.png"));
+                    pushButtonG2C8->setIcon(QIcon(":ikony/ikona4.png"));
+                    pushButtonG2C9->setIcon(QIcon(":ikony/ikona4.png"));
+                    pushButtonG2C10->setIcon(QIcon(":ikony/ikona4.png"));
+                }
 }
 
 void Klient::wyslijWiadomosc(QString message)
@@ -131,7 +188,7 @@ void Klient::odbierzWiadomosc()
 
 void Klient::serwerOdlaczony(QString)
 {
-    QMessageBox::critical(this, tr("Information"), tr("Utracono polaczenie z serwerem"));
+    QMessageBox::critical(this, tr("Informacja"), tr("Utracono polaczenie z serwerem"));
     wrocDoMenu();
 }
 
@@ -424,7 +481,7 @@ void Klient::klikKarta(QString c, QString c1)
 QString tmp2;
 QString numer;
 
-numer.setNum(c.mid(1).toShort());
+numer.setNum(c.mid(1).toInt());
 
 QString pixmap = ":talie2/" + rodzajTalii + "/" + numer + ".png";
 

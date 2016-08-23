@@ -31,6 +31,7 @@ public:
 
 	void wrocDoMenu();
 
+    void ustawIkony();
 	void ustawNickSerwera(QString);
     void ustawKarty(QString c);
     void ustawLiczbeKartG2(QString);
