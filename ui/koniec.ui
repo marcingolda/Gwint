@@ -23,7 +23,7 @@
      <item>
       <widget class="QLabel" name="labelWiadomosc">
        <property name="text">
-        <string>Information</string>
+        <string>Informacja</string>
        </property>
       </widget>
      </item>
@@ -44,7 +44,7 @@
          <item row="0" column="0">
           <widget class="QLabel" name="labelG1">
            <property name="text">
-            <string>Player 1</string>
+            <string>Gracz 1</string>
            </property>
           </widget>
          </item>
@@ -83,7 +83,7 @@
          <item row="1" column="0">
           <widget class="QLabel" name="labelG2">
            <property name="text">
-            <string>Player 2</string>
+            <string>Gracz 2</string>
            </property>
           </widget>
          </item>
@@ -146,7 +146,7 @@
         <string>OK</string>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../resources/cards.qrc">
          <normaloff>:/ikony/tak.png</normaloff>:/ikony/tak.png</iconset>
        </property>
       </widget>

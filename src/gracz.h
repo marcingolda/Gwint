@@ -13,12 +13,15 @@ private:
 
 
 
+
 public:
     Gracz(Karta*, Karta*, Karta*,Karta*, Karta*, Karta*,Karta*, Karta*, Karta*, Karta*);
 	~Gracz();
 
 
-
+    int licznikZmienionychMiecz;
+    int licznikZmienionychLuk;
+    int licznikZmienionychKata;
     Karta** rzuconeKartyMiecz;
     Karta** rzuconeKartyLuk;
     Karta** rzuconeKartyKata;
@@ -29,9 +32,15 @@ public:
 	void dodajKarte(int, Karta*);
 	Karta* getRzucona();
 	void setNullRzucona();
+    void setZmienioneMiecz(int);
+    void setZmienioneLuk(int);
+    void setZmienioneKata(int);
     void wyczyscKarty();
 	int getPunkty();
     int getLiczbaKart();
+    int getZmienioneMiecz();
+    int getZmienioneLuk();
+    int getZmienioneKata();
 	void zwiekszPunkty(int);
     void zmniejszPunkty(int);
 

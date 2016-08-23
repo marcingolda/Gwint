@@ -57,8 +57,6 @@ Server::Server(QString _nick, int _p_port, QWidget *parent) :
     connect(pushButtonPasG2, SIGNAL(clicked()), this, SLOT(klikPas()));
 
 
-
-
 }
 
 
@@ -415,12 +413,13 @@ void Server::kartyKlienta(QString c)
             }
         else
         {
-            specG1->setPixmap(QPixmap(carta1));
-            specG1->setAccessibleName("zajete");
+
             liczbaKart = g1->getLiczbaKart();
 
          if(r == "r")
          {
+             specG1->setPixmap(QPixmap(carta1));
+             specG1->setAccessibleName("zajete");
             if(rzad == "w")
             {
                 for(int i=0;i<liczbaKart;i++)
@@ -437,25 +436,32 @@ void Server::kartyKlienta(QString c)
                    g1->zwiekszPunkty(g1->rzuconeKartyKata[i]->getSila());
             }
 }
-         else if (r == "t")
+         else
          {
+             pogodaG1->setPixmap(QPixmap(carta1));
+             pogodaG1->setAccessibleName("zajete");
 
+             if(r == "t")
+             {
              for(int i=0;i<liczbaKart;i++)
              {
                  if (g1->rzuconeKartyMiecz[i]->getRodzaj() != NULL)
                  {
                 roznica = g1->rzuconeKartyMiecz[i]->getSila()-1;
+                g1->rzuconeKartyMiecz[i]->setOrginalnaSila(g1->rzuconeKartyMiecz[i]->getSila());
                 g1->zmniejszPunkty(roznica);
                 g1->rzuconeKartyMiecz[i]->setSila(1);
+                g1->setZmienioneMiecz(i+1);
                  }
                  if (g2->rzuconeKartyMiecz[i]->getRodzaj() != NULL)
                  {
                 roznica = g2->rzuconeKartyMiecz[i]->getSila() - 1;
+                g2->rzuconeKartyMiecz[i]->setOrginalnaSila(g2->rzuconeKartyMiecz[i]->getSila());
                 g2->zmniejszPunkty(roznica);
                 g2->rzuconeKartyMiecz[i]->setSila(1);
+                g2->setZmienioneMiecz(i+1);
                  }
              }
-             ustawTure(2);
          }
          else if (r == "g")
          {
@@ -464,17 +470,20 @@ void Server::kartyKlienta(QString c)
                  if (g1->rzuconeKartyLuk[i]->getRodzaj() != NULL)
                  {
                 roznica = g1->rzuconeKartyLuk[i]->getSila() - 1;
+                g1->rzuconeKartyLuk[i]->setOrginalnaSila(g1->rzuconeKartyLuk[i]->getSila());
                 g1->zmniejszPunkty(roznica);
                 g1->rzuconeKartyLuk[i]->setSila(1);
+                g1->setZmienioneLuk(i+1);
                  }
                  if (g2->rzuconeKartyLuk[i]->getRodzaj() != NULL)
                  {
                 roznica = g2->rzuconeKartyLuk[i]->getSila() - 1;
+                g2->rzuconeKartyLuk[i]->setOrginalnaSila(g2->rzuconeKartyLuk[i]->getSila());
                 g2->zmniejszPunkty(roznica);
                 g2->rzuconeKartyLuk[i]->setSila(1);
+                g2->setZmienioneLuk(i+1);
                  }
              }
-             ustawTure(2);
 
          }
          else if (r == "u")
@@ -484,20 +493,69 @@ void Server::kartyKlienta(QString c)
                  if (g1->rzuconeKartyKata[i]->getRodzaj() != NULL)
                  {
                 roznica = g1->rzuconeKartyKata[i]->getSila() - 1;
+                g1->rzuconeKartyKata[i]->setOrginalnaSila(g1->rzuconeKartyKata[i]->getSila());
                 g1->zmniejszPunkty(roznica);
                 g1->rzuconeKartyKata[i]->setSila(1);
+                g1->setZmienioneKata(i+1);
                  }
                  if (g2->rzuconeKartyKata[i]->getRodzaj() != NULL)
                  {
                 roznica = g2->rzuconeKartyKata[i]->getSila() - 1;
+                g2->rzuconeKartyKata[i]->setOrginalnaSila(g2->rzuconeKartyKata[i]->getSila());
                 g2->zmniejszPunkty(roznica);
                 g2->rzuconeKartyKata[i]->setSila(1);
+                g2->setZmienioneKata(i+1);
                  }
              }
-             ustawTure(2);
          }
          else
          {
+                 for (int i=0;i<g1->getZmienioneMiecz();i++)
+                 {
+                     g1->rzuconeKartyMiecz[i]->setSila(g1->rzuconeKartyMiecz[i]->getOrginalnaSila());
+                     roznica = g1->rzuconeKartyMiecz[i]->getSila() - 1;
+                     g1->zwiekszPunkty(roznica);
+                 }
+
+                 for (int i=0;i<g1->getZmienioneLuk();i++)
+                 {
+                     g1->rzuconeKartyLuk[i]->setSila(g1->rzuconeKartyLuk[i]->getOrginalnaSila());
+                     roznica = g1->rzuconeKartyLuk[i]->getSila() - 1;
+                     g1->zwiekszPunkty(roznica);
+                }
+                 for (int i=0;i<g1->getZmienioneKata();i++)
+                 {
+                     g1->rzuconeKartyKata[i]->setSila(g1->rzuconeKartyKata[i]->getOrginalnaSila());
+                     roznica = g1->rzuconeKartyKata[i]->getSila() - 1;
+                     g1->zwiekszPunkty(roznica);
+                }
+                 for (int i=0;i<g2->getZmienioneMiecz();i++)
+                 {
+                     g2->rzuconeKartyMiecz[i]->setSila(g2->rzuconeKartyMiecz[i]->getOrginalnaSila());
+                     roznica = g2->rzuconeKartyMiecz[i]->getSila() - 1;
+                     g2->zwiekszPunkty(roznica);
+                 }
+
+                 for (int i=0;i<g2->getZmienioneLuk();i++)
+                 {
+                     g2->rzuconeKartyLuk[i]->setSila(g2->rzuconeKartyLuk[i]->getOrginalnaSila());
+                     roznica = g2->rzuconeKartyLuk[i]->getSila() - 1;
+                     g2->zwiekszPunkty(roznica);
+                 }
+
+                 for (int i=0;i<g2->getZmienioneKata();i++)
+                 {
+                     g2->rzuconeKartyKata[i]->setSila(g2->rzuconeKartyKata[i]->getOrginalnaSila());
+                     roznica = g2->rzuconeKartyKata[i]->getSila() - 1;
+                     g2->zwiekszPunkty(roznica);
+                 }
+
+                 g1->setZmienioneKata(0);
+                 g1->setZmienioneLuk(0);
+                 g1->setZmienioneMiecz(0);
+                 g2->setZmienioneKata(0);
+                 g2->setZmienioneLuk(0);
+                 g2->setZmienioneMiecz(0);
 
          }
 
@@ -505,6 +563,7 @@ void Server::kartyKlienta(QString c)
         }
 
 
+}
     przyznajPunkty(1);
 }
 
@@ -878,16 +937,14 @@ void Server::klikKarta(QString c)
     }
     else
     {
-        specG2->setPixmap(carta1);
-        specG2->setAccessibleName("zajete");
         wyslijWiadomosc("0430" + tmp1 + "|");
         liczbaKart = g2->getLiczbaKart();
 
-
-
-
         if(tmp2 == "r")
         {
+            specG2->setPixmap(carta1);
+            specG2->setAccessibleName("zajete");
+
             WyborRzedu *wyborRzedu = new WyborRzedu("");
             wyborRzedu->exec();
 
@@ -907,22 +964,30 @@ void Server::klikKarta(QString c)
                   g2->zwiekszPunkty(g2->rzuconeKartyKata[i]->getSila());
            }
 }
-        else if (tmp2 == "t")
+        else
         {
+            pogodaG2->setPixmap(carta1);
+            pogodaG2->setAccessibleName("zajete");
 
+            if (tmp2 == "t")
+            {
             for(int i=0;i<liczbaKart;i++)
             {
                 if (g2->rzuconeKartyMiecz[i]->getRodzaj() != NULL)
                 {
                roznica = g2->rzuconeKartyMiecz[i]->getSila() - 1;
+               g2->rzuconeKartyMiecz[i]->setOrginalnaSila(g2->rzuconeKartyMiecz[i]->getSila());
                g2->zmniejszPunkty(roznica);
                g2->rzuconeKartyMiecz[i]->setSila(1);
+               g2->setZmienioneMiecz(i+1);
                 }
                 if (g1->rzuconeKartyMiecz[i]->getRodzaj() != NULL)
                 {
                roznica = g1->rzuconeKartyMiecz[i]->getSila() - 1;
+               g1->rzuconeKartyMiecz[i]->setOrginalnaSila(g1->rzuconeKartyMiecz[i]->getSila());
                g1->zmniejszPunkty(roznica);
                g1->rzuconeKartyMiecz[i]->setSila(1);
+               g1->setZmienioneMiecz(i+1);
                 }
             }
             przyznajPunkty(2);
@@ -934,14 +999,18 @@ void Server::klikKarta(QString c)
                 if (g2->rzuconeKartyLuk[i]->getRodzaj() != NULL)
                 {
                roznica = g2->rzuconeKartyLuk[i]->getSila() - 1;
+               g2->rzuconeKartyLuk[i]->setOrginalnaSila(g2->rzuconeKartyLuk[i]->getSila());
                g2->zmniejszPunkty(roznica);
                g2->rzuconeKartyLuk[i]->setSila(1);
+               g2->setZmienioneLuk(i+1);
                 }
                 if (g1->rzuconeKartyLuk[i]->getRodzaj() != NULL)
                 {
                roznica = g1->rzuconeKartyLuk[i]->getSila() - 1;
+               g1->rzuconeKartyLuk[i]->setOrginalnaSila(g1->rzuconeKartyLuk[i]->getSila());
                g1->zmniejszPunkty(roznica);
                g1->rzuconeKartyLuk[i]->setSila(1);
+               g1->setZmienioneLuk(i+1);
                 }
             }
             przyznajPunkty(2);
@@ -954,29 +1023,77 @@ void Server::klikKarta(QString c)
                 if (g2->rzuconeKartyKata[i]->getRodzaj() != NULL)
                 {
                roznica = g2->rzuconeKartyKata[i]->getSila() - 1;
+               g2->rzuconeKartyKata[i]->setOrginalnaSila(g2->rzuconeKartyKata[i]->getSila());
                g2->zmniejszPunkty(roznica);
                g2->rzuconeKartyKata[i]->setSila(1);
+               g2->setZmienioneKata(i+1);
                 }
                 if (g1->rzuconeKartyKata[i]->getRodzaj() != NULL)
                 {
                roznica = g1->rzuconeKartyKata[i]->getSila() - 1;
+               g1->rzuconeKartyKata[i]->setOrginalnaSila(g1->rzuconeKartyKata[i]->getSila());
                g1->zmniejszPunkty(roznica);
                g1->rzuconeKartyKata[i]->setSila(1);
+               g1->setZmienioneKata(i+1);
                 }
             }
             przyznajPunkty(2);
         }
         else
         {
+                for (int i=0;i<g1->getZmienioneMiecz();i++)
+                {
+                    g1->rzuconeKartyMiecz[i]->setSila(g1->rzuconeKartyMiecz[i]->getOrginalnaSila());
+                    roznica = g1->rzuconeKartyMiecz[i]->getSila() - 1;
+                    g1->zwiekszPunkty(roznica);
+                }
 
+                for (int i=0;i<g1->getZmienioneLuk();i++)
+                {
+                    g1->rzuconeKartyLuk[i]->setSila(g1->rzuconeKartyLuk[i]->getOrginalnaSila());
+                    roznica = g1->rzuconeKartyLuk[i]->getSila() - 1;
+                    g1->zwiekszPunkty(roznica);
+               }
+                for (int i=0;i<g1->getZmienioneKata();i++)
+                {
+                    g1->rzuconeKartyKata[i]->setSila(g1->rzuconeKartyKata[i]->getOrginalnaSila());
+                    roznica = g1->rzuconeKartyKata[i]->getSila() - 1;
+                    g1->zwiekszPunkty(roznica);
+               }
+                for (int i=0;i<g2->getZmienioneMiecz();i++)
+                {
+                    g2->rzuconeKartyMiecz[i]->setSila(g2->rzuconeKartyMiecz[i]->getOrginalnaSila());
+                    roznica = g2->rzuconeKartyMiecz[i]->getSila() - 1;
+                    g2->zwiekszPunkty(roznica);
+                }
+
+                for (int i=0;i<g2->getZmienioneLuk();i++)
+                {
+                    g2->rzuconeKartyLuk[i]->setSila(g2->rzuconeKartyLuk[i]->getOrginalnaSila());
+                    roznica = g2->rzuconeKartyLuk[i]->getSila() - 1;
+                    g2->zwiekszPunkty(roznica);
+                }
+
+                for (int i=0;i<g2->getZmienioneKata();i++)
+                {
+                    g2->rzuconeKartyKata[i]->setSila(g2->rzuconeKartyKata[i]->getOrginalnaSila());
+                    roznica = g2->rzuconeKartyKata[i]->getSila() - 1;
+                    g2->zwiekszPunkty(roznica);
+                }
+
+                g1->setZmienioneKata(0);
+                g1->setZmienioneLuk(0);
+                g1->setZmienioneMiecz(0);
+                g2->setZmienioneKata(0);
+                g2->setZmienioneLuk(0);
+                g2->setZmienioneMiecz(0);
 
         }
 
-
+    przyznajPunkty(2);
     }
 
-
-
+}
 }
 
 void Server::klikKarta1()
@@ -1366,8 +1483,6 @@ void Server::inicjujKolejnaPartie()
 
     g1->wyczyscKarty();
     g2->wyczyscKarty();
-
-
 
 }
 

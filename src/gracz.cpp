@@ -17,10 +17,6 @@ Gracz::Gracz(Karta *c1, Karta *c2, Karta *c3, Karta *c4, Karta *c5, Karta *c6, K
     karta[7] = c8;
     karta[8] = c9;
     karta[9] = c10;
-    punkty = 0;
-    Ki = 0;
-    Li = 0;
-    Mi = 0;
 
     wyczyscKarty();
 
@@ -40,6 +36,13 @@ Karta* Gracz::getKarta(int i)
 
 void Gracz::wyczyscKarty()
 {
+    punkty = 0;
+    Ki = 0;
+    Li = 0;
+    Mi = 0;
+    licznikZmienionychMiecz = 0;
+    licznikZmienionychLuk = 0;
+    licznikZmienionychKata = 0;
 
     for(int i=0;i<getLiczbaKart();i++)
     {
@@ -97,6 +100,36 @@ int Gracz::getPunkty()
 int Gracz::getLiczbaKart()
 {
     return liczbaKart;
+}
+
+void Gracz::setZmienioneKata(int z)
+{
+    licznikZmienionychKata = z;
+}
+
+void Gracz::setZmienioneLuk(int z)
+{
+    licznikZmienionychLuk = z;
+}
+
+void Gracz::setZmienioneMiecz(int z)
+{
+    licznikZmienionychMiecz = z;
+}
+
+int Gracz::getZmienioneKata()
+{
+    return licznikZmienionychKata;
+}
+
+int Gracz::getZmienioneLuk()
+{
+    return licznikZmienionychLuk;
+}
+
+int Gracz::getZmienioneMiecz()
+{
+    return licznikZmienionychMiecz;
 }
 
 void Gracz::zwiekszPunkty(int p)

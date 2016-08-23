@@ -196,7 +196,7 @@ void Klient::ustawKartySerwera(QString c)
     int tmp = c.mid(2).toInt();
     QString numer;
     numer.setNum(tmp);
-    QString iconaG2 = ":talie2/" + rodzajTaliiG2 + "/" + numer + ".png";
+    QString kartaG2 = ":talie2/" + rodzajTaliiG2 + "/" + numer + ".png";
 
 
 
@@ -204,111 +204,119 @@ void Klient::ustawKartySerwera(QString c)
     {
     if (poz == "0") {
         kata1G2->setAccessibleName("zajete");
-        kata1G2->setPixmap(QPixmap(iconaG2));
+        kata1G2->setPixmap(QPixmap(kartaG2));
     }
     else if (poz == "1") {
         kata2G2->setAccessibleName("zajete");
-        kata2G2->setPixmap(QPixmap(iconaG2));
+        kata2G2->setPixmap(QPixmap(kartaG2));
     }
     else if (poz == "2") {
         kata3G2->setAccessibleName("zajete");
-        kata3G2->setPixmap(QPixmap(iconaG2));
+        kata3G2->setPixmap(QPixmap(kartaG2));
     }
     else if (poz == "3") {
         kata4G2->setAccessibleName("zajete");
-        kata4G2->setPixmap(QPixmap(iconaG2));
+        kata4G2->setPixmap(QPixmap(kartaG2));
     }
     else if (poz == "4") {
         kata5G2->setAccessibleName("zajete");
-        kata5G2->setPixmap(QPixmap(iconaG2));
+        kata5G2->setPixmap(QPixmap(kartaG2));
     }
     else if (poz == "5") {
         kata6G2->setAccessibleName("zajete");
-        kata6G2->setPixmap(QPixmap(iconaG2));
+        kata6G2->setPixmap(QPixmap(kartaG2));
     }
     else if (poz == "6") {
         kata7G2->setAccessibleName("zajete");
-        kata7G2->setPixmap(QPixmap(iconaG2));
+        kata7G2->setPixmap(QPixmap(kartaG2));
     }
     else{
         kata8G2->setAccessibleName("zajete");
-        kata8G2->setPixmap(QPixmap(iconaG2));
+        kata8G2->setPixmap(QPixmap(kartaG2));
 }
 }
     else if (r=="l")
     {
         if (poz == "0") {
             luk1G2->setAccessibleName("zajete");
-            luk1G2->setPixmap(iconaG2);
+            luk1G2->setPixmap(kartaG2);
         }
         else if (poz == "1") {
             luk2G2->setAccessibleName("zajete");
-            luk2G2->setPixmap(QPixmap(iconaG2));
+            luk2G2->setPixmap(QPixmap(kartaG2));
         }
         else if (poz == "2") {
             luk3G2->setAccessibleName("zajete");
-            luk3G2->setPixmap(QPixmap(iconaG2));
+            luk3G2->setPixmap(QPixmap(kartaG2));
         }
         else if (poz == "3") {
             luk4G2->setAccessibleName("zajete");
-            luk4G2->setPixmap(QPixmap(iconaG2));
+            luk4G2->setPixmap(QPixmap(kartaG2));
         }
         else if (poz == "4") {
             luk5G2->setAccessibleName("zajete");
-            luk5G2->setPixmap(QPixmap(iconaG2));
+            luk5G2->setPixmap(QPixmap(kartaG2));
         }
         else if (poz == "5") {
             luk6G2->setAccessibleName("zajete");
-            luk6G2->setPixmap(QPixmap(iconaG2));
+            luk6G2->setPixmap(QPixmap(kartaG2));
         }
         else if (poz == "6") {
             luk7G2->setAccessibleName("zajete");
-            luk7G2->setPixmap(QPixmap(iconaG2));
+            luk7G2->setPixmap(QPixmap(kartaG2));
         }
         else{
             luk8G2->setAccessibleName("zajete");
-            luk8G2->setPixmap(QPixmap(iconaG2));
+            luk8G2->setPixmap(QPixmap(kartaG2));
     }
     }
     else if (r=="m")
     {
         if (poz == "0") {
             miecz1G2->setAccessibleName("zajete");
-            miecz1G2->setPixmap(QPixmap(iconaG2));
+            miecz1G2->setPixmap(QPixmap(kartaG2));
         }
         else if (poz == "1") {
             miecz2G2->setAccessibleName("zajete");
-            miecz2G2->setPixmap(QPixmap(iconaG2));
+            miecz2G2->setPixmap(QPixmap(kartaG2));
         }
         else if (poz == "2") {
             miecz3G2->setAccessibleName("zajete");
-            miecz3G2->setPixmap(QPixmap(iconaG2));
+            miecz3G2->setPixmap(QPixmap(kartaG2));
         }
         else if (poz == "3") {
             miecz4G2->setAccessibleName("zajete");
-            miecz4G2->setPixmap(QPixmap(iconaG2));
+            miecz4G2->setPixmap(QPixmap(kartaG2));
         }
         else if (poz == "4") {
             miecz5G2->setAccessibleName("zajete");
-            miecz5G2->setPixmap(QPixmap(iconaG2));
+            miecz5G2->setPixmap(QPixmap(kartaG2));
         }
         else if (poz == "5") {
             miecz6G2->setAccessibleName("zajete");
-            miecz6G2->setPixmap(QPixmap(iconaG2));
+            miecz6G2->setPixmap(QPixmap(kartaG2));
         }
         else if (poz == "6") {
             miecz7G2->setAccessibleName("zajete");
-            miecz7G2->setPixmap(QPixmap(iconaG2));
+            miecz7G2->setPixmap(QPixmap(kartaG2));
         }
         else {
             miecz8G2->setAccessibleName("zajete");
-            miecz8G2->setPixmap(QPixmap(iconaG2));
+            miecz8G2->setPixmap(QPixmap(kartaG2));
     }
         }
     else
     {
-        specG2->setPixmap(QPixmap(iconaG2));
+        if (r == "r")
+        {
+        specG2->setPixmap(QPixmap(kartaG2));
         specG2->setAccessibleName("zajete");
+        }
+        else
+        {
+         pogodaG2->setPixmap(QPixmap(kartaG2));
+         pogodaG2->setAccessibleName("zajete");
+        }
     }
 
 
@@ -572,12 +580,12 @@ else
     else
     {
         liczbaKart = 10;
-        specG1->setPixmap(QPixmap(pixmap));
-        specG1->setAccessibleName("zajete");
-
 
         if(tmp2 == "r")
         {
+
+        specG1->setPixmap(QPixmap(pixmap));
+        specG1->setAccessibleName("zajete");
         WyborRzedu *wyborRzedu = new WyborRzedu("");
         wyborRzedu->exec();
 
@@ -594,8 +602,13 @@ else
            wyslijWiadomosc("01o8r");
         }
         }
-        else if (tmp2 == "t")
+        else
         {
+
+            pogodaG1->setPixmap(QPixmap(pixmap));
+            pogodaG1->setAccessibleName("zajete");
+            if (tmp2 == "t")
+            {
 
             for(int i=0;i<liczbaKart;i++)
             {
@@ -609,7 +622,7 @@ else
             for(int i=0;i<liczbaKart;i++)
             {
 
-               wyslijWiadomosc("01w8g");
+               wyslijWiadomosc("01s8g");
 
             }
 
@@ -618,14 +631,15 @@ else
         {
             for(int i=0;i<liczbaKart;i++)
             {
-               wyslijWiadomosc("01w8u");
+               wyslijWiadomosc("01o8u");
             }
         }
         else
         {
-
+            wyslijWiadomosc("01x8c");
         }
     }
+}
 }
 
 void Klient::klikKartaKlient(QString c)

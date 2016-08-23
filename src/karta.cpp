@@ -32,6 +32,15 @@ void Karta::setSila(int s) {
     sila = s;
 }
 
+int Karta::getOrginalnaSila()
+{
+    return orginalnaSila;
+}
+
+void Karta::setOrginalnaSila(int s) {
+    orginalnaSila = s;
+}
+
 QString Karta::getMoc()
 {
     return moc;

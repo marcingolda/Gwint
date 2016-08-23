@@ -10,6 +10,7 @@ private:
 	int numer;
     QString moc;
 	int sila;
+    int orginalnaSila;
 
 public:
     Karta(QString, int, int, QString);
@@ -19,6 +20,8 @@ public:
 	int getNumer();
 	int getSila();
     void setSila(int);
+    int getOrginalnaSila();
+    void setOrginalnaSila(int);
     QString getMoc();
 
 };
