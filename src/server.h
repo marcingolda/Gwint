@@ -33,6 +33,7 @@ public:
     int ktoZaczyna();
     void przyznajPunkty(int);
     void aktywnyGracz(int);
+    void aktualizujPunkty(int);
 
     void wyslijWiadomosc(QString);
     void inicjuj();
