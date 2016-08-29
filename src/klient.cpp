@@ -83,13 +83,26 @@ void Klient::inicjuj()
     lineEditPktG2->setText("0");
     lineEditRundyG1->setText("0");
     lineEditRundyG2->setText("0");
-    ustawIkony();
     niewidoczneG2();
     rywalPas = false;
     Pas = false;
+    wymienioneKlient = false;
 
 
+}
 
+void Klient::wymianaKart()
+{
+
+
+    Wymiana*wym = new Wymiana(rodzajTalii, tablicaNumerowKlient);
+    wym->exec();
+
+    QString a,b;
+    a.setNum(wym->getWym1() - 1) ;
+    b.setNum(wym->getWym2() - 1);
+
+    wyslijWiadomosc("07" + a + b);
 }
 
 void Klient::niewidoczneG2()
@@ -107,61 +120,6 @@ void Klient::niewidoczneG2()
     pushButtonPasG2->setEnabled(false);
 }
 
-void Klient::ustawIkony()
-{
-    if (rodzajTaliiG2 == "kpln")
-    {
-        pushButtonG2C1->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG2C2->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG2C3->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG2C4->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG2C5->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG2C6->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG2C7->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG2C8->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG2C9->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG2C10->setIcon(QIcon(":ikony/ikona1.png"));
-    }
-             else if(rodzajTaliiG2 == "ngrd")
-        {
-            pushButtonG2C1->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG2C2->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG2C3->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG2C4->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG2C5->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG2C6->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG2C7->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG2C8->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG2C9->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG2C10->setIcon(QIcon(":ikony/ikona2.png"));
-        }
-             else if(rodzajTaliiG2 == "elfy")
-            {
-                pushButtonG2C1->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG2C2->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG2C3->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG2C4->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG2C5->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG2C6->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG2C7->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG2C8->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG2C9->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG2C10->setIcon(QIcon(":ikony/ikona3.png"));
-            }
-            else
-                {
-                    pushButtonG2C1->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG2C2->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG2C3->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG2C4->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG2C5->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG2C6->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG2C7->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG2C8->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG2C9->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG2C10->setIcon(QIcon(":ikony/ikona4.png"));
-                }
-}
 
 void Klient::wyslijWiadomosc(QString message)
 {
@@ -395,6 +353,12 @@ void Klient::ustawTure(QString)
     pushButtonG1C10->setEnabled(true);
     pushButtonPasG1->setEnabled(true);
 
+    if(wymienioneKlient == false)
+    {
+        wymianaKart();
+        wymienioneKlient = true;
+    }
+
 }
 
 void Klient::ustawLiczbeKartG2(QString c)
@@ -418,34 +382,46 @@ void Klient::ustawKarty(QString c)
     if (c[0] == QChar('0')) {
         QString icona10 = ":talie/" + rodzajTalii + "/" + c.mid(1) + ".png";
         pushButtonG1C1->setIcon(QIcon(icona10));
+        tablicaNumerowKlient[0] = c.mid(1).toInt();
     } else if (c[0] == QChar('1')) {
         QString icona11 = ":talie/" + rodzajTalii + "/" + c.mid(1) + ".png";
         pushButtonG1C2->setIcon(QIcon(icona11));
+        tablicaNumerowKlient[1] = c.mid(1).toInt();
     } else if (c[0] == QChar('2')) {
         QString icona12 = ":talie/" + rodzajTalii + "/" + c.mid(1) + ".png";
         pushButtonG1C3->setIcon(QIcon(icona12));
+        tablicaNumerowKlient[2] = c.mid(1).toInt();
     } else if (c[0] == QChar('3')) {
         QString icona13 = ":talie/" + rodzajTalii + "/" + c.mid(1) + ".png";
         pushButtonG1C4->setIcon(QIcon(icona13));
+        tablicaNumerowKlient[3] = c.mid(1).toInt();
     } else if (c[0] == QChar('4')) {
         QString icona14 = ":talie/" + rodzajTalii + "/" + c.mid(1) + ".png";
         pushButtonG1C5->setIcon(QIcon(icona14));
+        tablicaNumerowKlient[4] = c.mid(1).toInt();
     } else if (c[0] == QChar('5')) {
         QString icona15 = ":talie/" + rodzajTalii + "/" + c.mid(1) + ".png";
         pushButtonG1C6->setIcon(QIcon(icona15));
+        tablicaNumerowKlient[5] = c.mid(1).toInt();
     } else if (c[0] == QChar('6')) {
         QString icona16 = ":talie/" + rodzajTalii + "/" + c.mid(1) + ".png";
         pushButtonG1C7->setIcon(QIcon(icona16));
+        tablicaNumerowKlient[6] = c.mid(1).toInt();
     } else if (c[0] == QChar('7')) {
         QString icona17 = ":talie/" + rodzajTalii + "/" + c.mid(1) + ".png";
         pushButtonG1C8->setIcon(QIcon(icona17));
+        tablicaNumerowKlient[7] = c.mid(1).toInt();
     } else if (c[0] == QChar('8')) {
         QString icona18 = ":talie/" + rodzajTalii + "/" + c.mid(1) + ".png";
         pushButtonG1C9->setIcon(QIcon(icona18));
+        tablicaNumerowKlient[8] = c.mid(1).toInt();
     } else if (c[0] == QChar('9')) {
         QString icona19 = ":talie/" + rodzajTalii + "/" + c.mid(1) + ".png";
         pushButtonG1C10->setIcon(QIcon(icona19));
+        tablicaNumerowKlient[9] = c.mid(1).toInt();
     }
+
+    niewidoczneG1();
 }
 
 void Klient::ustawNickSerwera(QString c)
@@ -708,9 +684,6 @@ void Klient::klikKarta1()
 {
 
     wyslijWiadomosc("060|");
-    niewidoczneG1();
-
-
     pushButtonG1C1->setHidden(true);
 
 }
@@ -718,7 +691,6 @@ void Klient::klikKarta1()
 void Klient::klikKarta2()
 {
     wyslijWiadomosc("061|");
-    niewidoczneG1();
     pushButtonG1C2->setHidden(true);
 
 }
@@ -726,7 +698,6 @@ void Klient::klikKarta2()
 void Klient::klikKarta3()
 {
     wyslijWiadomosc("062|");
-    niewidoczneG1();
     pushButtonG1C3->setHidden(true);
 
 }
@@ -734,7 +705,6 @@ void Klient::klikKarta3()
 void Klient::klikKarta4()
 {
     wyslijWiadomosc("063|");
-    niewidoczneG1();
     pushButtonG1C4->setHidden(true);
 
 }
@@ -742,7 +712,6 @@ void Klient::klikKarta4()
 void Klient::klikKarta5()
 {
     wyslijWiadomosc("064|");
-     niewidoczneG1();
     pushButtonG1C5->setHidden(true);
 
 
@@ -751,7 +720,6 @@ void Klient::klikKarta5()
 void Klient::klikKarta6()
 {
     wyslijWiadomosc("065|");
-    niewidoczneG1();
     pushButtonG1C6->setHidden(true);
 
 }
@@ -759,7 +727,6 @@ void Klient::klikKarta6()
 void Klient::klikKarta7()
 {
     wyslijWiadomosc("066|");
-    niewidoczneG1();
     pushButtonG1C7->setHidden(true);
 
 }
@@ -767,7 +734,6 @@ void Klient::klikKarta7()
 void Klient::klikKarta8()
 {
     wyslijWiadomosc("067|");
-    niewidoczneG1();
     pushButtonG1C8->setHidden(true);
 
 }
@@ -775,7 +741,6 @@ void Klient::klikKarta8()
 void Klient::klikKarta9()
 {
     wyslijWiadomosc("068|");
-    niewidoczneG1();
     pushButtonG1C9->setHidden(true);
 
 }
@@ -783,7 +748,6 @@ void Klient::klikKarta9()
 void Klient::klikKarta10()
 {
     wyslijWiadomosc("069|");
-    niewidoczneG1();
     pushButtonG1C10->setHidden(true);
 
 }

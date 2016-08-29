@@ -894,7 +894,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/poziom.png</pixmap>
+      <pixmap resource="../resources/cards.qrc">:/ikony/tylPoziom.png</pixmap>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEditCardsG2">
@@ -984,7 +984,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../resources/cards.qrc">:/ikony/poziom.png</pixmap>
+      <pixmap resource="../resources/cards.qrc">:/ikony/tylPoziom.png</pixmap>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEditCardsG1">
@@ -1841,7 +1841,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1879,7 +1879,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1917,7 +1917,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1955,7 +1955,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1993,7 +1993,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -2031,7 +2031,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -2069,7 +2069,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -2107,7 +2107,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -2239,7 +2239,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -2277,7 +2277,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -2371,7 +2371,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -2409,7 +2409,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -2450,7 +2450,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -2488,7 +2488,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -2551,7 +2551,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -2589,7 +2589,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -2627,7 +2627,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -2665,7 +2665,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -2797,7 +2797,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -2835,7 +2835,7 @@
      </property>
      <property name="icon">
       <iconset resource="../resources/cards.qrc">
-       <normaloff>:/ikony/pion.png</normaloff>:/ikony/pion.png</iconset>
+       <normaloff>:/ikony/tyl.png</normaloff>:/ikony/tyl.png</iconset>
      </property>
      <property name="iconSize">
       <size>

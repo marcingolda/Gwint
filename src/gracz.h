@@ -43,6 +43,7 @@ public:
     int getZmienioneKata();
 	void zwiekszPunkty(int);
     void zmniejszPunkty(int);
+    void setKarta(int,Karta*);
 
 };
 

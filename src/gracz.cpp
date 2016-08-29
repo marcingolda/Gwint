@@ -34,6 +34,11 @@ Karta* Gracz::getKarta(int i)
     return karta[i];
 }
 
+void Gracz::setKarta(int i, Karta * k)
+{
+    karta[i] = k;
+}
+
 void Gracz::wyczyscKarty()
 {
     punkty = 0;

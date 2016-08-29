@@ -401,5 +401,7 @@
         <file>talie2/ptwr/44.png</file>
         <file>talie2/ptwr/45.png</file>
         <file>talie2/ptwr/46.png</file>
+        <file>ikony/tylPoziom.png</file>
+        <file>ikony/tyl.png</file>
     </qresource>
 </RCC>

@@ -24,9 +24,11 @@ HEADERS += src/gracz.h \
            src/start.h \
            src/talia.h \
            src/thread.h \
-    ui/wyborrzedu.h
+    ui/wyborrzedu.h \
+    ui/wymiana.h
 FORMS += ui/koniec.ui ui/plansza.ui ui/start.ui \
-    ui/wyborrzedu.ui
+    ui/wyborrzedu.ui \
+    ui/wymiana.ui
 SOURCES += src/gracz.cpp \
            src/karta.cpp \
            src/klient.cpp \
@@ -37,7 +39,8 @@ SOURCES += src/gracz.cpp \
            src/start.cpp \
            src/talia.cpp \
            src/thread.cpp \
-    ui/wyborrzedu.cpp
+    ui/wyborrzedu.cpp \
+    ui/wymiana.cpp
 RESOURCES += resources/cards.qrc
 
 

@@ -14,6 +14,7 @@
 #include "koniec.h"
 #include "start.h"
 #include "ui/wyborrzedu.h"
+#include "ui/wymiana.h"
 
 #include "ui_plansza.h"
 
@@ -34,6 +35,8 @@ public:
     void przyznajPunkty(int);
     void aktywnyGracz(int);
     void aktualizujPunkty(int);
+    int tablicaNumerowSerwer[10];
+    bool wymienioneServ;
 
     void wyslijWiadomosc(QString);
     void inicjuj();
@@ -52,6 +55,8 @@ public:
     void niewidoczneG1();
     void niewidoczneG2();
     void klikKarta(QString);
+    void wymianaKartKlienta(QString);
+    void wymianaKart();
 
     void wrocDoMenu();
     void ustawIkony();
@@ -101,7 +106,7 @@ private:
     int liczbaKart;
 
 
-    void (Server::*metoda[7])(QString);
+    void (Server::*metoda[8])(QString);
 
 };
 

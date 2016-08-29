@@ -1,3 +1,4 @@
+
 #include "server.h"
 #include <ctime>
 
@@ -30,6 +31,7 @@ Server::Server(QString _nick, int _p_port, QWidget *parent) :
     metoda[4] = &Server::ustawLiczbeRund;
     metoda[5] = &Server::przeciwnikPas;
     metoda[6] = &Server::rodzajKlienta;
+    metoda[7] = &Server::wymianaKartKlienta;
 
     server = new QTcpServer();
     server->listen(QHostAddress::Any, port);
@@ -67,11 +69,10 @@ void Server::inicjuj()
     lineEditPktG2->setText("0");
     lineEditRundyG1->setText("0");
     lineEditRundyG2->setText("0");
-    ustawIkony();
     niewidoczneG1();
     rywalPas = false;
     Pas = false;
-
+    wymienioneServ = false;
 
 }
 
@@ -102,6 +103,161 @@ void Server::dodajPolaczenie()
 
 }
 
+void Server::wymianaKart()
+{
+
+
+    Wymiana*wym = new Wymiana(rodzajTalii, tablicaNumerowSerwer);
+    wym->exec();
+
+    QString numer, karta;
+
+    if (wym->getWym1() == 1 || wym->getWym2() == 1)
+    {
+        g2->setKarta(0,talia->dajKarte());
+        numer.setNum(g2->getKarta(0)->getNumer());
+        karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
+        pushButtonG2C1->setIcon(QIcon(karta));
+    }
+    if(wym->getWym1() == 2 || wym->getWym2() == 2)
+    {
+        g2->setKarta(1,talia->dajKarte());
+        numer.setNum(g2->getKarta(1)->getNumer());
+        karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
+        pushButtonG2C2->setIcon(QIcon(karta));
+    }
+    if(wym->getWym1() == 3 || wym->getWym2() == 3)
+    {
+        g2->setKarta(2,talia->dajKarte());
+        numer.setNum(g2->getKarta(2)->getNumer());
+        karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
+        pushButtonG2C3->setIcon(QIcon(karta));
+    }
+    if(wym->getWym1() == 4 || wym->getWym2() == 4)
+    {
+        g2->setKarta(3,talia->dajKarte());
+        numer.setNum(g2->getKarta(3)->getNumer());
+        karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
+        pushButtonG2C4->setIcon(QIcon(karta));
+    }
+    if(wym->getWym1() == 5 || wym->getWym2() == 5)
+    {
+        g2->setKarta(4,talia->dajKarte());
+        numer.setNum(g2->getKarta(4)->getNumer());
+        karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
+        pushButtonG2C5->setIcon(QIcon(karta));
+    }
+    if(wym->getWym1() == 6 || wym->getWym2() == 6)
+    {
+        g2->setKarta(5,talia->dajKarte());
+        numer.setNum(g2->getKarta(5)->getNumer());
+        karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
+        pushButtonG2C6->setIcon(QIcon(karta));
+    }
+    if(wym->getWym1() == 7 || wym->getWym2() == 7)
+    {
+        g2->setKarta(6,talia->dajKarte());
+        numer.setNum(g2->getKarta(6)->getNumer());
+        karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
+        pushButtonG2C7->setIcon(QIcon(karta));
+    }
+    if(wym->getWym1() == 8 || wym->getWym2() == 8)
+    {
+        g2->setKarta(7,talia->dajKarte());
+        numer.setNum(g2->getKarta(7)->getNumer());
+        karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
+        pushButtonG2C8->setIcon(QIcon(karta));
+    }
+    if(wym->getWym1() == 9 || wym->getWym2() == 9)
+    {
+        g2->setKarta(8,talia->dajKarte());
+        numer.setNum(g2->getKarta(8)->getNumer());
+        karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
+        pushButtonG2C9->setIcon(QIcon(karta));
+    }
+    if(wym->getWym1() == 10 || wym->getWym2() == 10)
+    {
+        g2->setKarta(9,talia->dajKarte());
+        numer.setNum(g2->getKarta(9)->getNumer());
+        karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
+        pushButtonG2C10->setIcon(QIcon(karta));
+    }
+
+    ustawLiczbeKartG2();
+
+}
+
+
+void Server::wymianaKartKlienta(QString c)
+{
+    QString num;
+    QString a = c.mid(0,1);
+    QString b = c.mid(1,1);
+
+        if (a == "0" || b == "0")
+        {
+            g1->setKarta(0,talia1->dajKarte());
+            num.setNum(g1->getKarta(0)->getNumer());
+            wyslijWiadomosc("010" + num + "|");
+        }
+        if(a == "1" || b == "1")
+        {
+            g1->setKarta(1,talia1->dajKarte());
+            num.setNum(g1->getKarta(1)->getNumer());
+            wyslijWiadomosc("011" + num + "|");
+        }
+        if(a == "2" || b == "2")
+        {
+            g1->setKarta(2,talia1->dajKarte());
+            num.setNum(g1->getKarta(2)->getNumer());
+            wyslijWiadomosc("012" + num + "|");
+        }
+        if(a == "3" || b == "3")
+        {
+            g1->setKarta(3,talia1->dajKarte());
+            num.setNum(g1->getKarta(3)->getNumer());
+            wyslijWiadomosc("013" + num + "|");
+        }
+        if(a == "4" || b == "4")
+        {
+            g1->setKarta(4,talia1->dajKarte());
+            num.setNum(g1->getKarta(4)->getNumer());
+            wyslijWiadomosc("014" + num + "|");
+        }
+        if(a == "5" || b == "5")
+        {
+            g1->setKarta(5,talia1->dajKarte());
+            num.setNum(g1->getKarta(5)->getNumer());
+            wyslijWiadomosc("015" + num + "|");
+        }
+        if(a == "6" || b == "6")
+        {
+            g1->setKarta(6,talia1->dajKarte());
+            num.setNum(g1->getKarta(6)->getNumer());
+            wyslijWiadomosc("016" + num + "|");
+        }
+        if(a == "7" || b == "7")
+        {
+            g1->setKarta(7,talia1->dajKarte());
+            num.setNum(g1->getKarta(7)->getNumer());
+            wyslijWiadomosc("017" + num + "|");
+        }
+        if(a == "8" || b == "8")
+        {
+            g1->setKarta(8,talia1->dajKarte());
+            num.setNum(g1->getKarta(8)->getNumer());
+            wyslijWiadomosc("018" + num + "|");
+        }
+        if(a == "9" || b == "9")
+        {
+            g1->setKarta(9,talia1->dajKarte());
+            num.setNum(g1->getKarta(9)->getNumer());
+            wyslijWiadomosc("019" + num + "|");
+        }
+
+        ustawLiczbeKartG1();
+        ustawTure(2);
+}
 void Server::inicjujPartie(QString c)
 {
 
@@ -121,6 +277,11 @@ void Server::inicjujPartie(QString c)
 
     g1 = new Gracz(talia1->dajKarte(), talia1->dajKarte(), talia1->dajKarte(), talia1->dajKarte(), talia1->dajKarte(), talia1->dajKarte(), talia1->dajKarte(), talia1->dajKarte(), talia1->dajKarte(), talia1->dajKarte());
     g2 = new Gracz(talia->dajKarte(), talia->dajKarte(), talia->dajKarte(), talia->dajKarte(), talia->dajKarte(), talia->dajKarte(), talia->dajKarte(), talia->dajKarte(), talia->dajKarte(), talia->dajKarte());
+
+
+    for(int i=0;i<10;i++)
+        tablicaNumerowSerwer[i] = g2->getKarta(i)->getNumer();
+
 
 
     QString tmp, num;
@@ -217,6 +378,14 @@ void Server::ustawTure(int g)
         pushButtonG2C9->setEnabled(true);
         pushButtonG2C10->setEnabled(true);
         pushButtonPasG2->setEnabled(true);
+
+        if(wymienioneServ == false)
+        {
+            wymienioneServ = true;
+            wymianaKart();
+            niewidoczneG2();
+            ustawTure(1);
+        }
     } else {
         wyslijWiadomosc("03Tura|");
     }
@@ -654,67 +823,11 @@ void Server::wrocDoMenu()
     a->setVisible(true);
 }
 
-void Server::ustawIkony()
-{
 
 
 
-    if (rodzajTaliiG1 == "kpln")
-    {
-        pushButtonG1C1->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG1C2->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG1C3->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG1C4->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG1C5->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG1C6->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG1C7->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG1C8->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG1C9->setIcon(QIcon(":ikony/ikona1.png"));
-        pushButtonG1C10->setIcon(QIcon(":ikony/ikona1.png"));
-    }
-             else if(rodzajTaliiG1 == "ngrd")
-        {
-            pushButtonG1C1->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG1C2->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG1C3->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG1C4->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG1C5->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG1C6->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG1C7->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG1C8->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG1C9->setIcon(QIcon(":ikony/ikona2.png"));
-            pushButtonG1C10->setIcon(QIcon(":ikony/ikona2.png"));
-        }
-             else if(rodzajTaliiG1 == "elfy")
-            {
-                pushButtonG1C1->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG1C2->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG1C3->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG1C4->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG1C5->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG1C6->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG1C7->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG1C8->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG1C9->setIcon(QIcon(":ikony/ikona3.png"));
-                pushButtonG1C10->setIcon(QIcon(":ikony/ikona3.png"));
-            }
-            else
-                {
-                    pushButtonG1C1->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG1C2->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG1C3->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG1C4->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG1C5->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG1C6->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG1C7->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG1C8->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG1C9->setIcon(QIcon(":ikony/ikona4.png"));
-                    pushButtonG1C10->setIcon(QIcon(":ikony/ikona4.png"));
-                }
 
 
-
-}
 
 void Server::klikKarta(QString c)
 {
@@ -822,6 +935,7 @@ void Server::klikKarta(QString c)
     }
     else if (tmp2 == "m")
     {
+
         g2->rodzajRzuconejKarty(tmp2);
         if (miecz1G2->accessibleName()=="wolne") {
         miecz1G2->setPixmap(karta);
@@ -1014,7 +1128,7 @@ void Server::klikKarta(QString c)
                 {
                     g2->rzuconeKartyMiecz[i]->setSila(g2->rzuconeKartyMiecz[i]->getOrginalnaSila());
                     roznica = g2->rzuconeKartyMiecz[i]->getSila() - 1;
-                    g2->zwiekszPunkty(roznica);       
+                    g2->zwiekszPunkty(roznica);
                 }
 
                 for (int i=0;i<g2->getZmienioneLuk();i++)
@@ -1484,4 +1598,6 @@ void Server::closeEvent(QCloseEvent *event)
         wyslijWiadomosc("07|");
     }
 }
+
+
 

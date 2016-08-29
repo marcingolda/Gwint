@@ -10,6 +10,7 @@
 #include "koniec.h"
 #include "start.h"
 #include "ui/wyborrzedu.h"
+#include "ui/wymiana.h"
 
 #include "ui_plansza.h"
 
@@ -28,10 +29,10 @@ public:
 	void wyslijWiadomosc(QString);
     void inicjuj();
     void inicjujKolejnaPartie();
+    int tablicaNumerowKlient[10];
 
 	void wrocDoMenu();
 
-    void ustawIkony();
 	void ustawNickSerwera(QString);
     void ustawKarty(QString c);
     void ustawLiczbeKartG2(QString);
@@ -48,7 +49,9 @@ public:
     void niewidoczneG2();
     void klikKarta(QString, QString);
     void ktoraKartaSerwera(QString);
+    void wymianaKart();
     void klikKartaKlient(QString);
+    bool wymienioneKlient;
 
 protected:
 	virtual void closeEvent(QCloseEvent *);
