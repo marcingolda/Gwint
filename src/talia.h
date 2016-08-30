@@ -12,7 +12,6 @@ class Talia
 private:
     Karta** kartaWtalii;
 	int max;
-    Random *losowaKarta;
 
 public:
     Talia(QString);
@@ -22,7 +21,6 @@ public:
     void inicjalizuj(QString);
 	void setMax(int);
 	int getMax();
-    QString jakaTalia;
     Karta* zwrocKarte(int);
 	Karta* dajKarte();
 };

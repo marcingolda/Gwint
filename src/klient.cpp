@@ -99,8 +99,8 @@ void Klient::wymianaKart()
     wym->exec();
 
     QString a,b;
-    a.setNum(wym->getWym1() - 1) ;
-    b.setNum(wym->getWym2() - 1);
+    a = wym->getWym1() ;
+    b = wym->getWym2();
 
     wyslijWiadomosc("07" + a + b);
 }
@@ -357,6 +357,7 @@ void Klient::ustawTure(QString)
     {
         wymianaKart();
         wymienioneKlient = true;
+        niewidoczneG1();
     }
 
 }

@@ -5,17 +5,16 @@
 
 Talia::Talia(QString _talia)
 {
-
+    qsrand(time(NULL));
     max = 46;
     kartaWtalii = new Karta*[max];
-    losowaKarta = new Random(time(0));
     inicjalizuj(_talia);
+
 }
 
 Talia::~Talia()
 {
     delete[] kartaWtalii;
-    delete losowaKarta;
 }
 
 
@@ -88,10 +87,11 @@ Karta* Talia::zwrocKarte(int i)
 
 Karta* Talia::dajKarte()
 {
-    int i = static_cast<int>(losowaKarta->rand()*(max-1));
 
+    int i = qrand() % (max-1);
     Karta *temp = kartaWtalii[i];
     kartaWtalii[i] = kartaWtalii[max-1];
-	max --;
+    max --;
+
 	return temp;
 }

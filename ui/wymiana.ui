@@ -38,7 +38,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-1114</y>
+       <y>0</y>
        <width>272</width>
        <height>1463</height>
       </rect>
@@ -239,12 +239,18 @@
        <widget class="QPushButton" name="ok">
         <property name="maximumSize">
          <size>
-          <width>70</width>
+          <width>85</width>
           <height>30</height>
          </size>
         </property>
         <property name="text">
-         <string>Wymień</string>
+         <string>Wymiana/Start</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>16</height>
+         </size>
         </property>
        </widget>
       </item>

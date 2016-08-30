@@ -1,4 +1,3 @@
-
 #include "server.h"
 #include <ctime>
 
@@ -11,7 +10,6 @@ Server::Server(QString _nick, int _p_port, QWidget *parent) :
     setupUi(this);
     nick = _nick;
     port = _p_port;
-
 
     inicjuj();
 
@@ -112,70 +110,70 @@ void Server::wymianaKart()
 
     QString numer, karta;
 
-    if (wym->getWym1() == 1 || wym->getWym2() == 1)
+    if (wym->getWym1() == "0" || wym->getWym2() == "0")
     {
         g2->setKarta(0,talia->dajKarte());
         numer.setNum(g2->getKarta(0)->getNumer());
         karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
         pushButtonG2C1->setIcon(QIcon(karta));
     }
-    if(wym->getWym1() == 2 || wym->getWym2() == 2)
+    if(wym->getWym1() == "1" || wym->getWym2() == "1")
     {
         g2->setKarta(1,talia->dajKarte());
         numer.setNum(g2->getKarta(1)->getNumer());
         karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
         pushButtonG2C2->setIcon(QIcon(karta));
     }
-    if(wym->getWym1() == 3 || wym->getWym2() == 3)
+    if(wym->getWym1() == "2" || wym->getWym2() == "2")
     {
         g2->setKarta(2,talia->dajKarte());
         numer.setNum(g2->getKarta(2)->getNumer());
         karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
         pushButtonG2C3->setIcon(QIcon(karta));
     }
-    if(wym->getWym1() == 4 || wym->getWym2() == 4)
+    if(wym->getWym1() == "3" || wym->getWym2() == "3")
     {
         g2->setKarta(3,talia->dajKarte());
         numer.setNum(g2->getKarta(3)->getNumer());
         karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
         pushButtonG2C4->setIcon(QIcon(karta));
     }
-    if(wym->getWym1() == 5 || wym->getWym2() == 5)
+    if(wym->getWym1() == "4" || wym->getWym2() == "4")
     {
         g2->setKarta(4,talia->dajKarte());
         numer.setNum(g2->getKarta(4)->getNumer());
         karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
         pushButtonG2C5->setIcon(QIcon(karta));
     }
-    if(wym->getWym1() == 6 || wym->getWym2() == 6)
+    if(wym->getWym1() == "5" || wym->getWym2() == "5")
     {
         g2->setKarta(5,talia->dajKarte());
         numer.setNum(g2->getKarta(5)->getNumer());
         karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
         pushButtonG2C6->setIcon(QIcon(karta));
     }
-    if(wym->getWym1() == 7 || wym->getWym2() == 7)
+    if(wym->getWym1() == "6" || wym->getWym2() == "6")
     {
         g2->setKarta(6,talia->dajKarte());
         numer.setNum(g2->getKarta(6)->getNumer());
         karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
         pushButtonG2C7->setIcon(QIcon(karta));
     }
-    if(wym->getWym1() == 8 || wym->getWym2() == 8)
+    if(wym->getWym1() == "7" || wym->getWym2() == "7")
     {
         g2->setKarta(7,talia->dajKarte());
         numer.setNum(g2->getKarta(7)->getNumer());
         karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
         pushButtonG2C8->setIcon(QIcon(karta));
     }
-    if(wym->getWym1() == 9 || wym->getWym2() == 9)
+    if(wym->getWym1() == "8" || wym->getWym2() == "8")
     {
         g2->setKarta(8,talia->dajKarte());
         numer.setNum(g2->getKarta(8)->getNumer());
         karta = ":talie/" + rodzajTalii + "/" + numer + ".png";
         pushButtonG2C9->setIcon(QIcon(karta));
     }
-    if(wym->getWym1() == 10 || wym->getWym2() == 10)
+    if(wym->getWym1() == "9" || wym->getWym2() == "9")
     {
         g2->setKarta(9,talia->dajKarte());
         numer.setNum(g2->getKarta(9)->getNumer());

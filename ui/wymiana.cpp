@@ -19,8 +19,6 @@ Wymiana::Wymiana(QString t, int numer[],  QWidget *parent) :
     connect(c9, SIGNAL(clicked()), this, SLOT(klikKarta9()));
     connect(c10, SIGNAL(clicked()), this, SLOT(klikKarta10()));
 
-    wym1 = 0;
-    wym2 = 0;
 
 
         num.setNum(numer[0]);
@@ -94,11 +92,11 @@ void Wymiana::klikKarta1()
 {
   c1->setEnabled(false);
 
-  if(wym1 == 0)
-      wym1 = 1;
-  else if(wym2 == 0)
+  if(wym1 == NULL)
+      wym1 = "0";
+  else if(wym2 == NULL)
   {
-      wym2 = 1;
+      wym2 = "0";
       niewidoczne();
   }
 
@@ -108,11 +106,11 @@ void Wymiana::klikKarta2()
 {
     c2->setEnabled(false);
 
-    if(wym1 == 0)
-        wym1 = 2;
-    else if(wym2 == 0)
+    if(wym1 == NULL)
+        wym1 = "1";
+    else if(wym2 == NULL)
     {
-        wym2 = 2;
+        wym2 = "1";
         niewidoczne();
     }
 }
@@ -121,11 +119,11 @@ void Wymiana::klikKarta3()
 {
     c3->setEnabled(false);
 
-    if(wym1 == 0)
-        wym1 = 3;
-    else if(wym2 == 0)
+    if(wym1 == NULL)
+        wym1 = "2";
+    else if(wym2 == NULL)
     {
-        wym2 = 3;
+        wym2 = "2";
         niewidoczne();
     }
 
@@ -135,11 +133,11 @@ void Wymiana::klikKarta4()
 {
     c4->setEnabled(false);
 
-    if(wym1 == 0)
-        wym1 = 4;
-    else if(wym2 == 0)
+    if(wym1 == NULL)
+        wym1 = "3";
+    else if(wym2 == NULL)
     {
-        wym2 = 4;
+        wym2 = "3";
         niewidoczne();
     }
 }
@@ -148,11 +146,11 @@ void Wymiana::klikKarta5()
 {
     c5->setEnabled(false);
 
-    if(wym1 == 0)
-        wym1 = 5;
-    else if(wym2 == 0)
+    if(wym1 == NULL)
+        wym1 = "4";
+    else if(wym2 == NULL)
     {
-        wym2 = 5;
+        wym2 = "4";
         niewidoczne();
     }
 }
@@ -161,11 +159,11 @@ void Wymiana::klikKarta6()
 {
     c6->setEnabled(false);
 
-    if(wym1 == 0)
-        wym1 = 6;
-    else if(wym2 == 0)
+    if(wym1 == NULL)
+        wym1 = "5";
+    else if(wym2 == NULL)
     {
-        wym2 = 6;
+        wym2 = "5";
         niewidoczne();
     }
 }
@@ -174,11 +172,11 @@ void Wymiana::klikKarta7()
 {
     c7->setEnabled(false);
 
-    if(wym1 == 0)
-        wym1 = 7;
-    else if(wym2 == 0)
+    if(wym1 == NULL)
+        wym1 = "6";
+    else if(wym2 == NULL)
     {
-        wym2 = 7;
+        wym2 = "6";
         niewidoczne();
     }
 }
@@ -187,11 +185,11 @@ void Wymiana::klikKarta8()
 {
     c8->setEnabled(false);
 
-    if(wym1 == 0)
-        wym1 = 8;
-    else if(wym2 == 0)
+    if(wym1 == NULL)
+        wym1 = "7";
+    else if(wym2 == NULL)
     {
-        wym2 = 8;
+        wym2 = "7";
         niewidoczne();
     }
 
@@ -201,11 +199,11 @@ void Wymiana::klikKarta9()
 {
     c9->setEnabled(false);
 
-    if(wym1 == 0)
-        wym1 = 9;
-    else if(wym2 == 0)
+    if(wym1 == NULL)
+        wym1 = "8";
+    else if(wym2 == NULL)
     {
-        wym2 = 9;
+        wym2 = "8";
         niewidoczne();
     }
 }
@@ -214,21 +212,21 @@ void Wymiana::klikKarta10()
 {
     c10->setEnabled(false);
 
-    if(wym1 == 0)
-        wym1 = 10;
-    else if(wym2 == 0)
+    if(wym1 == NULL)
+        wym1 = "9";
+    else if(wym2 == NULL)
     {
-        wym2 = 10;
+        wym2 = "9";
         niewidoczne();
     }
 }
 
-int Wymiana::getWym1()
+QString Wymiana::getWym1()
 {
     return wym1;
 }
 
-int Wymiana::getWym2()
+QString Wymiana::getWym2()
 {
     return wym2;
 }
