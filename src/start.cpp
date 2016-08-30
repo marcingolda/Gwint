@@ -1,5 +1,4 @@
 #include "start.h"
-#include "plansza.h"
 #include "klient.h"
 #include "server.h"
 

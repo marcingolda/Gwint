@@ -9,7 +9,6 @@ INCLUDEPATH += .
 
 
 QT += network \
-    sql \
     core \
     gui
 
@@ -19,7 +18,6 @@ HEADERS += src/gracz.h \
            src/karta.h \
            src/klient.h \
            src/koniec.h \
-           src/random.h \
            src/server.h \
            src/start.h \
            src/talia.h \
@@ -34,7 +32,6 @@ SOURCES += src/gracz.cpp \
            src/klient.cpp \
            src/koniec.cpp \
            src/main.cpp \
-           src/random.cpp \
            src/server.cpp \
            src/start.cpp \
            src/talia.cpp \
