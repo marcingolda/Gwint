@@ -266,8 +266,6 @@ void Server::inicjujPartie(QString c)
     talia1 = new Talia(rodzajTaliiG1);
 
 
-    losujTure = new Random(time(0));
-
     tura = 0;
     pos1 = -1;
     pos2 = -1;
@@ -354,7 +352,7 @@ void Server::inicjujPartie(QString c)
 
 int Server::ktoZaczyna()
 {
-    int r = static_cast<int> (losujTure->rand() * (2));
+    int r = qrand() % 2;
 
     if (r > 0.5)
         return 2;

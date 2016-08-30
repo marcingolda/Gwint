@@ -31,24 +31,28 @@ void Talia::inicjalizuj(QString c)
                 dir=":talie/elfy/rodzaj.txt";
                 dir2=":talie/elfy/sila.txt";
                 dir3=":talie/elfy/moc.txt";
+                dir4=":talie/elfy/bohater.txt";
             }
             else if(tmp=="kpln")
            {
                 dir=":talie/kpln/rodzaj.txt";
                 dir2=":talie/kpln/sila.txt";
                 dir3=":talie/kpln/moc.txt";
+                dir4=":talie/kpln/bohater.txt";
            }
             else if(tmp=="ptwr")
                 {
                 dir=":talie/ptwr/rodzaj.txt";
                 dir2=":talie/ptwr/sila.txt";
                 dir3=":talie/ptwr/moc.txt";
+                dir4=":talie/ptwr/bohater.txt";
                 }
             else
                 {
                 dir=":talie/ngrd/rodzaj.txt";
                 dir2=":talie/ngrd/sila.txt";
                 dir3=":talie/ngrd/moc.txt";
+                dir4=":talie/ngrd/bohater.txt";
                 }
 
 
@@ -61,23 +65,26 @@ void Talia::inicjalizuj(QString c)
             QFile plik3(dir3);
             QTextStream in3( & plik3 );
 
+            QFile plik4(dir4);
+            QTextStream in4( & plik4);
+
             if (!plik.open(QIODevice::ReadOnly | QIODevice::Text) || (!plik2.open(QIODevice::ReadOnly | QIODevice::Text)) || (!plik3.open(QIODevice::ReadOnly | QIODevice::Text)))
                     return;
 
                   for (count=0;count<max;count++)
-                kartaWtalii[count] = new Karta(in.readLine(), count+1, in2.readLine().toInt(), in3.readLine());
+                kartaWtalii[count] = new Karta(in.readLine(), count+1, in2.readLine().toInt(), in3.readLine(), in4.readLine().toInt());
 
 
 }
 
 void Talia::setMax(int v)
 {
-	max = v;
+    max = v;
 }
 
 int Talia::getMax()
 {
-	return max;
+    return max;
 }
 
 Karta* Talia::zwrocKarte(int i)
@@ -88,10 +95,9 @@ Karta* Talia::zwrocKarte(int i)
 Karta* Talia::dajKarte()
 {
 
-    int i = qrand() % (max-1);
-    Karta *temp = kartaWtalii[i];
-    kartaWtalii[i] = kartaWtalii[max-1];
-    max --;
-
-	return temp;
+        int i = qrand() % (max-1);
+        Karta *temp = kartaWtalii[i];
+        kartaWtalii[i] = kartaWtalii[max-1];
+        max --;
+        return temp;
 }

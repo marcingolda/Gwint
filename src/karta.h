@@ -11,9 +11,11 @@ private:
     QString moc;
 	int sila;
     int orginalnaSila;
+    int bohater;
 
-public:
-    Karta(QString, int, int, QString);
+
+ public:
+     Karta(QString, int, int, QString, int);
     Karta(int);
 
 	QString getRodzaj();
@@ -23,6 +25,7 @@ public:
     int getOrginalnaSila();
     void setOrginalnaSila(int);
     QString getMoc();
+    int getBohater();
 
 };
 

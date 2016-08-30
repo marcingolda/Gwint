@@ -3,9 +3,6 @@
 
 #include <QtNetwork>
 #include <QtGui>
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlResult>
 
 #include "koniec.h"
 #include "start.h"

@@ -11,7 +11,6 @@
 #include "gracz.h"
 #include "koniec.h"
 #include "start.h"
-#include "random.h"
 #include "ui/wyborrzedu.h"
 #include "ui/wymiana.h"
 
@@ -90,10 +89,8 @@ private:
     QBuffer* buffer;
     Gracz *g1;
     Gracz *g2;
-    Karta *br;
     Talia *talia;
     Talia *talia1;
-    Random *losujTure;
     int tura;
     int pos1;
     int pos2;

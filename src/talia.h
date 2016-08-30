@@ -2,7 +2,6 @@
 #define TALIA_H_
 
 #include "karta.h"
-#include "random.h"
 #include "start.h"
 
 extern QString rodzajTalii;
@@ -11,7 +10,7 @@ class Talia
 {
 private:
     Karta** kartaWtalii;
-	int max;
+    int max;
 
 public:
     Talia(QString);
@@ -19,10 +18,10 @@ public:
 
 
     void inicjalizuj(QString);
-	void setMax(int);
-	int getMax();
+    void setMax(int);
+    int getMax();
     Karta* zwrocKarte(int);
-	Karta* dajKarte();
+    Karta* dajKarte();
 };
 
 #endif
