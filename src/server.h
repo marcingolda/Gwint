@@ -4,12 +4,14 @@
 #include <QtNetwork>
 #include <QtGui>
 
+
 #include "talia.h"
 #include "thread.h"
 #include "karta.h"
 #include "gracz.h"
 #include "koniec.h"
 #include "start.h"
+#include "random.h"
 #include "ui/wyborrzedu.h"
 #include "ui/wymiana.h"
 
@@ -92,7 +94,6 @@ private:
     Talia *talia;
     Talia *talia1;
     Random *losujTure;
-    Random *losujKarte;
     int tura;
     int pos1;
     int pos2;

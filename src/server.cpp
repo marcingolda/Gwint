@@ -311,7 +311,7 @@ void Server::inicjujPartie(QString c)
     tmp.setNum(g2->getKarta(4)->getNumer());
     QString icona24 = ":talie/" + rodzajTalii + "/" + tmp +  ".png";
     pushButtonG2C5->setIcon(QIcon(icona24));
-    num.setNum(g1->getKarta(1)->getNumer());
+    num.setNum(g1->getKarta(4)->getNumer());
     wyslijWiadomosc("014" + num + "|");
 
     tmp.setNum(g2->getKarta(5)->getNumer());

@@ -422,7 +422,7 @@ void Klient::ustawKarty(QString c)
         tablicaNumerowKlient[9] = c.mid(1).toInt();
     }
 
-    niewidoczneG1();
+
 }
 
 void Klient::ustawNickSerwera(QString c)
@@ -686,6 +686,7 @@ void Klient::klikKarta1()
 
     wyslijWiadomosc("060|");
     pushButtonG1C1->setHidden(true);
+    niewidoczneG1();
 
 }
 
@@ -693,6 +694,7 @@ void Klient::klikKarta2()
 {
     wyslijWiadomosc("061|");
     pushButtonG1C2->setHidden(true);
+    niewidoczneG1();
 
 }
 
@@ -700,6 +702,7 @@ void Klient::klikKarta3()
 {
     wyslijWiadomosc("062|");
     pushButtonG1C3->setHidden(true);
+    niewidoczneG1();
 
 }
 
@@ -707,6 +710,7 @@ void Klient::klikKarta4()
 {
     wyslijWiadomosc("063|");
     pushButtonG1C4->setHidden(true);
+    niewidoczneG1();
 
 }
 
@@ -714,6 +718,7 @@ void Klient::klikKarta5()
 {
     wyslijWiadomosc("064|");
     pushButtonG1C5->setHidden(true);
+    niewidoczneG1();
 
 
 }
@@ -722,6 +727,7 @@ void Klient::klikKarta6()
 {
     wyslijWiadomosc("065|");
     pushButtonG1C6->setHidden(true);
+    niewidoczneG1();
 
 }
 
@@ -729,6 +735,7 @@ void Klient::klikKarta7()
 {
     wyslijWiadomosc("066|");
     pushButtonG1C7->setHidden(true);
+    niewidoczneG1();
 
 }
 
@@ -736,6 +743,7 @@ void Klient::klikKarta8()
 {
     wyslijWiadomosc("067|");
     pushButtonG1C8->setHidden(true);
+    niewidoczneG1();
 
 }
 
@@ -743,6 +751,7 @@ void Klient::klikKarta9()
 {
     wyslijWiadomosc("068|");
     pushButtonG1C9->setHidden(true);
+    niewidoczneG1();
 
 }
 
@@ -750,6 +759,7 @@ void Klient::klikKarta10()
 {
     wyslijWiadomosc("069|");
     pushButtonG1C10->setHidden(true);
+    niewidoczneG1();
 
 }
 
