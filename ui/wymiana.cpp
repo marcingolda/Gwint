@@ -20,7 +20,6 @@ Wymiana::Wymiana(QString t, int numer[],  QWidget *parent) :
     connect(c10, SIGNAL(clicked()), this, SLOT(klikKarta10()));
 
 
-
         num.setNum(numer[0]);
         karta = ":talie/" + t + "/" + num + ".png";
         p1->setPixmap(QPixmap(karta));

@@ -68,7 +68,7 @@ void Talia::inicjalizuj(QString c)
             QFile plik4(dir4);
             QTextStream in4( & plik4);
 
-            if (!plik.open(QIODevice::ReadOnly | QIODevice::Text) || (!plik2.open(QIODevice::ReadOnly | QIODevice::Text)) || (!plik3.open(QIODevice::ReadOnly | QIODevice::Text)))
+            if (!plik.open(QIODevice::ReadOnly | QIODevice::Text) || (!plik2.open(QIODevice::ReadOnly | QIODevice::Text)) || (!plik3.open(QIODevice::ReadOnly | QIODevice::Text)) || (!plik4.open(QIODevice::ReadOnly | QIODevice::Text)))
                     return;
 
                   for (count=0;count<max;count++)

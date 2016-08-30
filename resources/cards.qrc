@@ -403,5 +403,9 @@
         <file>talie2/ptwr/46.png</file>
         <file>ikony/tylPoziom.png</file>
         <file>ikony/tyl.png</file>
+        <file>talie/elfy/bohater.txt</file>
+        <file>talie/kpln/bohater.txt</file>
+        <file>talie/ngrd/bohater.txt</file>
+        <file>talie/ptwr/bohater.txt</file>
     </qresource>
 </RCC>
