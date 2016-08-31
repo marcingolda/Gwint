@@ -809,7 +809,9 @@ void Klient::wydajWerdykt()
 
         if(rnd1==2 || rnd2==2)
         {
-            if(rnd1==2)
+            if(rnd1==2 && rnd2 == 2)
+                werdykt = Koniec::Remis;
+            else if (rnd1 == 2)
                 werdykt = Koniec::Zwyciestwo;
             else
                 werdykt = Koniec::Porazka;
