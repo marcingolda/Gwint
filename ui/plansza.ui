@@ -2339,7 +2339,7 @@
     <property name="flat">
      <bool>true</bool>
     </property>
-    <widget class="QPushButton" name="pushButtonG1C1">
+    <widget class="QPushButton" name="pushButtonG1C2">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -2380,7 +2380,7 @@
       </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButtonG1C2">
+    <widget class="QPushButton" name="pushButtonG1C3">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -2418,7 +2418,7 @@
       </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButtonG1C3">
+    <widget class="QPushButton" name="pushButtonG1C1">
      <property name="enabled">
       <bool>false</bool>
      </property>
