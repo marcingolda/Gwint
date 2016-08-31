@@ -1425,10 +1425,12 @@ void Server::wydajWerdykt()
 
         if(rnd1==2 || rnd2==2)
         {
-            if(rnd1==2)
-                werdykt = Koniec::Porazka;
-            else
+            if(rnd1==2 && rnd2 == 2)
+                werdykt = Koniec::Remis;
+            else if (rnd2 == 2)
                 werdykt = Koniec::Zwyciestwo;
+            else
+                werdykt = Koniec::Porazka;
 
 
             Koniec *koniec = new Koniec(werdykt, rnd1, rnd2, nick, groupBoxG2->title());

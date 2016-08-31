@@ -15,7 +15,8 @@ public:
     enum Werdykt
 	{
 		Zwyciestwo,
-        Porazka
+        Porazka,
+        Remis
 	};
 
 public slots:

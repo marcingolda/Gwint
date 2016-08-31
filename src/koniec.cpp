@@ -14,6 +14,10 @@ Koniec::Koniec(int c, int p1, int p2, QString g1, QString g2, QWidget *parent) :
         labelKoniec->setPixmap(QString(":/ikony/przegrana.png"));
         labelWiadomosc->setText(tr("Niestety, przegrales."));
     }
+    else {
+        labelKoniec->setPixmap(QString(":/ikony/remis.png"));
+        labelWiadomosc->setText(tr("Gra zakonczona remisem"));
+    }
 
 	labelG1->setText(g1);
 	QString tmp1;
