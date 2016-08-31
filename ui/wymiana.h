@@ -18,7 +18,7 @@ class Wymiana : public QDialog, private Ui::Wymiana
 public:
     explicit Wymiana(QString, int[], QWidget *parent = 0);
     void niewidoczne();
-    QString wym1, wym2;
+    QString wym1, wym2, wymieniona1, wymieniona2;
     QString getWym1();
     QString getWym2();
     QString karta;

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>290</width>
-    <height>352</height>
+    <height>351</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,14 @@
      <x>0</x>
      <y>0</y>
      <width>291</width>
-     <height>341</height>
+     <height>351</height>
     </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>291</width>
+     <height>361</height>
+    </size>
    </property>
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">

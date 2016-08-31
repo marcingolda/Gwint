@@ -67,6 +67,8 @@ Wymiana::Wymiana(QString t, int numer[],  QWidget *parent) :
 
 void Wymiana::wymien()
 {
+    wymieniona1 = wym1;
+    wymieniona2 = wym2;
     this->destroyed();
     setVisible(false);
     destroy();
@@ -222,12 +224,12 @@ void Wymiana::klikKarta10()
 
 QString Wymiana::getWym1()
 {
-    return wym1;
+    return wymieniona1;
 }
 
 QString Wymiana::getWym2()
 {
-    return wym2;
+    return wymieniona2;
 }
 
 void Wymiana::closeEvent(QCloseEvent *event)
